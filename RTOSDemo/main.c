@@ -84,18 +84,6 @@
  * processing is performed in this task.
  */
 
-
-
-
-/*************************************************************************
- * Please ensure to read http://www.freertos.org/portLM3Sxxxx_Eclipse.html
- * which provides information on configuring and running this demo for the
- * various Luminary Micro EKs.
- *************************************************************************/
-
-
-
-
 /* Standard includes. */
 #include <stdio.h>
 
@@ -175,12 +163,6 @@ the jitter time in nano seconds. */
 /*-----------------------------------------------------------*/
 
 /*
- * The task that handles the uIP stack.  All TCP/IP processing is performed in
- * this task.
- */
-extern void vuIP_Task( void *pvParameters );
-
-/*
  * The display is written two by more than one task so is controlled by a
  * 'gatekeeper' task.  This is the only task that is actually permitted to
  * access the display directly.  Other tasks wanting to display a message send
@@ -199,11 +181,6 @@ static void prvSetupHardware( void );
  */
 extern void vSetupHighFrequencyTimer( void );
 
-/*
- * The idle hook is used to run a test of the scheduler context switch
- * mechanism.
- */
-void vApplicationIdleHook( void ) __attribute__((naked));
 /*-----------------------------------------------------------*/
 
 /* The queue used to send messages to the OLED task. */
