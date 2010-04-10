@@ -146,7 +146,7 @@ time. */
 #define mainOLED_QUEUE_SIZE					( 3 )
 
 /* Dimensions the buffer into which the jitter time is written. */
-#define mainMAX_MSG_LEN						25
+#define mainMAX_MSG_LEN						LCD_MESSAGE_MAX_LENGTH
 
 /* The period of the system clock in nano seconds.  This is used to calculate
 the jitter time in nano seconds. */
@@ -170,6 +170,8 @@ the jitter time in nano seconds. */
  */
 static void vOLEDTask( void *pvParameters );
 
+ void vTaskRefresh( void * pvParameters );
+
 /*
  * Configure the hardware for the demo.
  */
@@ -187,7 +189,7 @@ extern void vSetupHighFrequencyTimer( void );
 xQueueHandle xOLEDQueue;
 
 /* The welcome text. */
-const portCHAR * const pcWelcomeMessage = "   www.FreeRTOS.org";
+const portCHAR * const pcWelcomeMessage = "   Better than ever";
 
 /* Variables used to detect the test in the idle hook failing. */
 unsigned portLONG ulIdleError = pdFALSE;
@@ -207,10 +209,10 @@ int main( void )
 	are received via this queue. */
 	xOLEDQueue = xQueueCreate( mainOLED_QUEUE_SIZE, sizeof( xOLEDMessage ) );
 
-
-
 	/* Start the tasks defined within this file/specific to this demo. */
 	xTaskCreate( vOLEDTask, ( signed portCHAR * ) "OLED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
+
+	xTaskCreate( vTaskRefresh, ( signed portCHAR * ) "REFRESH", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
 
 	/* Configure the high frequency interrupt used to measure the interrupt
 	jitter time. */
@@ -323,14 +325,34 @@ void ( *vOLEDClear )( void ) = NULL;
 
 		/* Display the message along with the maximum jitter time from the
 		high priority time test. */
-		sprintf( cMessage, "%s [%uns]", xMessage.pcMessage, ulMaxJitter * mainNS_PER_CLOCK );
+		sprintf( cMessage, "%s", xMessage.pcMessage );
 		vOLEDStringDraw( cMessage, 0, ulY, mainFULL_SCALE );
 	}
 }
 /*-----------------------------------------------------------*/
+void vTaskRefresh( void * pvParameters )
+{
+	/* Block for 500ms. */
+	const portTickType xDelay = 1000 / portTICK_RATE_MS;
+	xOLEDMessage msg;
+	int cycle;
 
+	/* init */
+	cycle = 1;
+	sprintf(msg.pcMessage, "duchlauf %2d", cycle++);
+
+    for( ;; )
+    {
+        /* Simply toggle the LED every 500ms, blocking between each toggle. */
+        xQueueSend(xOLEDQueue, &msg, portMAX_DELAY);
+        vTaskDelay( xDelay );
+        sprintf(msg.pcMessage, "duchlauf %2d", cycle++);
+    }
+}
+/*-----------------------------------------------------------*/
 void vApplicationStackOverflowHook( xTaskHandle *pxTask, signed portCHAR *pcTaskName )
 {
+
 	for( ;; );
 }
 
