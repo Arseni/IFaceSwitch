@@ -83,11 +83,12 @@ CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portabl
 SOURCE=	main.c \
 		timertest.c \
 		./ParTest/ParTest.c \
+		./API/LED.c \
 		rit128x96x4.c \
 		osram128x64x4.c \
 		formike128x128x16.c \
 		$(LUMINARY_DRIVER_DIR)/ustdlib.c \
-		./IntQueueTimer.c \
+		IntQueueTimer.c \
 		$(RTOS_SOURCE_DIR)/list.c \
 		$(RTOS_SOURCE_DIR)/queue.c \
 		$(RTOS_SOURCE_DIR)/tasks.c \

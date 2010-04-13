@@ -120,6 +120,9 @@
 #include "recmutex.h"
 #include "IntQueue.h"
 
+/* API includes */
+#include "api/led.h"
+
 /*-----------------------------------------------------------*/
 
 /* The time between cycles of the 'check' functionality (defined within the
@@ -170,7 +173,7 @@ the jitter time in nano seconds. */
  */
 static void vOLEDTask( void *pvParameters );
 
- void vTaskRefresh( void * pvParameters );
+void vTaskRefresh( void * pvParameters );
 
 /*
  * Configure the hardware for the demo.
@@ -196,6 +199,35 @@ unsigned portLONG ulIdleError = pdFALSE;
 
 /*-----------------------------------------------------------*/
 
+void vUARTTask(void * pvParameters)
+{
+	const portTickType xDelay = 1000 / portTICK_RATE_MS;
+
+	for(;;)
+	{
+		vTaskDelay(xDelay);
+	}
+}
+
+void vLEDTask(void * pvParameters)
+{
+	const portTickType xDelay = 1000 / portTICK_RATE_MS;
+
+	//UARTEnable(UART1_BASE);
+	//UARTConfigSet(UART1_BASE, 9600UL, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
+
+	GPIODirModeSet(GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_DIR_MODE_OUT);
+
+	for(;;)
+	{
+		vTaskDelay(xDelay);
+		ledSwitch(true);
+		vTaskDelay(xDelay);
+		ledSwitch(false);
+	}
+}
+
 /*************************************************************************
  * Please ensure to read http://www.freertos.org/portLM3Sxxxx_Eclipse.html
  * which provides information on configuring and running this demo for the
@@ -213,16 +245,16 @@ int main( void )
 	xTaskCreate( vOLEDTask, ( signed portCHAR * ) "OLED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
 
 	xTaskCreate( vTaskRefresh, ( signed portCHAR * ) "REFRESH", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
+	xTaskCreate( vUARTTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+	xTaskCreate( vLEDTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
-	/* Configure the high frequency interrupt used to measure the interrupt
-	jitter time. */
+	/* Configure the high frequency interrupt used to measure the interrupt	jitter time. */
 	vSetupHighFrequencyTimer();
 
 	/* Start the scheduler. */
 	vTaskStartScheduler();
 
-    /* Will only get here if there was insufficient memory to create the idle
-    task. */
+    /* Will only get here if there was insufficient memory to create the idle task. */
 	for( ;; );
 	return 0;
 }

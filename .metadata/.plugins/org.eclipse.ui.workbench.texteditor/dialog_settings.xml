@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="243" key="DIALOG_WIDTH"/>
+		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="421" key="DIALOG_Y_ORIGIN"/>
+		<item value="380" key="DIALOG_HEIGHT"/>
 		<item value="763" key="DIALOG_X_ORIGIN"/>
-		<item value="356" key="DIALOG_HEIGHT"/>
-		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="TaskList" key="selection"/>
+		<item value="GPIO_PORTF_BASE" key="selection"/>
 		<list key="findhistory">
+			<item value="RCGC2"/>
+			<item value="3Snnn device."/>
 			<item value="tasklist"/>
 			<item value="ulRunTimeCounter"/>
 			<item value="configGENERATE_RUN_TIME_STATS"/>
 			<item value="run_time"/>
 			<item value="libdriver"/>
 			<item value="luminarydrivers"/>
-			<item value="luminary"/>
-			<item value="driverlil"/>
 		</list>
 		<list key="replacehistory">
 			<item value="prvCopyDataToQueue"/>
