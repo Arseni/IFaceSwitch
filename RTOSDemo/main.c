@@ -105,23 +105,11 @@
 #include "formike128x128x16.h"
 
 /* Demo app includes. */
-#include "BlockQ.h"
-#include "death.h"
-#include "integer.h"
-#include "blocktim.h"
-#include "flash.h"
-#include "partest.h"
-#include "semtest.h"
-#include "PollQ.h"
 #include "lcd_message.h"
 #include "bitmap.h"
-#include "GenQTest.h"
-#include "QPeek.h"
-#include "recmutex.h"
-#include "IntQueue.h"
 
 /* API includes */
-//#include "api/led.h"
+#include "api/led.h"
 
 /*-----------------------------------------------------------*/
 
@@ -212,12 +200,11 @@ void vUARTTask(void * pvParameters)
 void vLEDTask(void * pvParameters)
 {
 	const portTickType xDelay = 100 / portTICK_RATE_MS;
+	xOLEDMessage msg;
 
-	//UARTEnable(UART1_BASE);
-	//UARTConfigSet(UART1_BASE, 9600UL, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-
 	GPIODirModeSet(GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_DIR_MODE_OUT);
+	GPIOPadConfigSet( GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD );
 
 	for(;;)
 	{
@@ -278,8 +265,6 @@ void prvSetupHardware( void )
 	SysCtlPeripheralEnable( SYSCTL_PERIPH_GPIOF );
 	GPIODirModeSet( GPIO_PORTF_BASE, (GPIO_PIN_2 | GPIO_PIN_3), GPIO_DIR_MODE_HW );
 	GPIOPadConfigSet( GPIO_PORTF_BASE, (GPIO_PIN_2 | GPIO_PIN_3 ), GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD );
-
-	vParTestInitialise();
 }
 
 /*-----------------------------------------------------------*/

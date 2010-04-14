@@ -59,8 +59,10 @@
 # *************************************************************************/
 
 RTOS_SOURCE_DIR=../../../Source
-DEMO_COMMON_DIR=../../Common/Minimal
-DEMO_INCLUDE_DIR=../../Common/include
+#DEMO_COMMON_DIR=../../Common/Minimal
+#DEMO_INCLUDE_DIR=../../Common/include
+DEMO_COMMON_DIR=./
+DEMO_INCLUDE_DIR=./
 UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
 LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
 DRIVERS_DIR=./Drivers
@@ -90,7 +92,6 @@ DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVER
 SOURCE=	$(DRIVERS) \
 		main.c \
 		timertest.c \
-		./ParTest/ParTest.c \
 		./API/led.c \
 		rit128x96x4.c \
 		osram128x64x4.c \

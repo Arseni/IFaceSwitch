@@ -145,7 +145,6 @@
 <sourceEntries>
 <entry excluding="Common Demo Files|FreeRTOS.org Source|Source|Minimal" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FreeRTOS.org Source"/>
-<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Common Demo Files"/>
 </sourceEntries>
 </configuration>
 </storageModule>
