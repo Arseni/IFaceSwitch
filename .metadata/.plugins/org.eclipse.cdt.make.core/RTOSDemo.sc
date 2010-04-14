@@ -4,6 +4,16 @@
 <scannerInfo id="org.eclipse.cdt.make.core.discoveredScannerInfo">
 <instance id="0.1109417601">
 <collector id="org.eclipse.cdt.make.core.PerProjectSICollector">
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Source/include"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/include"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/uip"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/webserver"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/drivers/LuminaryMicro"/>
+<includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/include"/>
+<includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/include-fixed"/>
+<includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/include"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Source/include"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Source/portable/GCC/ARM_CM3"/>
@@ -188,6 +198,7 @@
 <definedSymbol symbol="__DEC64_SUBNORMAL_MIN__=0.000000000000001E-383DD"/>
 <definedSymbol symbol="__DEC128_SUBNORMAL_MIN__=0.000000000000000000000000000000001E-6143DL"/>
 <definedSymbol symbol="__BIGGEST_ALIGNMENT__=8"/>
+<definedSymbol symbol="sourcerygxx=1"/>
 </collector>
 </instance>
 </scannerInfo>

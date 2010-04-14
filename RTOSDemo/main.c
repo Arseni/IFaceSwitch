@@ -121,7 +121,7 @@
 #include "IntQueue.h"
 
 /* API includes */
-#include "api/led.h"
+//#include "api/led.h"
 
 /*-----------------------------------------------------------*/
 
@@ -211,7 +211,7 @@ void vUARTTask(void * pvParameters)
 
 void vLEDTask(void * pvParameters)
 {
-	const portTickType xDelay = 1000 / portTICK_RATE_MS;
+	const portTickType xDelay = 100 / portTICK_RATE_MS;
 
 	//UARTEnable(UART1_BASE);
 	//UARTConfigSet(UART1_BASE, 9600UL, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
@@ -246,7 +246,7 @@ int main( void )
 
 	xTaskCreate( vTaskRefresh, ( signed portCHAR * ) "REFRESH", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
 	xTaskCreate( vUARTTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
-	xTaskCreate( vLEDTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+	xTaskCreate( vLEDTask, (signed portCHAR *) "LED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
 	/* Configure the high frequency interrupt used to measure the interrupt	jitter time. */
 	vSetupHighFrequencyTimer();

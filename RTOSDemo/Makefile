@@ -63,6 +63,7 @@ DEMO_COMMON_DIR=../../Common/Minimal
 DEMO_INCLUDE_DIR=../../Common/include
 UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
 LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
+DRIVERS_DIR=./Drivers
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -77,13 +78,20 @@ OPTIM=-O0
 
 CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portable/GCC/ARM_CM3 \
 		-I $(DEMO_INCLUDE_DIR) -D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
-		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf -D printf=uipprintf \
+		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf \
+		-D printf=uipprintf -D sourcerygxx \
 		-I $(UIP_COMMON_DIR) -I ./webserver -ffunction-sections -fdata-sections -I $(LUMINARY_DRIVER_DIR)
 
-SOURCE=	main.c \
+DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVERS_DIR)/cpu.c $(DRIVERS_DIR)/epi.c $(DRIVERS_DIR)/ethernet.c \
+		$(DRIVERS_DIR)/flash.c $(DRIVERS_DIR)/gpio.c $(DRIVERS_DIR)/hibernate.c $(DRIVERS_DIR)/i2c.c $(DRIVERS_DIR)/i2s.c $(DRIVERS_DIR)/interrupt.c \
+		$(DRIVERS_DIR)/mpu.c $(DRIVERS_DIR)/pwm.c $(DRIVERS_DIR)/qei.c $(DRIVERS_DIR)/ssi.c $(DRIVERS_DIR)/sysctl.c $(DRIVERS_DIR)/systick.c \
+		$(DRIVERS_DIR)/timer.c $(DRIVERS_DIR)/uart.c $(DRIVERS_DIR)/udma.c $(DRIVERS_DIR)/usb.c $(DRIVERS_DIR)/watchdog.c
+
+SOURCE=	$(DRIVERS) \
+		main.c \
 		timertest.c \
 		./ParTest/ParTest.c \
-		./API/LED.c \
+		./API/led.c \
 		rit128x96x4.c \
 		osram128x64x4.c \
 		formike128x128x16.c \
@@ -95,7 +103,8 @@ SOURCE=	main.c \
 		$(RTOS_SOURCE_DIR)/portable/GCC/ARM_CM3/port.c \
 		$(RTOS_SOURCE_DIR)/portable/MemMang/heap_2.c
 
-LIBS= $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libdriver.a $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libgr.a
+#LIBS= $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libdriver.a $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libgr.a
+LIBS= $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libgr.a
 
 OBJS = $(SOURCE:.c=.o)
 
