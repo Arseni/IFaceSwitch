@@ -109,7 +109,8 @@
 #include "bitmap.h"
 
 /* API includes */
-#include "api/led.h"
+#include "led.h"
+#include "comport.h"
 
 /*-----------------------------------------------------------*/
 
@@ -190,10 +191,11 @@ unsigned portLONG ulIdleError = pdFALSE;
 void vUARTTask(void * pvParameters)
 {
 	const portTickType xDelay = 1000 / portTICK_RATE_MS;
-
+	//xComOpen(1,2,3,4,5,6);
 	for(;;)
 	{
 		vTaskDelay(xDelay);
+		//vComPutChar(1, 2, 3);
 	}
 }
 
@@ -201,10 +203,6 @@ void vLEDTask(void * pvParameters)
 {
 	const portTickType xDelay = 100 / portTICK_RATE_MS;
 	xOLEDMessage msg;
-
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-	GPIODirModeSet(GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_DIR_MODE_OUT);
-	GPIOPadConfigSet( GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD );
 
 	for(;;)
 	{
@@ -215,14 +213,20 @@ void vLEDTask(void * pvParameters)
 	}
 }
 
-/*************************************************************************
- * Please ensure to read http://www.freertos.org/portLM3Sxxxx_Eclipse.html
- * which provides information on configuring and running this demo for the
- * various Luminary Micro EKs.
- *************************************************************************/
+void vTestRoutine(void)
+{
+	xComOpen(1,2,3,4,5,6);
+	for(;;)
+	{
+		vComPutChar(1, 2, 3);
+	}
+}
+
 int main( void )
 {
 	prvSetupHardware();
+
+	//vTestRoutine();
 
 	/* Create the queue used by the OLED task.  Messages for display on the OLED
 	are received via this queue. */
@@ -236,7 +240,7 @@ int main( void )
 	xTaskCreate( vLEDTask, (signed portCHAR *) "LED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
 	/* Configure the high frequency interrupt used to measure the interrupt	jitter time. */
-	vSetupHighFrequencyTimer();
+	//vSetupHighFrequencyTimer();
 
 	/* Start the scheduler. */
 	vTaskStartScheduler();

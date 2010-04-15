@@ -11,6 +11,7 @@
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/uip"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/webserver"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/drivers/LuminaryMicro"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/API"/>
 <includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/include"/>
 <includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/include-fixed"/>
 <includePath path="c:\programme\codesourcery\sourcery g++ lite\bin\../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/include"/>

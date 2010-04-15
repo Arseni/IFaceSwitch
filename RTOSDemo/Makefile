@@ -66,6 +66,7 @@ DEMO_INCLUDE_DIR=./
 UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
 LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
 DRIVERS_DIR=./Drivers
+API_DIR=./API
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -82,7 +83,7 @@ CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portabl
 		-I $(DEMO_INCLUDE_DIR) -D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
 		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf \
 		-D printf=uipprintf -D sourcerygxx \
-		-I $(UIP_COMMON_DIR) -I ./webserver -ffunction-sections -fdata-sections -I $(LUMINARY_DRIVER_DIR)
+		-I $(UIP_COMMON_DIR) -I ./webserver -ffunction-sections -fdata-sections -I $(LUMINARY_DRIVER_DIR) -I $(API_DIR)
 
 DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVERS_DIR)/cpu.c $(DRIVERS_DIR)/epi.c $(DRIVERS_DIR)/ethernet.c \
 		$(DRIVERS_DIR)/flash.c $(DRIVERS_DIR)/gpio.c $(DRIVERS_DIR)/hibernate.c $(DRIVERS_DIR)/i2c.c $(DRIVERS_DIR)/i2s.c $(DRIVERS_DIR)/interrupt.c \
@@ -92,7 +93,8 @@ DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVER
 SOURCE=	$(DRIVERS) \
 		main.c \
 		timertest.c \
-		./API/led.c \
+		$(API_DIR)/led.c \
+		$(API_DIR)/comport.c \
 		rit128x96x4.c \
 		osram128x64x4.c \
 		formike128x128x16.c \

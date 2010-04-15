@@ -31,6 +31,9 @@ static void Init(void)
 	// set LED as output
 	GPIODirModeSet(LED_PORT_BASE, LED_PIN, GPIO_DIR_MODE_OUT);
 
+	// set driver to drive 8mA on the PIN
+	GPIOPadConfigSet( GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_STRENGTH_8MA, GPIO_PIN_TYPE_STD );
+
 	// initialization complete
 	isInitialized = true;
 }
