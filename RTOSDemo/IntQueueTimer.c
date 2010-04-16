@@ -56,7 +56,6 @@
 
 /* Demo includes. */
 #include "IntQueueTimer.h"
-#include "IntQueue.h"
 
 /* Library includes. */
 #include "hw_ints.h"

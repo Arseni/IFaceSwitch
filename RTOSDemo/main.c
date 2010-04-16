@@ -105,23 +105,12 @@
 #include "formike128x128x16.h"
 
 /* Demo app includes. */
-#include "BlockQ.h"
-#include "death.h"
-#include "integer.h"
-#include "blocktim.h"
-#include "flash.h"
-#include "partest.h"
-#include "semtest.h"
-#include "PollQ.h"
 #include "lcd_message.h"
 #include "bitmap.h"
-#include "GenQTest.h"
-#include "QPeek.h"
-#include "recmutex.h"
-#include "IntQueue.h"
 
 /* API includes */
-#include "api/led.h"
+#include "led.h"
+#include "comport.h"
 
 /*-----------------------------------------------------------*/
 
@@ -202,22 +191,18 @@ unsigned portLONG ulIdleError = pdFALSE;
 void vUARTTask(void * pvParameters)
 {
 	const portTickType xDelay = 1000 / portTICK_RATE_MS;
-
+	//xComOpen(1,2,3,4,5,6);
 	for(;;)
 	{
 		vTaskDelay(xDelay);
+		//vComPutChar(1, 2, 3);
 	}
 }
 
 void vLEDTask(void * pvParameters)
 {
-	const portTickType xDelay = 1000 / portTICK_RATE_MS;
-
-	//UARTEnable(UART1_BASE);
-	//UARTConfigSet(UART1_BASE, 9600UL, UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE | UART_CONFIG_PAR_NONE);
-	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
-
-	GPIODirModeSet(GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_DIR_MODE_OUT);
+	const portTickType xDelay = 100 / portTICK_RATE_MS;
+	xOLEDMessage msg;
 
 	for(;;)
 	{
@@ -228,14 +213,20 @@ void vLEDTask(void * pvParameters)
 	}
 }
 
-/*************************************************************************
- * Please ensure to read http://www.freertos.org/portLM3Sxxxx_Eclipse.html
- * which provides information on configuring and running this demo for the
- * various Luminary Micro EKs.
- *************************************************************************/
+void vTestRoutine(void)
+{
+	xComOpen(1,2,3,4,5,6);
+	for(;;)
+	{
+		vComPutChar(1, 2, 3);
+	}
+}
+
 int main( void )
 {
 	prvSetupHardware();
+
+	//vTestRoutine();
 
 	/* Create the queue used by the OLED task.  Messages for display on the OLED
 	are received via this queue. */
@@ -246,10 +237,10 @@ int main( void )
 
 	xTaskCreate( vTaskRefresh, ( signed portCHAR * ) "REFRESH", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL );
 	xTaskCreate( vUARTTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
-	xTaskCreate( vLEDTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+	xTaskCreate( vLEDTask, (signed portCHAR *) "LED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 
 	/* Configure the high frequency interrupt used to measure the interrupt	jitter time. */
-	vSetupHighFrequencyTimer();
+	//vSetupHighFrequencyTimer();
 
 	/* Start the scheduler. */
 	vTaskStartScheduler();
@@ -278,8 +269,6 @@ void prvSetupHardware( void )
 	SysCtlPeripheralEnable( SYSCTL_PERIPH_GPIOF );
 	GPIODirModeSet( GPIO_PORTF_BASE, (GPIO_PIN_2 | GPIO_PIN_3), GPIO_DIR_MODE_HW );
 	GPIOPadConfigSet( GPIO_PORTF_BASE, (GPIO_PIN_2 | GPIO_PIN_3 ), GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD );
-
-	vParTestInitialise();
 }
 
 /*-----------------------------------------------------------*/
