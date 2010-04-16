@@ -101,7 +101,7 @@ SOURCE=	$(DRIVERS) \
 		$(RTOS_SOURCE_DIR)/portable/GCC/ARM_CM3/port.c \
 		$(RTOS_SOURCE_DIR)/portable/MemMang/heap_2.c
 
-LIBS= $(DRIVERS_DIR)/libgr.a
+LIBS= $(DRIVERS_DIR)/grlib.a
 
 OBJS = $(SOURCE:.c=.o)
 

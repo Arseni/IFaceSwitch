@@ -1,13 +1,13 @@
 Archive member included because of file (symbol)
 
-./Drivers/libgr.a(context.o)  ./OLEDDisplay/formike128x128x16.o (GrContextInit)
-./Drivers/libgr.a(fontcmss12.o)
+./Drivers/grlib.a(context.o)  ./OLEDDisplay/formike128x128x16.o (GrContextInit)
+./Drivers/grlib.a(fontcmss12.o)
                               ./OLEDDisplay/formike128x128x16.o (g_sFontCmss12)
-./Drivers/libgr.a(image.o)    ./OLEDDisplay/formike128x128x16.o (GrImageDraw)
-./Drivers/libgr.a(rectangle.o)
+./Drivers/grlib.a(image.o)    ./OLEDDisplay/formike128x128x16.o (GrImageDraw)
+./Drivers/grlib.a(rectangle.o)
                               ./OLEDDisplay/formike128x128x16.o (GrRectFill)
-./Drivers/libgr.a(string.o)   ./OLEDDisplay/formike128x128x16.o (GrStringDraw)
-./Drivers/libgr.a(line.o)     ./Drivers/libgr.a(rectangle.o) (GrLineDrawH)
+./Drivers/grlib.a(string.o)   ./OLEDDisplay/formike128x128x16.o (GrStringDraw)
+./Drivers/grlib.a(line.o)     ./Drivers/grlib.a(rectangle.o) (GrLineDrawH)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                               ../../../Source/tasks.o (memcmp)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
@@ -75,7 +75,7 @@ LOAD ../../../Source/tasks.o
 LOAD ../../../Source/portable/GCC/ARM_CM3/port.o
 LOAD ../../../Source/portable/MemMang/heap_2.o
 LOAD startup.o
-LOAD ./Drivers/libgr.a
+LOAD ./Drivers/grlib.a
 START GROUP
 LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
 LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
@@ -2138,43 +2138,43 @@ END GROUP
  .text.ResetISR
                 0x0000f250       0x74 startup.o
                 0x0000f250                ResetISR
- .text          0x0000f2c4        0x0 ./Drivers/libgr.a(context.o)
+ .text          0x0000f2c4        0x0 ./Drivers/grlib.a(context.o)
  .text.GrContextInit
-                0x0000f2c4       0x24 ./Drivers/libgr.a(context.o)
+                0x0000f2c4       0x24 ./Drivers/grlib.a(context.o)
                 0x0000f2c4                GrContextInit
  .text.GrContextClipRegionSet
-                0x0000f2e8       0x88 ./Drivers/libgr.a(context.o)
+                0x0000f2e8       0x88 ./Drivers/grlib.a(context.o)
                 0x0000f2e8                GrContextClipRegionSet
- .text          0x0000f370        0x0 ./Drivers/libgr.a(fontcmss12.o)
- .text          0x0000f370        0x0 ./Drivers/libgr.a(image.o)
+ .text          0x0000f370        0x0 ./Drivers/grlib.a(fontcmss12.o)
+ .text          0x0000f370        0x0 ./Drivers/grlib.a(image.o)
  .text.GrImageDraw
-                0x0000f370      0x37c ./Drivers/libgr.a(image.o)
+                0x0000f370      0x37c ./Drivers/grlib.a(image.o)
                 0x0000f370                GrImageDraw
- .text          0x0000f6ec        0x0 ./Drivers/libgr.a(rectangle.o)
+ .text          0x0000f6ec        0x0 ./Drivers/grlib.a(rectangle.o)
  .text.GrRectFill
-                0x0000f6ec       0xb4 ./Drivers/libgr.a(rectangle.o)
+                0x0000f6ec       0xb4 ./Drivers/grlib.a(rectangle.o)
                 0x0000f6ec                GrRectFill
  .text.GrRectDraw
-                0x0000f7a0       0x64 ./Drivers/libgr.a(rectangle.o)
+                0x0000f7a0       0x64 ./Drivers/grlib.a(rectangle.o)
                 0x0000f7a0                GrRectDraw
- .text          0x0000f804        0x0 ./Drivers/libgr.a(string.o)
+ .text          0x0000f804        0x0 ./Drivers/grlib.a(string.o)
  .text.GrStringWidthGet
-                0x0000f804       0x58 ./Drivers/libgr.a(string.o)
+                0x0000f804       0x58 ./Drivers/grlib.a(string.o)
                 0x0000f804                GrStringWidthGet
  .text.GrStringDraw
-                0x0000f85c      0x34c ./Drivers/libgr.a(string.o)
+                0x0000f85c      0x34c ./Drivers/grlib.a(string.o)
                 0x0000f85c                GrStringDraw
- .text          0x0000fba8        0x0 ./Drivers/libgr.a(line.o)
+ .text          0x0000fba8        0x0 ./Drivers/grlib.a(line.o)
  .text.GrLineDrawH
-                0x0000fba8       0x58 ./Drivers/libgr.a(line.o)
+                0x0000fba8       0x58 ./Drivers/grlib.a(line.o)
                 0x0000fba8                GrLineDrawH
  .text.GrLineDrawV
-                0x0000fc00       0x58 ./Drivers/libgr.a(line.o)
+                0x0000fc00       0x58 ./Drivers/grlib.a(line.o)
                 0x0000fc00                GrLineDrawV
  .text.GrClipCodeGet
-                0x0000fc58       0x38 ./Drivers/libgr.a(line.o)
+                0x0000fc58       0x38 ./Drivers/grlib.a(line.o)
  .text.GrLineDraw
-                0x0000fc90      0x19c ./Drivers/libgr.a(line.o)
+                0x0000fc90      0x19c ./Drivers/grlib.a(line.o)
                 0x0000fc90                GrLineDraw
  .text          0x0000fe2c       0x64 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                 0x0000fe2c                memcmp
@@ -2272,10 +2272,10 @@ END GROUP
                 0x00011d10        0x2 ../../../Source/portable/MemMang/heap_2.o
  *fill*         0x00011d12        0x2 00
  .rodata.g_sFontCmss12
-                0x00011d14       0xc8 ./Drivers/libgr.a(fontcmss12.o)
+                0x00011d14       0xc8 ./Drivers/grlib.a(fontcmss12.o)
                 0x00011d14                g_sFontCmss12
  .rodata.g_pucCmss12Data
-                0x00011ddc      0x514 ./Drivers/libgr.a(fontcmss12.o)
+                0x00011ddc      0x514 ./Drivers/grlib.a(fontcmss12.o)
                 0x000122f0                _etext = .
 
 .glue_7         0x000122f0        0x0
@@ -2335,12 +2335,12 @@ END GROUP
                 0x20000004        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
  .data          0x20000008        0x0 ../../../Source/portable/MemMang/heap_2.o
  .data          0x20000008        0x0 startup.o
- .data          0x20000008        0x0 ./Drivers/libgr.a(context.o)
- .data          0x20000008        0x0 ./Drivers/libgr.a(fontcmss12.o)
- .data          0x20000008        0x0 ./Drivers/libgr.a(image.o)
- .data          0x20000008        0x0 ./Drivers/libgr.a(rectangle.o)
- .data          0x20000008        0x0 ./Drivers/libgr.a(string.o)
- .data          0x20000008        0x0 ./Drivers/libgr.a(line.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(context.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(fontcmss12.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(image.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(rectangle.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(string.o)
+ .data          0x20000008        0x0 ./Drivers/grlib.a(line.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
@@ -2498,14 +2498,14 @@ END GROUP
                 0x200060ec        0x4 ../../../Source/portable/MemMang/heap_2.o
  .bss           0x200060f0        0x0 startup.o
  .bss.pulStack  0x200060f0      0x1e0 startup.o
- .bss           0x200062d0        0x0 ./Drivers/libgr.a(context.o)
- .bss           0x200062d0        0x0 ./Drivers/libgr.a(fontcmss12.o)
- .bss           0x200062d0        0x0 ./Drivers/libgr.a(image.o)
+ .bss           0x200062d0        0x0 ./Drivers/grlib.a(context.o)
+ .bss           0x200062d0        0x0 ./Drivers/grlib.a(fontcmss12.o)
+ .bss           0x200062d0        0x0 ./Drivers/grlib.a(image.o)
  .bss.g_pucDictionary
-                0x200062d0       0x20 ./Drivers/libgr.a(image.o)
- .bss           0x200062f0        0x0 ./Drivers/libgr.a(rectangle.o)
- .bss           0x200062f0        0x0 ./Drivers/libgr.a(string.o)
- .bss           0x200062f0        0x0 ./Drivers/libgr.a(line.o)
+                0x200062d0       0x20 ./Drivers/grlib.a(image.o)
+ .bss           0x200062f0        0x0 ./Drivers/grlib.a(rectangle.o)
+ .bss           0x200062f0        0x0 ./Drivers/grlib.a(string.o)
+ .bss           0x200062f0        0x0 ./Drivers/grlib.a(line.o)
  .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
@@ -3028,12 +3028,12 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .comment       0x00000594       0x2a ../../../Source/portable/GCC/ARM_CM3/port.o
  .comment       0x000005be       0x2a ../../../Source/portable/MemMang/heap_2.o
  .comment       0x000005e8       0x2a startup.o
- .comment       0x00000612       0x22 ./Drivers/libgr.a(context.o)
- .comment       0x00000634       0x22 ./Drivers/libgr.a(fontcmss12.o)
- .comment       0x00000656       0x22 ./Drivers/libgr.a(image.o)
- .comment       0x00000678       0x22 ./Drivers/libgr.a(rectangle.o)
- .comment       0x0000069a       0x22 ./Drivers/libgr.a(string.o)
- .comment       0x000006bc       0x22 ./Drivers/libgr.a(line.o)
+ .comment       0x00000612       0x22 ./Drivers/grlib.a(context.o)
+ .comment       0x00000634       0x22 ./Drivers/grlib.a(fontcmss12.o)
+ .comment       0x00000656       0x22 ./Drivers/grlib.a(image.o)
+ .comment       0x00000678       0x22 ./Drivers/grlib.a(rectangle.o)
+ .comment       0x0000069a       0x22 ./Drivers/grlib.a(string.o)
+ .comment       0x000006bc       0x22 ./Drivers/grlib.a(line.o)
 
 .ARM.attributes
                 0x00000000       0x31
@@ -3112,17 +3112,17 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .ARM.attributes
                 0x000006e4       0x31 startup.o
  .ARM.attributes
-                0x00000715       0x31 ./Drivers/libgr.a(context.o)
+                0x00000715       0x31 ./Drivers/grlib.a(context.o)
  .ARM.attributes
-                0x00000746       0x2f ./Drivers/libgr.a(fontcmss12.o)
+                0x00000746       0x2f ./Drivers/grlib.a(fontcmss12.o)
  .ARM.attributes
-                0x00000775       0x31 ./Drivers/libgr.a(image.o)
+                0x00000775       0x31 ./Drivers/grlib.a(image.o)
  .ARM.attributes
-                0x000007a6       0x31 ./Drivers/libgr.a(rectangle.o)
+                0x000007a6       0x31 ./Drivers/grlib.a(rectangle.o)
  .ARM.attributes
-                0x000007d7       0x31 ./Drivers/libgr.a(string.o)
+                0x000007d7       0x31 ./Drivers/grlib.a(string.o)
  .ARM.attributes
-                0x00000808       0x31 ./Drivers/libgr.a(line.o)
+                0x00000808       0x31 ./Drivers/grlib.a(line.o)
  .ARM.attributes
                 0x00000839       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .ARM.attributes

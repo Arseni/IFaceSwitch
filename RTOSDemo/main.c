@@ -106,7 +106,7 @@
 
 /* Demo app includes. */
 #include "OLEDDisplay/lcd_message.h"
-#include "bitmap.h"
+#include "OLEDDisplay/bitmap.h"
 
 /* API includes */
 #include "led.h"
