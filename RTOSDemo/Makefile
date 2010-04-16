@@ -64,6 +64,7 @@ UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
 LUMINARY_DRIVER_DIR=./
 DRIVERS_DIR=./Drivers
 API_DIR=./API
+OLEDDISPLAY_DIR=./OLEDDisplay
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -88,13 +89,12 @@ DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVER
 		$(DRIVERS_DIR)/timer.c $(DRIVERS_DIR)/uart.c $(DRIVERS_DIR)/udma.c $(DRIVERS_DIR)/usb.c $(DRIVERS_DIR)/watchdog.c
 
 APIS=$(API_DIR)/led.c $(API_DIR)/comport.c $(API_DIR)/buttons.c $(API_DIR)/ustdlib.c
-
+OLEDDisplay=$(OLEDDISPLAY_DIR)/rit128x96x4.c $(OLEDDISPLAY_DIR)/osram128x64x4.c $(OLEDDISPLAY_DIR)/formike128x128x16.c
+ 
 SOURCE=	$(DRIVERS) \
 		$(APIS) \
+		$(OLEDDisplay) \
 		main.c \
-		rit128x96x4.c \
-		osram128x64x4.c \
-		formike128x128x16.c \
 		$(RTOS_SOURCE_DIR)/list.c \
 		$(RTOS_SOURCE_DIR)/queue.c \
 		$(RTOS_SOURCE_DIR)/tasks.c \

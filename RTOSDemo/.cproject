@@ -48,6 +48,7 @@
 <listOptionValue builtIn="false" value="c:/programme/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Source/include"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/Common/include"/>
+<listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/drivers/LuminaryMicro"/>
 <listOptionValue builtIn="false" value="c:/program files (x86)/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/freeRTOS/Source/portable/GCC/ARM_CM3"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/CORTEX_LM3Sxxxx_Eclipse/RTOSDemo"/>
@@ -89,6 +90,7 @@
 <listOptionValue builtIn="false" value="c:/programme/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Source/include"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/Common/include"/>
+<listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/drivers/LuminaryMicro"/>
 <listOptionValue builtIn="false" value="c:/program files (x86)/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/freeRTOS/Source/portable/GCC/ARM_CM3"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/CORTEX_LM3Sxxxx_Eclipse/RTOSDemo"/>
@@ -130,6 +132,7 @@
 <listOptionValue builtIn="false" value="c:/programme/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Source/include"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/Common/include"/>
+<listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/drivers/LuminaryMicro"/>
 <listOptionValue builtIn="false" value="c:/program files (x86)/codesourcery/sourcery g++ lite/lib/gcc/arm-none-eabi/4.4.1/include"/>
 <listOptionValue builtIn="false" value="C:/TUHH/Studienarbeit/freeRTOS/Source/portable/GCC/ARM_CM3"/>
 <listOptionValue builtIn="false" value="C:/E/Dev/FreeRTOS/WorkingCopy3/Demo/CORTEX_LM3Sxxxx_Eclipse/RTOSDemo"/>

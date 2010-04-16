@@ -100,12 +100,12 @@
 #include "sysctl.h"
 #include "gpio.h"
 #include "grlib.h"
-#include "rit128x96x4.h"
-#include "osram128x64x4.h"
-#include "formike128x128x16.h"
+#include "OLEDDisplay/rit128x96x4.h"
+#include "OLEDDisplay/osram128x64x4.h"
+#include "OLEDDisplay/formike128x128x16.h"
 
 /* Demo app includes. */
-#include "lcd_message.h"
+#include "OLEDDisplay/lcd_message.h"
 #include "bitmap.h"
 
 /* API includes */
@@ -198,7 +198,7 @@ void vUARTTask(void * pvParameters)
 	{
 		vTaskDelay(xDelay);
 		c = xComGetChar(1, 0);
-		sprintf(msg.pcMessage, "Zeichen empfangen '%c' (%02XH)", c, c);
+		sprintf(msg.pcMessage, "Rx: '%c' (%02XH)", c, c);
 		xQueueSend(xOLEDQueue, &msg, portMAX_DELAY);
 	}
 }

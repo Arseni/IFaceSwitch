@@ -1,12 +1,12 @@
 Archive member included because of file (symbol)
 
-./Drivers/libgr.a(context.o)  formike128x128x16.o (GrContextInit)
+./Drivers/libgr.a(context.o)  ./OLEDDisplay/formike128x128x16.o (GrContextInit)
 ./Drivers/libgr.a(fontcmss12.o)
-                              formike128x128x16.o (g_sFontCmss12)
-./Drivers/libgr.a(image.o)    formike128x128x16.o (GrImageDraw)
+                              ./OLEDDisplay/formike128x128x16.o (g_sFontCmss12)
+./Drivers/libgr.a(image.o)    ./OLEDDisplay/formike128x128x16.o (GrImageDraw)
 ./Drivers/libgr.a(rectangle.o)
-                              formike128x128x16.o (GrRectFill)
-./Drivers/libgr.a(string.o)   formike128x128x16.o (GrStringDraw)
+                              ./OLEDDisplay/formike128x128x16.o (GrRectFill)
+./Drivers/libgr.a(string.o)   ./OLEDDisplay/formike128x128x16.o (GrStringDraw)
 ./Drivers/libgr.a(line.o)     ./Drivers/libgr.a(rectangle.o) (GrLineDrawH)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                               ../../../Source/tasks.o (memcmp)
@@ -19,7 +19,7 @@ c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-ea
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
                               c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o) (strcpy)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
-                              formike128x128x16.o (strlen)
+                              ./OLEDDisplay/formike128x128x16.o (strlen)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
                               ./API/ustdlib.o (strncpy)
 
@@ -65,10 +65,10 @@ LOAD ./API/led.o
 LOAD ./API/comport.o
 LOAD ./API/buttons.o
 LOAD ./API/ustdlib.o
+LOAD ./OLEDDisplay/rit128x96x4.o
+LOAD ./OLEDDisplay/osram128x64x4.o
+LOAD ./OLEDDisplay/formike128x128x16.o
 LOAD main.o
-LOAD rit128x96x4.o
-LOAD osram128x64x4.o
-LOAD formike128x128x16.o
 LOAD ../../../Source/list.o
 LOAD ../../../Source/queue.o
 LOAD ../../../Source/tasks.o
@@ -81,7 +81,7 @@ LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-no
 LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
 END GROUP
 
-.text           0x00000000    0x122fc
+.text           0x00000000    0x122f0
  *(.isr_vector)
  .isr_vector    0x00000000       0xf0 startup.o
                 0x00000000                g_pfnVectors
@@ -1785,123 +1785,123 @@ END GROUP
  .text.usnprintf
                 0x0000addc       0x34 ./API/ustdlib.o
                 0x0000addc                usnprintf
- .text          0x0000ae10        0x0 main.o
- .text.vUARTTask
-                0x0000ae10       0x7c main.o
-                0x0000ae10                vUARTTask
- .text.vLEDTask
-                0x0000ae8c       0x2c main.o
-                0x0000ae8c                vLEDTask
- .text.main     0x0000aeb8      0x100 main.o
-                0x0000aeb8                main
- .text.prvSetupHardware
-                0x0000afb8       0x6c main.o
- .text.vOLEDTask
-                0x0000b024      0x1d8 main.o
- .text.vTaskRefresh
-                0x0000b1fc       0x78 main.o
-                0x0000b1fc                vTaskRefresh
- .text.vApplicationStackOverflowHook
-                0x0000b274        0xc main.o
-                0x0000b274                vApplicationStackOverflowHook
- .text          0x0000b280        0x0 rit128x96x4.o
+ .text          0x0000ae10        0x0 ./OLEDDisplay/rit128x96x4.o
  .text.RITWriteCommand
-                0x0000b280       0x84 rit128x96x4.o
+                0x0000ae10       0x84 ./OLEDDisplay/rit128x96x4.o
  .text.RITWriteData
-                0x0000b304       0x90 rit128x96x4.o
+                0x0000ae94       0x90 ./OLEDDisplay/rit128x96x4.o
  .text.RIT128x96x4Clear
-                0x0000b394       0x94 rit128x96x4.o
-                0x0000b394                RIT128x96x4Clear
+                0x0000af24       0x94 ./OLEDDisplay/rit128x96x4.o
+                0x0000af24                RIT128x96x4Clear
  .text.RIT128x96x4StringDraw
-                0x0000b428      0x1e4 rit128x96x4.o
-                0x0000b428                RIT128x96x4StringDraw
+                0x0000afb8      0x1e4 ./OLEDDisplay/rit128x96x4.o
+                0x0000afb8                RIT128x96x4StringDraw
  .text.RIT128x96x4ImageDraw
-                0x0000b60c       0xec rit128x96x4.o
-                0x0000b60c                RIT128x96x4ImageDraw
+                0x0000b19c       0xec ./OLEDDisplay/rit128x96x4.o
+                0x0000b19c                RIT128x96x4ImageDraw
  .text.RIT128x96x4Enable
-                0x0000b6f8       0x9c rit128x96x4.o
-                0x0000b6f8                RIT128x96x4Enable
+                0x0000b288       0x9c ./OLEDDisplay/rit128x96x4.o
+                0x0000b288                RIT128x96x4Enable
  .text.RIT128x96x4Disable
-                0x0000b794       0x7c rit128x96x4.o
-                0x0000b794                RIT128x96x4Disable
+                0x0000b324       0x7c ./OLEDDisplay/rit128x96x4.o
+                0x0000b324                RIT128x96x4Disable
  .text.RIT128x96x4Init
-                0x0000b810      0x204 rit128x96x4.o
-                0x0000b810                RIT128x96x4Init
+                0x0000b3a0      0x204 ./OLEDDisplay/rit128x96x4.o
+                0x0000b3a0                RIT128x96x4Init
  .text.RIT128x96x4DisplayOn
-                0x0000ba14       0x5c rit128x96x4.o
-                0x0000ba14                RIT128x96x4DisplayOn
+                0x0000b5a4       0x5c ./OLEDDisplay/rit128x96x4.o
+                0x0000b5a4                RIT128x96x4DisplayOn
  .text.RIT128x96x4DisplayOff
-                0x0000ba70       0x18 rit128x96x4.o
-                0x0000ba70                RIT128x96x4DisplayOff
- .text          0x0000ba88        0x0 osram128x64x4.o
+                0x0000b600       0x18 ./OLEDDisplay/rit128x96x4.o
+                0x0000b600                RIT128x96x4DisplayOff
+ .text          0x0000b618        0x0 ./OLEDDisplay/osram128x64x4.o
  .text.OSRAMWriteCommand
-                0x0000ba88       0x78 osram128x64x4.o
+                0x0000b618       0x78 ./OLEDDisplay/osram128x64x4.o
  .text.OSRAMWriteData
-                0x0000bb00       0x78 osram128x64x4.o
+                0x0000b690       0x78 ./OLEDDisplay/osram128x64x4.o
  .text.OSRAM128x64x4Clear
-                0x0000bb78       0x7c osram128x64x4.o
-                0x0000bb78                OSRAM128x64x4Clear
+                0x0000b708       0x7c ./OLEDDisplay/osram128x64x4.o
+                0x0000b708                OSRAM128x64x4Clear
  .text.OSRAM128x64x4StringDraw
-                0x0000bbf4      0x1e4 osram128x64x4.o
-                0x0000bbf4                OSRAM128x64x4StringDraw
+                0x0000b784      0x1e4 ./OLEDDisplay/osram128x64x4.o
+                0x0000b784                OSRAM128x64x4StringDraw
  .text.OSRAM128x64x4ImageDraw
-                0x0000bdd8       0xec osram128x64x4.o
-                0x0000bdd8                OSRAM128x64x4ImageDraw
+                0x0000b968       0xec ./OLEDDisplay/osram128x64x4.o
+                0x0000b968                OSRAM128x64x4ImageDraw
  .text.OSRAM128x64x4Enable
-                0x0000bec4       0x9c osram128x64x4.o
-                0x0000bec4                OSRAM128x64x4Enable
+                0x0000ba54       0x9c ./OLEDDisplay/osram128x64x4.o
+                0x0000ba54                OSRAM128x64x4Enable
  .text.OSRAM128x64x4Disable
-                0x0000bf60       0x80 osram128x64x4.o
-                0x0000bf60                OSRAM128x64x4Disable
+                0x0000baf0       0x80 ./OLEDDisplay/osram128x64x4.o
+                0x0000baf0                OSRAM128x64x4Disable
  .text.OSRAM128x64x4Init
-                0x0000bfe0      0x124 osram128x64x4.o
-                0x0000bfe0                OSRAM128x64x4Init
+                0x0000bb70      0x124 ./OLEDDisplay/osram128x64x4.o
+                0x0000bb70                OSRAM128x64x4Init
  .text.OSRAM128x64x4DisplayOn
-                0x0000c104       0x5c osram128x64x4.o
-                0x0000c104                OSRAM128x64x4DisplayOn
+                0x0000bc94       0x5c ./OLEDDisplay/osram128x64x4.o
+                0x0000bc94                OSRAM128x64x4DisplayOn
  .text.OSRAM128x64x4DisplayOff
-                0x0000c160       0x18 osram128x64x4.o
-                0x0000c160                OSRAM128x64x4DisplayOff
- .text          0x0000c178        0x0 formike128x128x16.o
+                0x0000bcf0       0x18 ./OLEDDisplay/osram128x64x4.o
+                0x0000bcf0                OSRAM128x64x4DisplayOff
+ .text          0x0000bd08        0x0 ./OLEDDisplay/formike128x128x16.o
  .text.WriteData
-                0x0000c178       0x3c formike128x128x16.o
+                0x0000bd08       0x3c ./OLEDDisplay/formike128x128x16.o
  .text.WriteCommand
-                0x0000c1b4       0x58 formike128x128x16.o
+                0x0000bd44       0x58 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16Init
-                0x0000c20c      0x268 formike128x128x16.o
-                0x0000c20c                Formike128x128x16Init
+                0x0000bd9c      0x268 ./OLEDDisplay/formike128x128x16.o
+                0x0000bd9c                Formike128x128x16Init
  .text.Formike128x128x16BacklightOn
-                0x0000c474       0x18 formike128x128x16.o
-                0x0000c474                Formike128x128x16BacklightOn
+                0x0000c004       0x18 ./OLEDDisplay/formike128x128x16.o
+                0x0000c004                Formike128x128x16BacklightOn
  .text.Formike128x128x16BacklightOff
-                0x0000c48c       0x18 formike128x128x16.o
-                0x0000c48c                Formike128x128x16BacklightOff
+                0x0000c01c       0x18 ./OLEDDisplay/formike128x128x16.o
+                0x0000c01c                Formike128x128x16BacklightOff
  .text.Formike128x128x16PixelDraw
-                0x0000c4a4       0x7c formike128x128x16.o
+                0x0000c034       0x7c ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16PixelDrawMultiple
-                0x0000c520      0x278 formike128x128x16.o
+                0x0000c0b0      0x278 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16Flush
-                0x0000c798       0x14 formike128x128x16.o
+                0x0000c328       0x14 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16LineDrawH
-                0x0000c7ac       0x98 formike128x128x16.o
+                0x0000c33c       0x98 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16LineDrawV
-                0x0000c844       0x98 formike128x128x16.o
+                0x0000c3d4       0x98 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16RectFill
-                0x0000c8dc       0xc0 formike128x128x16.o
+                0x0000c46c       0xc0 ./OLEDDisplay/formike128x128x16.o
  .text.Formike128x128x16ColorTranslate
-                0x0000c99c       0x40 formike128x128x16.o
+                0x0000c52c       0x40 ./OLEDDisplay/formike128x128x16.o
  .text.vFormike128x128x16Clear
-                0x0000c9dc       0x78 formike128x128x16.o
-                0x0000c9dc                vFormike128x128x16Clear
+                0x0000c56c       0x78 ./OLEDDisplay/formike128x128x16.o
+                0x0000c56c                vFormike128x128x16Clear
  .text.vFormike128x128x16StringDraw
-                0x0000ca54       0x60 formike128x128x16.o
-                0x0000ca54                vFormike128x128x16StringDraw
+                0x0000c5e4       0x60 ./OLEDDisplay/formike128x128x16.o
+                0x0000c5e4                vFormike128x128x16StringDraw
  .text.vFormike128x128x16Init
-                0x0000cab4       0xb8 formike128x128x16.o
-                0x0000cab4                vFormike128x128x16Init
+                0x0000c644       0xb8 ./OLEDDisplay/formike128x128x16.o
+                0x0000c644                vFormike128x128x16Init
  .text.vFormike128x128x16ImageDraw
-                0x0000cb6c       0x28 formike128x128x16.o
-                0x0000cb6c                vFormike128x128x16ImageDraw
+                0x0000c6fc       0x28 ./OLEDDisplay/formike128x128x16.o
+                0x0000c6fc                vFormike128x128x16ImageDraw
+ .text          0x0000c724        0x0 main.o
+ .text.vUARTTask
+                0x0000c724       0x7c main.o
+                0x0000c724                vUARTTask
+ .text.vLEDTask
+                0x0000c7a0       0x2c main.o
+                0x0000c7a0                vLEDTask
+ .text.main     0x0000c7cc      0x100 main.o
+                0x0000c7cc                main
+ .text.prvSetupHardware
+                0x0000c8cc       0x6c main.o
+ .text.vOLEDTask
+                0x0000c938      0x1d8 main.o
+ .text.vTaskRefresh
+                0x0000cb10       0x78 main.o
+                0x0000cb10                vTaskRefresh
+ .text.vApplicationStackOverflowHook
+                0x0000cb88        0xc main.o
+                0x0000cb88                vApplicationStackOverflowHook
  .text          0x0000cb94        0x0 ../../../Source/list.o
  .text.vListInitialise
                 0x0000cb94       0x48 ../../../Source/list.o
@@ -2218,79 +2218,79 @@ END GROUP
  .rodata        0x00010450       0x1c ./API/ustdlib.o
  .rodata.g_pcHex
                 0x0001046c        0x4 ./API/ustdlib.o
- .rodata.pucBasicBitmap
-                0x00010470      0xc84 main.o
-                0x00010470                pucBasicBitmap
- .rodata.pucGrLibBitmap
-                0x000110f4      0x6a8 main.o
-                0x000110f4                pucGrLibBitmap
- .rodata        0x0001179c       0x78 main.o
- .rodata.pcWelcomeMessage
-                0x00011814        0x4 main.o
-                0x00011814                pcWelcomeMessage
  .rodata.g_pucRIT128x96x4VerticalInc
-                0x00011818        0x4 rit128x96x4.o
+                0x00010470        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucRIT128x96x4HorizontalInc
-                0x0001181c        0x4 rit128x96x4.o
+                0x00010474        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucFont
-                0x00011820      0x1e0 rit128x96x4.o
+                0x00010478      0x1e0 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucRIT128x96x4Init
-                0x00011a00       0x50 rit128x96x4.o
+                0x00010658       0x50 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand1.1758
-                0x00011a50        0x4 rit128x96x4.o
+                0x000106a8        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand1.1572
-                0x00011a54        0x4 rit128x96x4.o
+                0x000106ac        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand2.1573
-                0x00011a58        0x4 rit128x96x4.o
+                0x000106b0        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucOSRAM128x64x4VerticalInc
-                0x00011a5c        0x4 osram128x64x4.o
+                0x000106b4        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucOSRAM128x64x4HorizontalInc
-                0x00011a60        0x4 osram128x64x4.o
+                0x000106b8        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucFont
-                0x00011a64      0x1e0 osram128x64x4.o
+                0x000106bc      0x1e0 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucOSRAM128x64x4Init
-                0x00011c44       0x50 osram128x64x4.o
+                0x0001089c       0x50 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand1.1718
-                0x00011c94        0x4 osram128x64x4.o
+                0x000108ec        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand1.1559
-                0x00011c98        0x4 osram128x64x4.o
+                0x000108f0        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand2.1560
-                0x00011c9c        0x4 osram128x64x4.o
+                0x000108f4        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_sFormike128x128x16
-                0x00011ca0       0x28 formike128x128x16.o
-                0x00011ca0                g_sFormike128x128x16
- .rodata        0x00011cc8       0x14 formike128x128x16.o
+                0x000108f8       0x28 ./OLEDDisplay/formike128x128x16.o
+                0x000108f8                g_sFormike128x128x16
+ .rodata        0x00010920       0x14 ./OLEDDisplay/formike128x128x16.o
  .rodata.C.4.2343
-                0x00011cdc        0x8 formike128x128x16.o
- .rodata        0x00011ce4       0x20 ../../../Source/tasks.o
+                0x00010934        0x8 ./OLEDDisplay/formike128x128x16.o
+ .rodata.pucBasicBitmap
+                0x0001093c      0xc84 main.o
+                0x0001093c                pucBasicBitmap
+ .rodata.pucGrLibBitmap
+                0x000115c0      0x6a8 main.o
+                0x000115c0                pucGrLibBitmap
+ .rodata        0x00011c68       0x6c main.o
+ .rodata.pcWelcomeMessage
+                0x00011cd4        0x4 main.o
+                0x00011cd4                pcWelcomeMessage
+ .rodata        0x00011cd8       0x20 ../../../Source/tasks.o
  .rodata.ucExpectedStackBytes.3394
-                0x00011d04       0x14 ../../../Source/tasks.o
+                0x00011cf8       0x14 ../../../Source/tasks.o
  .rodata.ulKernelPriority
-                0x00011d18        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x00011d18                ulKernelPriority
+                0x00011d0c        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x00011d0c                ulKernelPriority
  .rodata.heapSTRUCT_SIZE
-                0x00011d1c        0x2 ../../../Source/portable/MemMang/heap_2.o
- *fill*         0x00011d1e        0x2 00
+                0x00011d10        0x2 ../../../Source/portable/MemMang/heap_2.o
+ *fill*         0x00011d12        0x2 00
  .rodata.g_sFontCmss12
-                0x00011d20       0xc8 ./Drivers/libgr.a(fontcmss12.o)
-                0x00011d20                g_sFontCmss12
+                0x00011d14       0xc8 ./Drivers/libgr.a(fontcmss12.o)
+                0x00011d14                g_sFontCmss12
  .rodata.g_pucCmss12Data
-                0x00011de8      0x514 ./Drivers/libgr.a(fontcmss12.o)
-                0x000122fc                _etext = .
+                0x00011ddc      0x514 ./Drivers/libgr.a(fontcmss12.o)
+                0x000122f0                _etext = .
 
-.glue_7         0x000122fc        0x0
+.glue_7         0x000122f0        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x000122fc        0x0
+.glue_7t        0x000122f0        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x000122fc        0x0
+.vfp11_veneer   0x000122f0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x000122fc        0x0
+.v4_bx          0x000122f0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.data           0x20000000        0x8 load address 0x000122fc
+.data           0x20000000        0x8 load address 0x000122f0
                 0x20000000                _data = .
  *(vtable)
  *(.data*)
@@ -2321,10 +2321,10 @@ END GROUP
  .data          0x20000000        0x0 ./API/comport.o
  .data          0x20000000        0x0 ./API/buttons.o
  .data          0x20000000        0x0 ./API/ustdlib.o
+ .data          0x20000000        0x0 ./OLEDDisplay/rit128x96x4.o
+ .data          0x20000000        0x0 ./OLEDDisplay/osram128x64x4.o
+ .data          0x20000000        0x0 ./OLEDDisplay/formike128x128x16.o
  .data          0x20000000        0x0 main.o
- .data          0x20000000        0x0 rit128x96x4.o
- .data          0x20000000        0x0 osram128x64x4.o
- .data          0x20000000        0x0 formike128x128x16.o
  .data          0x20000000        0x0 ../../../Source/list.o
  .data          0x20000000        0x0 ../../../Source/queue.o
  .data          0x20000000        0x0 ../../../Source/tasks.o
@@ -2351,11 +2351,11 @@ END GROUP
                 0x20000008                _edata = .
 
 .cs3.region-head.ram
-                0x20000008      0x11c load address 0x00012304
+                0x20000008      0x11c load address 0x000122f8
  .cs3.region-head.ram
                 0x20000008      0x11c ./Drivers/interrupt.o
 
-.bss            0x20000128     0x621c load address 0x00012424
+.bss            0x20000128     0x621c load address 0x00012418
                 0x20000128                _bss = .
  *(.bss*)
  .bss           0x20000128        0x0 ./Drivers/adc.o
@@ -2398,41 +2398,41 @@ END GROUP
  .bss.callbackCollection
                 0x20000134       0x28 ./API/buttons.o
  .bss           0x2000015c        0x0 ./API/ustdlib.o
- .bss           0x2000015c        0x0 main.o
- .bss.ulIdleError
-                0x2000015c        0x4 main.o
-                0x2000015c                ulIdleError
- .bss.cMessage.3058
-                0x20000160       0x1c main.o
- .bss           0x2000017c        0x0 rit128x96x4.o
- .bss.ulGPIOId  0x2000017c        0x4 rit128x96x4.o
-                0x2000017c                ulGPIOId
+ .bss           0x2000015c        0x0 ./OLEDDisplay/rit128x96x4.o
+ .bss.ulGPIOId  0x2000015c        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x2000015c                ulGPIOId
  .bss.ulGPIOBase
-                0x20000180        0x4 rit128x96x4.o
-                0x20000180                ulGPIOBase
+                0x20000160        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000160                ulGPIOBase
  .bss.ulOLEDDC_PIN
-                0x20000184        0x4 rit128x96x4.o
-                0x20000184                ulOLEDDC_PIN
+                0x20000164        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000164                ulOLEDDC_PIN
  .bss.ulOLEDEN_PIN
-                0x20000188        0x4 rit128x96x4.o
-                0x20000188                ulOLEDEN_PIN
+                0x20000168        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000168                ulOLEDEN_PIN
  .bss.g_bSSIEnabled
-                0x2000018c        0x1 rit128x96x4.o
- *fill*         0x2000018d        0x3 00
+                0x2000016c        0x1 ./OLEDDisplay/rit128x96x4.o
+ *fill*         0x2000016d        0x3 00
  .bss.g_pucBuffer
-                0x20000190        0x8 rit128x96x4.o
- .bss           0x20000198        0x0 osram128x64x4.o
+                0x20000170        0x8 ./OLEDDisplay/rit128x96x4.o
+ .bss           0x20000178        0x0 ./OLEDDisplay/osram128x64x4.o
  .bss.g_bSSIEnabled
-                0x20000198        0x1 osram128x64x4.o
- *fill*         0x20000199        0x3 00
+                0x20000178        0x1 ./OLEDDisplay/osram128x64x4.o
+ *fill*         0x20000179        0x3 00
  .bss.pucBuffer.1644
-                0x2000019c        0x8 osram128x64x4.o
+                0x2000017c        0x8 ./OLEDDisplay/osram128x64x4.o
  .bss.pucBuffer.1576
-                0x200001a4        0x8 osram128x64x4.o
+                0x20000184        0x8 ./OLEDDisplay/osram128x64x4.o
  .bss.pucZeroBuffer.1563
-                0x200001ac        0x8 osram128x64x4.o
- .bss           0x200001b4        0x0 formike128x128x16.o
- .bss.sContext  0x200001b4       0x1c formike128x128x16.o
+                0x2000018c        0x8 ./OLEDDisplay/osram128x64x4.o
+ .bss           0x20000194        0x0 ./OLEDDisplay/formike128x128x16.o
+ .bss.sContext  0x20000194       0x1c ./OLEDDisplay/formike128x128x16.o
+ .bss           0x200001b0        0x0 main.o
+ .bss.ulIdleError
+                0x200001b0        0x4 main.o
+                0x200001b0                ulIdleError
+ .bss.cMessage.3058
+                0x200001b4       0x1c main.o
  .bss           0x200001d0        0x0 ../../../Source/list.o
  .bss           0x200001d0        0x0 ../../../Source/queue.o
  .bss           0x200001d0        0x0 ../../../Source/tasks.o
@@ -2549,10 +2549,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_abbrev  0x00001599       0xbc ./API/comport.o
  .debug_abbrev  0x00001655       0xde ./API/buttons.o
  .debug_abbrev  0x00001733       0xfe ./API/ustdlib.o
- .debug_abbrev  0x00001831      0x17f main.o
- .debug_abbrev  0x000019b0       0xd9 rit128x96x4.o
- .debug_abbrev  0x00001a89       0xc8 osram128x64x4.o
- .debug_abbrev  0x00001b51      0x1df formike128x128x16.o
+ .debug_abbrev  0x00001831       0xd9 ./OLEDDisplay/rit128x96x4.o
+ .debug_abbrev  0x0000190a       0xc8 ./OLEDDisplay/osram128x64x4.o
+ .debug_abbrev  0x000019d2      0x1df ./OLEDDisplay/formike128x128x16.o
+ .debug_abbrev  0x00001bb1      0x17f main.o
  .debug_abbrev  0x00001d30       0xca ../../../Source/list.o
  .debug_abbrev  0x00001dfa      0x16f ../../../Source/queue.o
  .debug_abbrev  0x00001f69      0x183 ../../../Source/tasks.o
@@ -2588,10 +2588,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_info    0x00008730      0x3c2 ./API/comport.o
  .debug_info    0x00008af2      0x118 ./API/buttons.o
  .debug_info    0x00008c0a      0x267 ./API/ustdlib.o
- .debug_info    0x00008e71      0x406 main.o
- .debug_info    0x00009277      0x457 rit128x96x4.o
- .debug_info    0x000096ce      0x434 osram128x64x4.o
- .debug_info    0x00009b02      0x874 formike128x128x16.o
+ .debug_info    0x00008e71      0x457 ./OLEDDisplay/rit128x96x4.o
+ .debug_info    0x000092c8      0x434 ./OLEDDisplay/osram128x64x4.o
+ .debug_info    0x000096fc      0x874 ./OLEDDisplay/formike128x128x16.o
+ .debug_info    0x00009f70      0x406 main.o
  .debug_info    0x0000a376      0x2b1 ../../../Source/list.o
  .debug_info    0x0000a627      0x8b9 ../../../Source/queue.o
  .debug_info    0x0000aee0      0xfa0 ../../../Source/tasks.o
@@ -2599,7 +2599,7 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_info    0x0000c04f      0x2ba ../../../Source/portable/MemMang/heap_2.o
  .debug_info    0x0000c309      0x17b startup.o
 
-.debug_line     0x00000000     0x4e47
+.debug_line     0x00000000     0x4e77
  .debug_line    0x00000000      0x30d ./Drivers/adc.o
  .debug_line    0x0000030d      0x35a ./Drivers/can.o
  .debug_line    0x00000667       0xfb ./Drivers/comp.o
@@ -2627,16 +2627,16 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_line    0x000037f0      0x11c ./API/comport.o
  .debug_line    0x0000390c       0x77 ./API/buttons.o
  .debug_line    0x00003983      0x162 ./API/ustdlib.o
- .debug_line    0x00003ae5      0x17c main.o
- .debug_line    0x00003c61      0x19c rit128x96x4.o
- .debug_line    0x00003dfd      0x18d osram128x64x4.o
- .debug_line    0x00003f8a      0x22f formike128x128x16.o
- .debug_line    0x000041b9      0x119 ../../../Source/list.o
- .debug_line    0x000042d2      0x398 ../../../Source/queue.o
- .debug_line    0x0000466a      0x4e4 ../../../Source/tasks.o
- .debug_line    0x00004b4e      0x14c ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_line    0x00004c9a      0x125 ../../../Source/portable/MemMang/heap_2.o
- .debug_line    0x00004dbf       0x88 startup.o
+ .debug_line    0x00003ae5      0x1a8 ./OLEDDisplay/rit128x96x4.o
+ .debug_line    0x00003c8d      0x199 ./OLEDDisplay/osram128x64x4.o
+ .debug_line    0x00003e26      0x23b ./OLEDDisplay/formike128x128x16.o
+ .debug_line    0x00004061      0x188 main.o
+ .debug_line    0x000041e9      0x119 ../../../Source/list.o
+ .debug_line    0x00004302      0x398 ../../../Source/queue.o
+ .debug_line    0x0000469a      0x4e4 ../../../Source/tasks.o
+ .debug_line    0x00004b7e      0x14c ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_line    0x00004cca      0x125 ../../../Source/portable/MemMang/heap_2.o
+ .debug_line    0x00004def       0x88 startup.o
 
 .debug_frame    0x00000000     0x5180
  .debug_frame   0x00000000      0x37c ./Drivers/adc.o
@@ -2666,10 +2666,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_frame   0x00003f0c       0xfc ./API/comport.o
  .debug_frame   0x00004008       0x4c ./API/buttons.o
  .debug_frame   0x00004054       0x84 ./API/ustdlib.o
- .debug_frame   0x000040d8       0xe8 main.o
- .debug_frame   0x000041c0      0x14c rit128x96x4.o
- .debug_frame   0x0000430c      0x14c osram128x64x4.o
- .debug_frame   0x00004458      0x1f8 formike128x128x16.o
+ .debug_frame   0x000040d8      0x14c ./OLEDDisplay/rit128x96x4.o
+ .debug_frame   0x00004224      0x14c ./OLEDDisplay/osram128x64x4.o
+ .debug_frame   0x00004370      0x1f8 ./OLEDDisplay/formike128x128x16.o
+ .debug_frame   0x00004568       0xe8 main.o
  .debug_frame   0x00004650       0x9c ../../../Source/list.o
  .debug_frame   0x000046ec      0x284 ../../../Source/queue.o
  .debug_frame   0x00004970      0x4c0 ../../../Source/tasks.o
@@ -2711,10 +2711,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_loc     0x00007345      0x1ac ./API/comport.o
  .debug_loc     0x000074f1       0x6e ./API/buttons.o
  .debug_loc     0x0000755f       0xbd ./API/ustdlib.o
- .debug_loc     0x0000761c      0x178 main.o
- .debug_loc     0x00007794      0x21a rit128x96x4.o
- .debug_loc     0x000079ae      0x21a osram128x64x4.o
- .debug_loc     0x00007bc8      0x358 formike128x128x16.o
+ .debug_loc     0x0000761c      0x21a ./OLEDDisplay/rit128x96x4.o
+ .debug_loc     0x00007836      0x21a ./OLEDDisplay/osram128x64x4.o
+ .debug_loc     0x00007a50      0x358 ./OLEDDisplay/formike128x128x16.o
+ .debug_loc     0x00007da8      0x178 main.o
  .debug_loc     0x00007f20      0x113 ../../../Source/list.o
  .debug_loc     0x00008033      0x44c ../../../Source/queue.o
  .debug_loc     0x0000847f      0x7fb ../../../Source/tasks.o
@@ -2779,13 +2779,13 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_pubnames
                 0x00002fd2       0x3c ./API/ustdlib.o
  .debug_pubnames
-                0x0000300e       0xc3 main.o
+                0x0000300e      0x10c ./OLEDDisplay/rit128x96x4.o
  .debug_pubnames
-                0x000030d1      0x10c rit128x96x4.o
+                0x0000311a       0xde ./OLEDDisplay/osram128x64x4.o
  .debug_pubnames
-                0x000031dd       0xde osram128x64x4.o
+                0x000031f8      0x100 ./OLEDDisplay/formike128x128x16.o
  .debug_pubnames
-                0x000032bb      0x100 formike128x128x16.o
+                0x000032f8       0xc3 main.o
  .debug_pubnames
                 0x000033bb       0x71 ../../../Source/list.o
  .debug_pubnames
@@ -2855,13 +2855,13 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_aranges
                 0x000013f8       0x30 ./API/ustdlib.o
  .debug_aranges
-                0x00001428       0x50 main.o
+                0x00001428       0x68 ./OLEDDisplay/rit128x96x4.o
  .debug_aranges
-                0x00001478       0x68 rit128x96x4.o
+                0x00001490       0x68 ./OLEDDisplay/osram128x64x4.o
  .debug_aranges
-                0x000014e0       0x68 osram128x64x4.o
+                0x000014f8       0x98 ./OLEDDisplay/formike128x128x16.o
  .debug_aranges
-                0x00001548       0x98 formike128x128x16.o
+                0x00001590       0x50 main.o
  .debug_aranges
                 0x000015e0       0x40 ../../../Source/list.o
  .debug_aranges
@@ -2903,10 +2903,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_ranges  0x000012b8       0x50 ./API/comport.o
  .debug_ranges  0x00001308       0x20 ./API/buttons.o
  .debug_ranges  0x00001328       0x28 ./API/ustdlib.o
- .debug_ranges  0x00001350       0x48 main.o
- .debug_ranges  0x00001398       0x60 rit128x96x4.o
- .debug_ranges  0x000013f8       0x60 osram128x64x4.o
- .debug_ranges  0x00001458       0x90 formike128x128x16.o
+ .debug_ranges  0x00001350       0x60 ./OLEDDisplay/rit128x96x4.o
+ .debug_ranges  0x000013b0       0x60 ./OLEDDisplay/osram128x64x4.o
+ .debug_ranges  0x00001410       0x90 ./OLEDDisplay/formike128x128x16.o
+ .debug_ranges  0x000014a0       0x48 main.o
  .debug_ranges  0x000014e8       0x38 ../../../Source/list.o
  .debug_ranges  0x00001520       0xb0 ../../../Source/queue.o
  .debug_ranges  0x000015d0      0x140 ../../../Source/tasks.o
@@ -2914,7 +2914,7 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_ranges  0x00001778       0x30 ../../../Source/portable/MemMang/heap_2.o
  .debug_ranges  0x000017a8       0x38 startup.o
 
-.debug_str      0x00000000     0x4d9b
+.debug_str      0x00000000     0x4dbf
  .debug_str     0x00000000      0x3dd ./Drivers/adc.o
                                 0x40c (size before relaxing)
  .debug_str     0x000003dd      0x494 ./Drivers/can.o
@@ -2969,25 +2969,25 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
                                 0x11a (size before relaxing)
  .debug_str     0x000035ff       0xbb ./API/ustdlib.o
                                 0x1a9 (size before relaxing)
- .debug_str     0x000036ba      0x17a main.o
+ .debug_str     0x000036ba      0x1bf ./OLEDDisplay/rit128x96x4.o
+                                0x290 (size before relaxing)
+ .debug_str     0x00003879      0x13a ./OLEDDisplay/osram128x64x4.o
+                                0x280 (size before relaxing)
+ .debug_str     0x000039b3      0x327 ./OLEDDisplay/formike128x128x16.o
+                                0x48b (size before relaxing)
+ .debug_str     0x00003cda      0x171 main.o
                                 0x278 (size before relaxing)
- .debug_str     0x00003834      0x1aa rit128x96x4.o
-                                0x284 (size before relaxing)
- .debug_str     0x000039de      0x12e osram128x64x4.o
-                                0x274 (size before relaxing)
- .debug_str     0x00003b0c      0x31b formike128x128x16.o
-                                0x47f (size before relaxing)
- .debug_str     0x00003e27      0x135 ../../../Source/list.o
+ .debug_str     0x00003e4b      0x135 ../../../Source/list.o
                                 0x230 (size before relaxing)
- .debug_str     0x00003f5c      0x3ad ../../../Source/queue.o
+ .debug_str     0x00003f80      0x3ad ../../../Source/queue.o
                                 0x57a (size before relaxing)
- .debug_str     0x00004309      0x78e ../../../Source/tasks.o
+ .debug_str     0x0000432d      0x78e ../../../Source/tasks.o
                                 0x9a0 (size before relaxing)
- .debug_str     0x00004a97      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_str     0x00004abb      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
                                 0x1ff (size before relaxing)
- .debug_str     0x00004bca      0x161 ../../../Source/portable/MemMang/heap_2.o
+ .debug_str     0x00004bee      0x161 ../../../Source/portable/MemMang/heap_2.o
                                 0x25b (size before relaxing)
- .debug_str     0x00004d2b       0x70 startup.o
+ .debug_str     0x00004d4f       0x70 startup.o
                                  0xf8 (size before relaxing)
 
 .comment        0x00000000      0x6de
@@ -3018,10 +3018,10 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .comment       0x000003f0       0x2a ./API/comport.o
  .comment       0x0000041a       0x2a ./API/buttons.o
  .comment       0x00000444       0x2a ./API/ustdlib.o
- .comment       0x0000046e       0x2a main.o
- .comment       0x00000498       0x2a rit128x96x4.o
- .comment       0x000004c2       0x2a osram128x64x4.o
- .comment       0x000004ec       0x2a formike128x128x16.o
+ .comment       0x0000046e       0x2a ./OLEDDisplay/rit128x96x4.o
+ .comment       0x00000498       0x2a ./OLEDDisplay/osram128x64x4.o
+ .comment       0x000004c2       0x2a ./OLEDDisplay/formike128x128x16.o
+ .comment       0x000004ec       0x2a main.o
  .comment       0x00000516       0x2a ../../../Source/list.o
  .comment       0x00000540       0x2a ../../../Source/queue.o
  .comment       0x0000056a       0x2a ../../../Source/tasks.o
@@ -3092,13 +3092,13 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .ARM.attributes
                 0x000004fa       0x31 ./API/ustdlib.o
  .ARM.attributes
-                0x0000052b       0x31 main.o
+                0x0000052b       0x31 ./OLEDDisplay/rit128x96x4.o
  .ARM.attributes
-                0x0000055c       0x31 rit128x96x4.o
+                0x0000055c       0x31 ./OLEDDisplay/osram128x64x4.o
  .ARM.attributes
-                0x0000058d       0x31 osram128x64x4.o
+                0x0000058d       0x31 ./OLEDDisplay/formike128x128x16.o
  .ARM.attributes
-                0x000005be       0x31 formike128x128x16.o
+                0x000005be       0x31 main.o
  .ARM.attributes
                 0x000005ef       0x31 ../../../Source/list.o
  .ARM.attributes
