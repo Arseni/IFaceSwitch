@@ -59,9 +59,6 @@
 # *************************************************************************/
 
 RTOS_SOURCE_DIR=../../../Source
-UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
-#LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
-LUMINARY_DRIVER_DIR=./
 DRIVERS_DIR=./Drivers
 API_DIR=./API
 OLEDDISPLAY_DIR=./OLEDDisplay
@@ -71,7 +68,8 @@ OBJCOPY=arm-none-eabi-objcopy
 LDSCRIPT=standalone.ld
 
 # should use --gc-sections but the debugger does not seem to be able to cope with the option.
-LINKER_FLAGS=-nostartfiles -Xlinker -oRTOSDemo.axf -Xlinker -M -Xlinker -Map=rtosdemo.map -Xlinker --no-gc-sections
+LINKER_FLAGS=-nostartfiles -Xlinker -oRTOSDemo.axf -Xlinker -M -Xlinker -Map=rtosdemo.map -Xlinker --gc-sections 
+#--no-gc-sections
 
 DEBUG=-g
 OPTIM=-O0
@@ -81,7 +79,7 @@ CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portabl
 		-D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
 		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf \
 		-D printf=uipprintf -D sourcerygxx -I $(DRIVERS_DIR) \
-		-I $(UIP_COMMON_DIR) -I ./webserver -ffunction-sections -fdata-sections -I $(LUMINARY_DRIVER_DIR) -I $(API_DIR)
+		-I $(UIP_COMMON_DIR) -ffunction-sections -fdata-sections -I $(API_DIR)
 
 DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVERS_DIR)/cpu.c $(DRIVERS_DIR)/epi.c $(DRIVERS_DIR)/ethernet.c \
 		$(DRIVERS_DIR)/flash.c $(DRIVERS_DIR)/gpio.c $(DRIVERS_DIR)/hibernate.c $(DRIVERS_DIR)/i2c.c $(DRIVERS_DIR)/i2s.c $(DRIVERS_DIR)/interrupt.c \
