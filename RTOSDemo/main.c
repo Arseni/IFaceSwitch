@@ -191,11 +191,15 @@ unsigned portLONG ulIdleError = pdFALSE;
 void vUARTTask(void * pvParameters)
 {
 	const portTickType xDelay = 1000 / portTICK_RATE_MS;
+	xOLEDMessage msg;
+	int c;
 	xComOpen(1,2,3,4,5,6);
 	for(;;)
 	{
 		vTaskDelay(xDelay);
-		vComPutChar(1, 2, 3);
+		c = xComGetChar(1, 0);
+		sprintf(msg.pcMessage, "Zeichen empfangen '%c' (%02XH)", c, c);
+		xQueueSend(xOLEDQueue, &msg, portMAX_DELAY);
 	}
 }
 
@@ -213,20 +217,10 @@ void vLEDTask(void * pvParameters)
 	}
 }
 
-void vTestRoutine(void)
-{
-	xComOpen(1,2,3,4,5,6);
-	for(;;)
-	{
-		vComPutChar(1, 2, 3);
-	}
-}
 
 int main( void )
 {
 	prvSetupHardware();
-
-	//vTestRoutine();
 
 	/* Create the queue used by the OLED task.  Messages for display on the OLED
 	are received via this queue. */

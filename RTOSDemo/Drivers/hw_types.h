@@ -40,6 +40,10 @@ typedef unsigned char tBoolean;
 #define false 0
 #endif
 
+#ifndef NULL
+#define NULL ((void*)0)
+#endif
+
 //*****************************************************************************
 //
 // Macros for hardware access, both direct and via the bit-band region.

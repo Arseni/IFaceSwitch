@@ -39,11 +39,12 @@ static void Init(void)
 		return;
 
 	// enable peripheral clock
+	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
 
 	// set gpio pins to hardware used mode
 	GPIOPinTypeUART(SERIALPORT_PORT_BASE, SERIALPORT_PINS);
-	//GPIOIntTypeSet(SERIALPORT_PORT_BASE, SERIALPORT_PINS, GPIO_DIR_MODE_HW);
+	GPIOIntTypeSet(SERIALPORT_PORT_BASE, SERIALPORT_PINS, GPIO_DIR_MODE_HW);
 
 	// initialization complete
 	isInitialized = true;
@@ -61,8 +62,12 @@ xComPortHandle xComOpen( tCOMPort ePort, tBaud eWantedBaud, tParity eWantedParit
 void vComWrite( xComPortHandle pxPort, const signed char * const pcString, unsigned short usStringLength )
 {
 }
-signed portBASE_TYPE xComGetChar( xComPortHandle pxPort, signed char *pcRxedChar, portTickType xBlockTime )
+signed portBASE_TYPE vComRead( xComPortHandle pxPort, const signed char * const pcString, unsigned short usStringLength )
 {
+}
+signed portBASE_TYPE xComGetChar( xComPortHandle pxPort, portTickType xBlockTime )
+{
+	return UARTCharGet(UART0_BASE);
 }
 void vComPutChar( xComPortHandle pxPort, signed char cOutChar, portTickType xBlockTime )
 {

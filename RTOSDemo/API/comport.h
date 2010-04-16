@@ -62,7 +62,7 @@ typedef enum
 
 xComPortHandle xComOpen( tCOMPort ePort, tBaud eWantedBaud, tParity eWantedParity, tDataBits eWantedDataBits, tStopBits eWantedStopBits, unsigned portBASE_TYPE uxBufferLength );
 void vComWrite( xComPortHandle pxPort, const signed char * const pcString, unsigned short usStringLength );
-signed portBASE_TYPE xComGetChar( xComPortHandle pxPort, signed char *pcRxedChar, portTickType xBlockTime );
+signed portBASE_TYPE xComGetChar( xComPortHandle pxPort, portTickType xBlockTime );
 void vComPutChar( xComPortHandle pxPort, signed char cOutChar, portTickType xBlockTime );
 portBASE_TYPE xComWaitForSemaphore( xComPortHandle xPort );
 void vComClose( xComPortHandle xPort );

@@ -59,12 +59,9 @@
 # *************************************************************************/
 
 RTOS_SOURCE_DIR=../../../Source
-#DEMO_COMMON_DIR=../../Common/Minimal
-#DEMO_INCLUDE_DIR=../../Common/include
-DEMO_COMMON_DIR=./
-DEMO_INCLUDE_DIR=./
 UIP_COMMON_DIR=../../Common/ethernet/uIP/uip-1.0/uip
-LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
+#LUMINARY_DRIVER_DIR=../../Common/drivers/LuminaryMicro
+LUMINARY_DRIVER_DIR=./
 DRIVERS_DIR=./Drivers
 API_DIR=./API
 
@@ -80,9 +77,9 @@ OPTIM=-O0
 
 
 CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portable/GCC/ARM_CM3 \
-		-I $(DEMO_INCLUDE_DIR) -D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
+		-D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
 		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf \
-		-D printf=uipprintf -D sourcerygxx \
+		-D printf=uipprintf -D sourcerygxx -I $(DRIVERS_DIR) \
 		-I $(UIP_COMMON_DIR) -I ./webserver -ffunction-sections -fdata-sections -I $(LUMINARY_DRIVER_DIR) -I $(API_DIR)
 
 DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVERS_DIR)/cpu.c $(DRIVERS_DIR)/epi.c $(DRIVERS_DIR)/ethernet.c \
@@ -90,24 +87,21 @@ DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVER
 		$(DRIVERS_DIR)/mpu.c $(DRIVERS_DIR)/pwm.c $(DRIVERS_DIR)/qei.c $(DRIVERS_DIR)/ssi.c $(DRIVERS_DIR)/sysctl.c $(DRIVERS_DIR)/systick.c \
 		$(DRIVERS_DIR)/timer.c $(DRIVERS_DIR)/uart.c $(DRIVERS_DIR)/udma.c $(DRIVERS_DIR)/usb.c $(DRIVERS_DIR)/watchdog.c
 
+APIS=$(API_DIR)/led.c $(API_DIR)/comport.c $(API_DIR)/buttons.c $(API_DIR)/ustdlib.c
+
 SOURCE=	$(DRIVERS) \
+		$(APIS) \
 		main.c \
-		timertest.c \
-		$(API_DIR)/led.c \
-		$(API_DIR)/comport.c \
 		rit128x96x4.c \
 		osram128x64x4.c \
 		formike128x128x16.c \
-		$(LUMINARY_DRIVER_DIR)/ustdlib.c \
-		IntQueueTimer.c \
 		$(RTOS_SOURCE_DIR)/list.c \
 		$(RTOS_SOURCE_DIR)/queue.c \
 		$(RTOS_SOURCE_DIR)/tasks.c \
 		$(RTOS_SOURCE_DIR)/portable/GCC/ARM_CM3/port.c \
 		$(RTOS_SOURCE_DIR)/portable/MemMang/heap_2.c
 
-#LIBS= $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libdriver.a $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libgr.a
-LIBS= $(LUMINARY_DRIVER_DIR)/arm-none-eabi-gcc/libgr.a
+LIBS= $(DRIVERS_DIR)/libgr.a
 
 OBJS = $(SOURCE:.c=.o)
 

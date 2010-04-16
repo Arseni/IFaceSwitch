@@ -1,21 +1,17 @@
 Archive member included because of file (symbol)
 
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
-                              formike128x128x16.o (GrContextInit)
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
+./Drivers/libgr.a(context.o)  formike128x128x16.o (GrContextInit)
+./Drivers/libgr.a(fontcmss12.o)
                               formike128x128x16.o (g_sFontCmss12)
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
-                              formike128x128x16.o (GrImageDraw)
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
+./Drivers/libgr.a(image.o)    formike128x128x16.o (GrImageDraw)
+./Drivers/libgr.a(rectangle.o)
                               formike128x128x16.o (GrRectFill)
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
-                              formike128x128x16.o (GrStringDraw)
-../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
-                              ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o) (GrLineDrawH)
+./Drivers/libgr.a(string.o)   formike128x128x16.o (GrStringDraw)
+./Drivers/libgr.a(line.o)     ./Drivers/libgr.a(rectangle.o) (GrLineDrawH)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                               ../../../Source/tasks.o (memcmp)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
-                              ../../Common/drivers/LuminaryMicro/ustdlib.o (memcpy)
+                              ./API/ustdlib.o (memcpy)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
                               ../../../Source/tasks.o (memset)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
@@ -25,7 +21,7 @@ c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-ea
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
                               formike128x128x16.o (strlen)
 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
-                              ../../Common/drivers/LuminaryMicro/ustdlib.o (strncpy)
+                              ./API/ustdlib.o (strncpy)
 
 Allocating common symbols
 Common symbol       size              file
@@ -65,28 +61,27 @@ LOAD ./Drivers/uart.o
 LOAD ./Drivers/udma.o
 LOAD ./Drivers/usb.o
 LOAD ./Drivers/watchdog.o
-LOAD main.o
-LOAD timertest.o
 LOAD ./API/led.o
 LOAD ./API/comport.o
+LOAD ./API/buttons.o
+LOAD ./API/ustdlib.o
+LOAD main.o
 LOAD rit128x96x4.o
 LOAD osram128x64x4.o
 LOAD formike128x128x16.o
-LOAD ../../Common/drivers/LuminaryMicro/ustdlib.o
-LOAD IntQueueTimer.o
 LOAD ../../../Source/list.o
 LOAD ../../../Source/queue.o
 LOAD ../../../Source/tasks.o
 LOAD ../../../Source/portable/GCC/ARM_CM3/port.o
 LOAD ../../../Source/portable/MemMang/heap_2.o
 LOAD startup.o
-LOAD ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a
+LOAD ./Drivers/libgr.a
 START GROUP
 LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
 LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
 END GROUP
 
-.text           0x00000000    0x12794
+.text           0x00000000    0x122fc
  *(.isr_vector)
  .isr_vector    0x00000000       0xf0 startup.o
                 0x00000000                g_pfnVectors
@@ -1747,575 +1742,555 @@ END GROUP
  .text.WatchdogStallDisable
                 0x0000a644       0x28 ./Drivers/watchdog.o
                 0x0000a644                WatchdogStallDisable
- .text          0x0000a66c        0x0 main.o
- .text.vUARTTask
-                0x0000a66c       0x48 main.o
-                0x0000a66c                vUARTTask
- .text.vLEDTask
-                0x0000a6b4       0x2c main.o
-                0x0000a6b4                vLEDTask
- .text.vTestRoutine
-                0x0000a6e0       0x38 main.o
-                0x0000a6e0                vTestRoutine
- .text.main     0x0000a718      0x100 main.o
-                0x0000a718                main
- .text.prvSetupHardware
-                0x0000a818       0x6c main.o
- .text.vOLEDTask
-                0x0000a884      0x1d8 main.o
- .text.vTaskRefresh
-                0x0000aa5c       0x78 main.o
-                0x0000aa5c                vTaskRefresh
- .text.vApplicationStackOverflowHook
-                0x0000aad4        0xc main.o
-                0x0000aad4                vApplicationStackOverflowHook
- .text          0x0000aae0        0x0 timertest.o
- .text.vSetupHighFrequencyTimer
-                0x0000aae0       0xc0 timertest.o
-                0x0000aae0                vSetupHighFrequencyTimer
- .text.Timer0IntHandler
-                0x0000aba0       0xa8 timertest.o
-                0x0000aba0                Timer0IntHandler
- .text          0x0000ac48        0x0 ./API/led.o
- .text.Init     0x0000ac48       0x60 ./API/led.o
+ .text          0x0000a66c        0x0 ./API/led.o
+ .text.Init     0x0000a66c       0x60 ./API/led.o
  .text.ledSwitch
-                0x0000aca8       0x48 ./API/led.o
-                0x0000aca8                ledSwitch
- .text          0x0000acf0        0x0 ./API/comport.o
- .text.Init     0x0000acf0       0x44 ./API/comport.o
+                0x0000a6cc       0x48 ./API/led.o
+                0x0000a6cc                ledSwitch
+ .text          0x0000a714        0x0 ./API/comport.o
+ .text.Init     0x0000a714       0x64 ./API/comport.o
  .text.xComOpen
-                0x0000ad34       0x44 ./API/comport.o
-                0x0000ad34                xComOpen
+                0x0000a778       0x44 ./API/comport.o
+                0x0000a778                xComOpen
  .text.vComWrite
-                0x0000ad78       0x18 ./API/comport.o
-                0x0000ad78                vComWrite
+                0x0000a7bc       0x18 ./API/comport.o
+                0x0000a7bc                vComWrite
+ .text.vComRead
+                0x0000a7d4       0x18 ./API/comport.o
+                0x0000a7d4                vComRead
  .text.xComGetChar
-                0x0000ad90       0x18 ./API/comport.o
-                0x0000ad90                xComGetChar
+                0x0000a7ec       0x24 ./API/comport.o
+                0x0000a7ec                xComGetChar
  .text.vComPutChar
-                0x0000ada8       0x28 ./API/comport.o
-                0x0000ada8                vComPutChar
+                0x0000a810       0x28 ./API/comport.o
+                0x0000a810                vComPutChar
  .text.xComWaitForSemaphore
-                0x0000add0       0x14 ./API/comport.o
-                0x0000add0                xComWaitForSemaphore
+                0x0000a838       0x14 ./API/comport.o
+                0x0000a838                xComWaitForSemaphore
  .text.vComClose
-                0x0000ade4       0x14 ./API/comport.o
-                0x0000ade4                vComClose
- .text          0x0000adf8        0x0 rit128x96x4.o
- .text.RITWriteCommand
-                0x0000adf8       0x84 rit128x96x4.o
- .text.RITWriteData
-                0x0000ae7c       0x90 rit128x96x4.o
- .text.RIT128x96x4Clear
-                0x0000af0c       0x94 rit128x96x4.o
-                0x0000af0c                RIT128x96x4Clear
- .text.RIT128x96x4StringDraw
-                0x0000afa0      0x1e4 rit128x96x4.o
-                0x0000afa0                RIT128x96x4StringDraw
- .text.RIT128x96x4ImageDraw
-                0x0000b184       0xec rit128x96x4.o
-                0x0000b184                RIT128x96x4ImageDraw
- .text.RIT128x96x4Enable
-                0x0000b270       0x9c rit128x96x4.o
-                0x0000b270                RIT128x96x4Enable
- .text.RIT128x96x4Disable
-                0x0000b30c       0x7c rit128x96x4.o
-                0x0000b30c                RIT128x96x4Disable
- .text.RIT128x96x4Init
-                0x0000b388      0x204 rit128x96x4.o
-                0x0000b388                RIT128x96x4Init
- .text.RIT128x96x4DisplayOn
-                0x0000b58c       0x5c rit128x96x4.o
-                0x0000b58c                RIT128x96x4DisplayOn
- .text.RIT128x96x4DisplayOff
-                0x0000b5e8       0x18 rit128x96x4.o
-                0x0000b5e8                RIT128x96x4DisplayOff
- .text          0x0000b600        0x0 osram128x64x4.o
- .text.OSRAMWriteCommand
-                0x0000b600       0x78 osram128x64x4.o
- .text.OSRAMWriteData
-                0x0000b678       0x78 osram128x64x4.o
- .text.OSRAM128x64x4Clear
-                0x0000b6f0       0x7c osram128x64x4.o
-                0x0000b6f0                OSRAM128x64x4Clear
- .text.OSRAM128x64x4StringDraw
-                0x0000b76c      0x1e4 osram128x64x4.o
-                0x0000b76c                OSRAM128x64x4StringDraw
- .text.OSRAM128x64x4ImageDraw
-                0x0000b950       0xec osram128x64x4.o
-                0x0000b950                OSRAM128x64x4ImageDraw
- .text.OSRAM128x64x4Enable
-                0x0000ba3c       0x9c osram128x64x4.o
-                0x0000ba3c                OSRAM128x64x4Enable
- .text.OSRAM128x64x4Disable
-                0x0000bad8       0x80 osram128x64x4.o
-                0x0000bad8                OSRAM128x64x4Disable
- .text.OSRAM128x64x4Init
-                0x0000bb58      0x124 osram128x64x4.o
-                0x0000bb58                OSRAM128x64x4Init
- .text.OSRAM128x64x4DisplayOn
-                0x0000bc7c       0x5c osram128x64x4.o
-                0x0000bc7c                OSRAM128x64x4DisplayOn
- .text.OSRAM128x64x4DisplayOff
-                0x0000bcd8       0x18 osram128x64x4.o
-                0x0000bcd8                OSRAM128x64x4DisplayOff
- .text          0x0000bcf0        0x0 formike128x128x16.o
- .text.WriteData
-                0x0000bcf0       0x3c formike128x128x16.o
- .text.WriteCommand
-                0x0000bd2c       0x58 formike128x128x16.o
- .text.Formike128x128x16Init
-                0x0000bd84      0x268 formike128x128x16.o
-                0x0000bd84                Formike128x128x16Init
- .text.Formike128x128x16BacklightOn
-                0x0000bfec       0x18 formike128x128x16.o
-                0x0000bfec                Formike128x128x16BacklightOn
- .text.Formike128x128x16BacklightOff
-                0x0000c004       0x18 formike128x128x16.o
-                0x0000c004                Formike128x128x16BacklightOff
- .text.Formike128x128x16PixelDraw
-                0x0000c01c       0x7c formike128x128x16.o
- .text.Formike128x128x16PixelDrawMultiple
-                0x0000c098      0x278 formike128x128x16.o
- .text.Formike128x128x16Flush
-                0x0000c310       0x14 formike128x128x16.o
- .text.Formike128x128x16LineDrawH
-                0x0000c324       0x98 formike128x128x16.o
- .text.Formike128x128x16LineDrawV
-                0x0000c3bc       0x98 formike128x128x16.o
- .text.Formike128x128x16RectFill
-                0x0000c454       0xc0 formike128x128x16.o
- .text.Formike128x128x16ColorTranslate
-                0x0000c514       0x40 formike128x128x16.o
- .text.vFormike128x128x16Clear
-                0x0000c554       0x78 formike128x128x16.o
-                0x0000c554                vFormike128x128x16Clear
- .text.vFormike128x128x16StringDraw
-                0x0000c5cc       0x60 formike128x128x16.o
-                0x0000c5cc                vFormike128x128x16StringDraw
- .text.vFormike128x128x16Init
-                0x0000c62c       0xb8 formike128x128x16.o
-                0x0000c62c                vFormike128x128x16Init
- .text.vFormike128x128x16ImageDraw
-                0x0000c6e4       0x28 formike128x128x16.o
-                0x0000c6e4                vFormike128x128x16ImageDraw
- .text          0x0000c70c        0x0 ../../Common/drivers/LuminaryMicro/ustdlib.o
+                0x0000a84c       0x14 ./API/comport.o
+                0x0000a84c                vComClose
+ .text          0x0000a860        0x0 ./API/buttons.o
+ .text.Init     0x0000a860       0x38 ./API/buttons.o
+ .text.xButtonRegisterCallback
+                0x0000a898       0x14 ./API/buttons.o
+                0x0000a898                xButtonRegisterCallback
+ .text          0x0000a8ac        0x0 ./API/ustdlib.o
  .text.uvsnprintf
-                0x0000c70c      0x4fc ../../Common/drivers/LuminaryMicro/ustdlib.o
-                0x0000c70c                uvsnprintf
+                0x0000a8ac      0x4fc ./API/ustdlib.o
+                0x0000a8ac                uvsnprintf
  .text.usprintf
-                0x0000cc08       0x34 ../../Common/drivers/LuminaryMicro/ustdlib.o
-                0x0000cc08                usprintf
+                0x0000ada8       0x34 ./API/ustdlib.o
+                0x0000ada8                usprintf
  .text.usnprintf
-                0x0000cc3c       0x34 ../../Common/drivers/LuminaryMicro/ustdlib.o
-                0x0000cc3c                usnprintf
- .text          0x0000cc70        0x0 IntQueueTimer.o
- .text.vInitialiseTimerForIntQueueTest
-                0x0000cc70       0xe8 IntQueueTimer.o
-                0x0000cc70                vInitialiseTimerForIntQueueTest
- .text.vT2InterruptHandler
-                0x0000cd58       0x18 IntQueueTimer.o
-                0x0000cd58                vT2InterruptHandler
- .text.vT3InterruptHandler
-                0x0000cd70       0x18 IntQueueTimer.o
-                0x0000cd70                vT3InterruptHandler
- .text          0x0000cd88        0x0 ../../../Source/list.o
+                0x0000addc       0x34 ./API/ustdlib.o
+                0x0000addc                usnprintf
+ .text          0x0000ae10        0x0 main.o
+ .text.vUARTTask
+                0x0000ae10       0x7c main.o
+                0x0000ae10                vUARTTask
+ .text.vLEDTask
+                0x0000ae8c       0x2c main.o
+                0x0000ae8c                vLEDTask
+ .text.main     0x0000aeb8      0x100 main.o
+                0x0000aeb8                main
+ .text.prvSetupHardware
+                0x0000afb8       0x6c main.o
+ .text.vOLEDTask
+                0x0000b024      0x1d8 main.o
+ .text.vTaskRefresh
+                0x0000b1fc       0x78 main.o
+                0x0000b1fc                vTaskRefresh
+ .text.vApplicationStackOverflowHook
+                0x0000b274        0xc main.o
+                0x0000b274                vApplicationStackOverflowHook
+ .text          0x0000b280        0x0 rit128x96x4.o
+ .text.RITWriteCommand
+                0x0000b280       0x84 rit128x96x4.o
+ .text.RITWriteData
+                0x0000b304       0x90 rit128x96x4.o
+ .text.RIT128x96x4Clear
+                0x0000b394       0x94 rit128x96x4.o
+                0x0000b394                RIT128x96x4Clear
+ .text.RIT128x96x4StringDraw
+                0x0000b428      0x1e4 rit128x96x4.o
+                0x0000b428                RIT128x96x4StringDraw
+ .text.RIT128x96x4ImageDraw
+                0x0000b60c       0xec rit128x96x4.o
+                0x0000b60c                RIT128x96x4ImageDraw
+ .text.RIT128x96x4Enable
+                0x0000b6f8       0x9c rit128x96x4.o
+                0x0000b6f8                RIT128x96x4Enable
+ .text.RIT128x96x4Disable
+                0x0000b794       0x7c rit128x96x4.o
+                0x0000b794                RIT128x96x4Disable
+ .text.RIT128x96x4Init
+                0x0000b810      0x204 rit128x96x4.o
+                0x0000b810                RIT128x96x4Init
+ .text.RIT128x96x4DisplayOn
+                0x0000ba14       0x5c rit128x96x4.o
+                0x0000ba14                RIT128x96x4DisplayOn
+ .text.RIT128x96x4DisplayOff
+                0x0000ba70       0x18 rit128x96x4.o
+                0x0000ba70                RIT128x96x4DisplayOff
+ .text          0x0000ba88        0x0 osram128x64x4.o
+ .text.OSRAMWriteCommand
+                0x0000ba88       0x78 osram128x64x4.o
+ .text.OSRAMWriteData
+                0x0000bb00       0x78 osram128x64x4.o
+ .text.OSRAM128x64x4Clear
+                0x0000bb78       0x7c osram128x64x4.o
+                0x0000bb78                OSRAM128x64x4Clear
+ .text.OSRAM128x64x4StringDraw
+                0x0000bbf4      0x1e4 osram128x64x4.o
+                0x0000bbf4                OSRAM128x64x4StringDraw
+ .text.OSRAM128x64x4ImageDraw
+                0x0000bdd8       0xec osram128x64x4.o
+                0x0000bdd8                OSRAM128x64x4ImageDraw
+ .text.OSRAM128x64x4Enable
+                0x0000bec4       0x9c osram128x64x4.o
+                0x0000bec4                OSRAM128x64x4Enable
+ .text.OSRAM128x64x4Disable
+                0x0000bf60       0x80 osram128x64x4.o
+                0x0000bf60                OSRAM128x64x4Disable
+ .text.OSRAM128x64x4Init
+                0x0000bfe0      0x124 osram128x64x4.o
+                0x0000bfe0                OSRAM128x64x4Init
+ .text.OSRAM128x64x4DisplayOn
+                0x0000c104       0x5c osram128x64x4.o
+                0x0000c104                OSRAM128x64x4DisplayOn
+ .text.OSRAM128x64x4DisplayOff
+                0x0000c160       0x18 osram128x64x4.o
+                0x0000c160                OSRAM128x64x4DisplayOff
+ .text          0x0000c178        0x0 formike128x128x16.o
+ .text.WriteData
+                0x0000c178       0x3c formike128x128x16.o
+ .text.WriteCommand
+                0x0000c1b4       0x58 formike128x128x16.o
+ .text.Formike128x128x16Init
+                0x0000c20c      0x268 formike128x128x16.o
+                0x0000c20c                Formike128x128x16Init
+ .text.Formike128x128x16BacklightOn
+                0x0000c474       0x18 formike128x128x16.o
+                0x0000c474                Formike128x128x16BacklightOn
+ .text.Formike128x128x16BacklightOff
+                0x0000c48c       0x18 formike128x128x16.o
+                0x0000c48c                Formike128x128x16BacklightOff
+ .text.Formike128x128x16PixelDraw
+                0x0000c4a4       0x7c formike128x128x16.o
+ .text.Formike128x128x16PixelDrawMultiple
+                0x0000c520      0x278 formike128x128x16.o
+ .text.Formike128x128x16Flush
+                0x0000c798       0x14 formike128x128x16.o
+ .text.Formike128x128x16LineDrawH
+                0x0000c7ac       0x98 formike128x128x16.o
+ .text.Formike128x128x16LineDrawV
+                0x0000c844       0x98 formike128x128x16.o
+ .text.Formike128x128x16RectFill
+                0x0000c8dc       0xc0 formike128x128x16.o
+ .text.Formike128x128x16ColorTranslate
+                0x0000c99c       0x40 formike128x128x16.o
+ .text.vFormike128x128x16Clear
+                0x0000c9dc       0x78 formike128x128x16.o
+                0x0000c9dc                vFormike128x128x16Clear
+ .text.vFormike128x128x16StringDraw
+                0x0000ca54       0x60 formike128x128x16.o
+                0x0000ca54                vFormike128x128x16StringDraw
+ .text.vFormike128x128x16Init
+                0x0000cab4       0xb8 formike128x128x16.o
+                0x0000cab4                vFormike128x128x16Init
+ .text.vFormike128x128x16ImageDraw
+                0x0000cb6c       0x28 formike128x128x16.o
+                0x0000cb6c                vFormike128x128x16ImageDraw
+ .text          0x0000cb94        0x0 ../../../Source/list.o
  .text.vListInitialise
-                0x0000cd88       0x48 ../../../Source/list.o
-                0x0000cd88                vListInitialise
+                0x0000cb94       0x48 ../../../Source/list.o
+                0x0000cb94                vListInitialise
  .text.vListInitialiseItem
-                0x0000cdd0       0x1c ../../../Source/list.o
-                0x0000cdd0                vListInitialiseItem
+                0x0000cbdc       0x1c ../../../Source/list.o
+                0x0000cbdc                vListInitialiseItem
  .text.vListInsertEnd
-                0x0000cdec       0x50 ../../../Source/list.o
-                0x0000cdec                vListInsertEnd
+                0x0000cbf8       0x50 ../../../Source/list.o
+                0x0000cbf8                vListInsertEnd
  .text.vListInsert
-                0x0000ce3c       0x74 ../../../Source/list.o
-                0x0000ce3c                vListInsert
+                0x0000cc48       0x74 ../../../Source/list.o
+                0x0000cc48                vListInsert
  .text.vListRemove
-                0x0000ceb0       0x54 ../../../Source/list.o
-                0x0000ceb0                vListRemove
- .text          0x0000cf04        0x0 ../../../Source/queue.o
+                0x0000ccbc       0x54 ../../../Source/list.o
+                0x0000ccbc                vListRemove
+ .text          0x0000cd10        0x0 ../../../Source/queue.o
  .text.xQueueCreate
-                0x0000cf04       0xcc ../../../Source/queue.o
-                0x0000cf04                xQueueCreate
+                0x0000cd10       0xcc ../../../Source/queue.o
+                0x0000cd10                xQueueCreate
  .text.xQueueCreateMutex
-                0x0000cfd0       0x98 ../../../Source/queue.o
-                0x0000cfd0                xQueueCreateMutex
+                0x0000cddc       0x98 ../../../Source/queue.o
+                0x0000cddc                xQueueCreateMutex
  .text.xQueueGiveMutexRecursive
-                0x0000d068       0x58 ../../../Source/queue.o
-                0x0000d068                xQueueGiveMutexRecursive
+                0x0000ce74       0x58 ../../../Source/queue.o
+                0x0000ce74                xQueueGiveMutexRecursive
  .text.xQueueTakeMutexRecursive
-                0x0000d0c0       0x60 ../../../Source/queue.o
-                0x0000d0c0                xQueueTakeMutexRecursive
+                0x0000cecc       0x60 ../../../Source/queue.o
+                0x0000cecc                xQueueTakeMutexRecursive
  .text.xQueueGenericSend
-                0x0000d120      0x120 ../../../Source/queue.o
-                0x0000d120                xQueueGenericSend
+                0x0000cf2c      0x120 ../../../Source/queue.o
+                0x0000cf2c                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x0000d240       0x98 ../../../Source/queue.o
-                0x0000d240                xQueueGenericSendFromISR
+                0x0000d04c       0x98 ../../../Source/queue.o
+                0x0000d04c                xQueueGenericSendFromISR
  .text.xQueueGenericReceive
-                0x0000d2d8      0x190 ../../../Source/queue.o
-                0x0000d2d8                xQueueGenericReceive
+                0x0000d0e4      0x190 ../../../Source/queue.o
+                0x0000d0e4                xQueueGenericReceive
  .text.xQueueReceiveFromISR
-                0x0000d468       0x9c ../../../Source/queue.o
-                0x0000d468                xQueueReceiveFromISR
+                0x0000d274       0x9c ../../../Source/queue.o
+                0x0000d274                xQueueReceiveFromISR
  .text.uxQueueMessagesWaiting
-                0x0000d504       0x24 ../../../Source/queue.o
-                0x0000d504                uxQueueMessagesWaiting
+                0x0000d310       0x24 ../../../Source/queue.o
+                0x0000d310                uxQueueMessagesWaiting
  .text.uxQueueMessagesWaitingFromISR
-                0x0000d528       0x1c ../../../Source/queue.o
-                0x0000d528                uxQueueMessagesWaitingFromISR
+                0x0000d334       0x1c ../../../Source/queue.o
+                0x0000d334                uxQueueMessagesWaitingFromISR
  .text.vQueueDelete
-                0x0000d544       0x28 ../../../Source/queue.o
-                0x0000d544                vQueueDelete
+                0x0000d350       0x28 ../../../Source/queue.o
+                0x0000d350                vQueueDelete
  .text.prvCopyDataToQueue
-                0x0000d56c       0xcc ../../../Source/queue.o
+                0x0000d378       0xcc ../../../Source/queue.o
  .text.prvCopyDataFromQueue
-                0x0000d638       0x50 ../../../Source/queue.o
+                0x0000d444       0x50 ../../../Source/queue.o
  .text.prvUnlockQueue
-                0x0000d688       0xa0 ../../../Source/queue.o
+                0x0000d494       0xa0 ../../../Source/queue.o
  .text.prvIsQueueEmpty
-                0x0000d728       0x2c ../../../Source/queue.o
+                0x0000d534       0x2c ../../../Source/queue.o
  .text.xQueueIsQueueEmptyFromISR
-                0x0000d754       0x24 ../../../Source/queue.o
-                0x0000d754                xQueueIsQueueEmptyFromISR
+                0x0000d560       0x24 ../../../Source/queue.o
+                0x0000d560                xQueueIsQueueEmptyFromISR
  .text.prvIsQueueFull
-                0x0000d778       0x30 ../../../Source/queue.o
+                0x0000d584       0x30 ../../../Source/queue.o
  .text.xQueueIsQueueFullFromISR
-                0x0000d7a8       0x28 ../../../Source/queue.o
-                0x0000d7a8                xQueueIsQueueFullFromISR
+                0x0000d5b4       0x28 ../../../Source/queue.o
+                0x0000d5b4                xQueueIsQueueFullFromISR
  .text.vQueueAddToRegistry
-                0x0000d7d0       0x64 ../../../Source/queue.o
-                0x0000d7d0                vQueueAddToRegistry
+                0x0000d5dc       0x64 ../../../Source/queue.o
+                0x0000d5dc                vQueueAddToRegistry
  .text.vQueueUnregisterQueue
-                0x0000d834       0x54 ../../../Source/queue.o
- .text          0x0000d888        0x0 ../../../Source/tasks.o
+                0x0000d640       0x54 ../../../Source/queue.o
+ .text          0x0000d694        0x0 ../../../Source/tasks.o
  .text.xTaskGenericCreate
-                0x0000d888      0x1b0 ../../../Source/tasks.o
-                0x0000d888                xTaskGenericCreate
+                0x0000d694      0x1b0 ../../../Source/tasks.o
+                0x0000d694                xTaskGenericCreate
  .text.vTaskDelete
-                0x0000da38       0xc0 ../../../Source/tasks.o
-                0x0000da38                vTaskDelete
+                0x0000d844       0xc0 ../../../Source/tasks.o
+                0x0000d844                vTaskDelete
  .text.vTaskDelayUntil
-                0x0000daf8      0x114 ../../../Source/tasks.o
-                0x0000daf8                vTaskDelayUntil
+                0x0000d904      0x114 ../../../Source/tasks.o
+                0x0000d904                vTaskDelayUntil
  .text.vTaskDelay
-                0x0000dc0c       0xb8 ../../../Source/tasks.o
-                0x0000dc0c                vTaskDelay
+                0x0000da18       0xb8 ../../../Source/tasks.o
+                0x0000da18                vTaskDelay
  .text.uxTaskPriorityGet
-                0x0000dcc4       0x38 ../../../Source/tasks.o
-                0x0000dcc4                uxTaskPriorityGet
+                0x0000dad0       0x38 ../../../Source/tasks.o
+                0x0000dad0                uxTaskPriorityGet
  .text.vTaskPrioritySet
-                0x0000dcfc      0x130 ../../../Source/tasks.o
-                0x0000dcfc                vTaskPrioritySet
+                0x0000db08      0x130 ../../../Source/tasks.o
+                0x0000db08                vTaskPrioritySet
  .text.vTaskSuspend
-                0x0000de2c       0x84 ../../../Source/tasks.o
-                0x0000de2c                vTaskSuspend
+                0x0000dc38       0x84 ../../../Source/tasks.o
+                0x0000dc38                vTaskSuspend
  .text.xTaskIsTaskSuspended
-                0x0000deb0       0x50 ../../../Source/tasks.o
-                0x0000deb0                xTaskIsTaskSuspended
+                0x0000dcbc       0x50 ../../../Source/tasks.o
+                0x0000dcbc                xTaskIsTaskSuspended
  .text.vTaskResume
-                0x0000df00       0xac ../../../Source/tasks.o
-                0x0000df00                vTaskResume
+                0x0000dd0c       0xac ../../../Source/tasks.o
+                0x0000dd0c                vTaskResume
  .text.xTaskResumeFromISR
-                0x0000dfac       0xc0 ../../../Source/tasks.o
-                0x0000dfac                xTaskResumeFromISR
+                0x0000ddb8       0xc0 ../../../Source/tasks.o
+                0x0000ddb8                xTaskResumeFromISR
  .text.vTaskStartScheduler
-                0x0000e06c       0x84 ../../../Source/tasks.o
-                0x0000e06c                vTaskStartScheduler
+                0x0000de78       0x78 ../../../Source/tasks.o
+                0x0000de78                vTaskStartScheduler
  .text.vTaskEndScheduler
-                0x0000e0f0       0x24 ../../../Source/tasks.o
-                0x0000e0f0                vTaskEndScheduler
+                0x0000def0       0x24 ../../../Source/tasks.o
+                0x0000def0                vTaskEndScheduler
  .text.vTaskSuspendAll
-                0x0000e114       0x24 ../../../Source/tasks.o
-                0x0000e114                vTaskSuspendAll
+                0x0000df14       0x24 ../../../Source/tasks.o
+                0x0000df14                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x0000e138      0x160 ../../../Source/tasks.o
-                0x0000e138                xTaskResumeAll
+                0x0000df38      0x160 ../../../Source/tasks.o
+                0x0000df38                xTaskResumeAll
  .text.xTaskGetTickCount
-                0x0000e298       0x28 ../../../Source/tasks.o
-                0x0000e298                xTaskGetTickCount
+                0x0000e098       0x28 ../../../Source/tasks.o
+                0x0000e098                xTaskGetTickCount
  .text.uxTaskGetNumberOfTasks
-                0x0000e2c0       0x18 ../../../Source/tasks.o
-                0x0000e2c0                uxTaskGetNumberOfTasks
+                0x0000e0c0       0x18 ../../../Source/tasks.o
+                0x0000e0c0                uxTaskGetNumberOfTasks
  .text.vTaskList
-                0x0000e2d8      0x130 ../../../Source/tasks.o
-                0x0000e2d8                vTaskList
- .text.vTaskGetRunTimeStats
-                0x0000e408      0x130 ../../../Source/tasks.o
-                0x0000e408                vTaskGetRunTimeStats
+                0x0000e0d8      0x130 ../../../Source/tasks.o
+                0x0000e0d8                vTaskList
  .text.vTaskStartTrace
-                0x0000e538       0x54 ../../../Source/tasks.o
-                0x0000e538                vTaskStartTrace
+                0x0000e208       0x54 ../../../Source/tasks.o
+                0x0000e208                vTaskStartTrace
  .text.ulTaskEndTrace
-                0x0000e58c       0x44 ../../../Source/tasks.o
-                0x0000e58c                ulTaskEndTrace
+                0x0000e25c       0x44 ../../../Source/tasks.o
+                0x0000e25c                ulTaskEndTrace
  .text.vTaskIncrementTick
-                0x0000e5d0      0x13c ../../../Source/tasks.o
-                0x0000e5d0                vTaskIncrementTick
+                0x0000e2a0      0x13c ../../../Source/tasks.o
+                0x0000e2a0                vTaskIncrementTick
  .text.vTaskSwitchContext
-                0x0000e70c      0x250 ../../../Source/tasks.o
-                0x0000e70c                vTaskSwitchContext
+                0x0000e3dc      0x218 ../../../Source/tasks.o
+                0x0000e3dc                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x0000e95c       0xd4 ../../../Source/tasks.o
-                0x0000e95c                vTaskPlaceOnEventList
+                0x0000e5f4       0xd4 ../../../Source/tasks.o
+                0x0000e5f4                vTaskPlaceOnEventList
  .text.xTaskRemoveFromEventList
-                0x0000ea30       0xd4 ../../../Source/tasks.o
-                0x0000ea30                xTaskRemoveFromEventList
+                0x0000e6c8       0xd4 ../../../Source/tasks.o
+                0x0000e6c8                xTaskRemoveFromEventList
  .text.vTaskSetTimeOutState
-                0x0000eb04       0x30 ../../../Source/tasks.o
-                0x0000eb04                vTaskSetTimeOutState
+                0x0000e79c       0x30 ../../../Source/tasks.o
+                0x0000e79c                vTaskSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x0000eb34       0xa8 ../../../Source/tasks.o
-                0x0000eb34                xTaskCheckForTimeOut
+                0x0000e7cc       0xa8 ../../../Source/tasks.o
+                0x0000e7cc                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x0000ebdc       0x18 ../../../Source/tasks.o
-                0x0000ebdc                vTaskMissedYield
+                0x0000e874       0x18 ../../../Source/tasks.o
+                0x0000e874                vTaskMissedYield
  .text.prvIdleTask
-                0x0000ebf4       0x10 ../../../Source/tasks.o
+                0x0000e88c       0x10 ../../../Source/tasks.o
  .text.prvInitialiseTCBVariables
-                0x0000ec04       0x84 ../../../Source/tasks.o
+                0x0000e89c       0x7c ../../../Source/tasks.o
  .text.prvInitialiseTaskLists
-                0x0000ec88       0xa4 ../../../Source/tasks.o
+                0x0000e918       0xa4 ../../../Source/tasks.o
  .text.prvCheckTasksWaitingTermination
-                0x0000ed2c       0xa8 ../../../Source/tasks.o
+                0x0000e9bc       0xa8 ../../../Source/tasks.o
  .text.prvAllocateTCBAndStack
-                0x0000edd4       0x74 ../../../Source/tasks.o
+                0x0000ea64       0x74 ../../../Source/tasks.o
  .text.prvListTaskWithinSingleList
-                0x0000ee48       0xcc ../../../Source/tasks.o
- .text.prvGenerateRunTimeStatsForTasksInList
-                0x0000ef14      0x114 ../../../Source/tasks.o
+                0x0000ead8       0xcc ../../../Source/tasks.o
  .text.usTaskCheckFreeStackSpace
-                0x0000f028       0x38 ../../../Source/tasks.o
+                0x0000eba4       0x38 ../../../Source/tasks.o
  .text.uxTaskGetStackHighWaterMark
-                0x0000f060       0x3c ../../../Source/tasks.o
-                0x0000f060                uxTaskGetStackHighWaterMark
+                0x0000ebdc       0x3c ../../../Source/tasks.o
+                0x0000ebdc                uxTaskGetStackHighWaterMark
  .text.prvDeleteTCB
-                0x0000f09c       0x20 ../../../Source/tasks.o
+                0x0000ec18       0x20 ../../../Source/tasks.o
  .text.xTaskGetCurrentTaskHandle
-                0x0000f0bc       0x20 ../../../Source/tasks.o
-                0x0000f0bc                xTaskGetCurrentTaskHandle
+                0x0000ec38       0x20 ../../../Source/tasks.o
+                0x0000ec38                xTaskGetCurrentTaskHandle
  .text.vTaskPriorityInherit
-                0x0000f0dc       0xd8 ../../../Source/tasks.o
-                0x0000f0dc                vTaskPriorityInherit
+                0x0000ec58       0xd8 ../../../Source/tasks.o
+                0x0000ec58                vTaskPriorityInherit
  .text.vTaskPriorityDisinherit
-                0x0000f1b4       0x90 ../../../Source/tasks.o
-                0x0000f1b4                vTaskPriorityDisinherit
- .text          0x0000f244        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ed30       0x90 ../../../Source/tasks.o
+                0x0000ed30                vTaskPriorityDisinherit
+ .text          0x0000edc0        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
  .text.pxPortInitialiseStack
-                0x0000f244       0x60 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f244                pxPortInitialiseStack
+                0x0000edc0       0x60 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000edc0                pxPortInitialiseStack
  .text.vPortSVCHandler
-                0x0000f2a4       0x20 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f2a4                vPortSVCHandler
+                0x0000ee20       0x20 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ee20                vPortSVCHandler
  .text.vPortStartFirstTask
-                0x0000f2c4       0x10 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f2c4                vPortStartFirstTask
+                0x0000ee40       0x10 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ee40                vPortStartFirstTask
  .text.xPortStartScheduler
-                0x0000f2d4       0x54 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f2d4                xPortStartScheduler
+                0x0000ee50       0x54 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ee50                xPortStartScheduler
  .text.vPortEndScheduler
-                0x0000f328        0xc ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f328                vPortEndScheduler
+                0x0000eea4        0xc ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000eea4                vPortEndScheduler
  .text.vPortYieldFromISR
-                0x0000f334       0x18 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f334                vPortYieldFromISR
+                0x0000eeb0       0x18 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000eeb0                vPortYieldFromISR
  .text.vPortEnterCritical
-                0x0000f34c       0x2c ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f34c                vPortEnterCritical
+                0x0000eec8       0x2c ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000eec8                vPortEnterCritical
  .text.vPortExitCritical
-                0x0000f378       0x38 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f378                vPortExitCritical
+                0x0000eef4       0x38 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000eef4                vPortExitCritical
  .text.xPortPendSVHandler
-                0x0000f3b0       0x3c ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f3b0                xPortPendSVHandler
+                0x0000ef2c       0x3c ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ef2c                xPortPendSVHandler
  .text.xPortSysTickHandler
-                0x0000f3ec       0x38 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f3ec                xPortSysTickHandler
+                0x0000ef68       0x38 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000ef68                xPortSysTickHandler
  .text.prvSetupTimerInterrupt
-                0x0000f424       0x28 ../../../Source/portable/GCC/ARM_CM3/port.o
- .text          0x0000f44c        0x0 ../../../Source/portable/MemMang/heap_2.o
+                0x0000efa0       0x28 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .text          0x0000efc8        0x0 ../../../Source/portable/MemMang/heap_2.o
  .text.pvPortMalloc
-                0x0000f44c      0x1c4 ../../../Source/portable/MemMang/heap_2.o
-                0x0000f44c                pvPortMalloc
+                0x0000efc8      0x1c4 ../../../Source/portable/MemMang/heap_2.o
+                0x0000efc8                pvPortMalloc
  .text.vPortFree
-                0x0000f610       0x88 ../../../Source/portable/MemMang/heap_2.o
-                0x0000f610                vPortFree
+                0x0000f18c       0x88 ../../../Source/portable/MemMang/heap_2.o
+                0x0000f18c                vPortFree
  .text.xPortGetFreeHeapSize
-                0x0000f698       0x18 ../../../Source/portable/MemMang/heap_2.o
-                0x0000f698                xPortGetFreeHeapSize
+                0x0000f214       0x18 ../../../Source/portable/MemMang/heap_2.o
+                0x0000f214                xPortGetFreeHeapSize
  .text.vPortInitialiseBlocks
-                0x0000f6b0        0xc ../../../Source/portable/MemMang/heap_2.o
-                0x0000f6b0                vPortInitialiseBlocks
- .text          0x0000f6bc        0x0 startup.o
- .text.NmiSR    0x0000f6bc        0x4 startup.o
+                0x0000f22c        0xc ../../../Source/portable/MemMang/heap_2.o
+                0x0000f22c                vPortInitialiseBlocks
+ .text          0x0000f238        0x0 startup.o
+ .text.NmiSR    0x0000f238        0x4 startup.o
  .text.FaultISR
-                0x0000f6c0        0x4 startup.o
- .text.vEMAC_ISR
-                0x0000f6c4        0x4 startup.o
-                0x0000f6c4                vEMAC_ISR
+                0x0000f23c        0x4 startup.o
  .text.IntDefaultHandler
-                0x0000f6c8        0x4 startup.o
+                0x0000f240        0x4 startup.o
  .text.uipprintf
-                0x0000f6cc        0xc startup.o
-                0x0000f6cc                uipprintf
+                0x0000f244        0xc startup.o
+                0x0000f244                uipprintf
  .text.ResetISR
-                0x0000f6d8       0x74 startup.o
-                0x0000f6d8                ResetISR
- .text          0x0000f74c        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
+                0x0000f250       0x74 startup.o
+                0x0000f250                ResetISR
+ .text          0x0000f2c4        0x0 ./Drivers/libgr.a(context.o)
  .text.GrContextInit
-                0x0000f74c       0x24 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
-                0x0000f74c                GrContextInit
+                0x0000f2c4       0x24 ./Drivers/libgr.a(context.o)
+                0x0000f2c4                GrContextInit
  .text.GrContextClipRegionSet
-                0x0000f770       0x88 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
-                0x0000f770                GrContextClipRegionSet
- .text          0x0000f7f8        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
- .text          0x0000f7f8        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
+                0x0000f2e8       0x88 ./Drivers/libgr.a(context.o)
+                0x0000f2e8                GrContextClipRegionSet
+ .text          0x0000f370        0x0 ./Drivers/libgr.a(fontcmss12.o)
+ .text          0x0000f370        0x0 ./Drivers/libgr.a(image.o)
  .text.GrImageDraw
-                0x0000f7f8      0x37c ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
-                0x0000f7f8                GrImageDraw
- .text          0x0000fb74        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
+                0x0000f370      0x37c ./Drivers/libgr.a(image.o)
+                0x0000f370                GrImageDraw
+ .text          0x0000f6ec        0x0 ./Drivers/libgr.a(rectangle.o)
  .text.GrRectFill
-                0x0000fb74       0xb4 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
-                0x0000fb74                GrRectFill
+                0x0000f6ec       0xb4 ./Drivers/libgr.a(rectangle.o)
+                0x0000f6ec                GrRectFill
  .text.GrRectDraw
-                0x0000fc28       0x64 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
-                0x0000fc28                GrRectDraw
- .text          0x0000fc8c        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
+                0x0000f7a0       0x64 ./Drivers/libgr.a(rectangle.o)
+                0x0000f7a0                GrRectDraw
+ .text          0x0000f804        0x0 ./Drivers/libgr.a(string.o)
  .text.GrStringWidthGet
-                0x0000fc8c       0x58 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
-                0x0000fc8c                GrStringWidthGet
+                0x0000f804       0x58 ./Drivers/libgr.a(string.o)
+                0x0000f804                GrStringWidthGet
  .text.GrStringDraw
-                0x0000fce4      0x34c ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
-                0x0000fce4                GrStringDraw
- .text          0x00010030        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
+                0x0000f85c      0x34c ./Drivers/libgr.a(string.o)
+                0x0000f85c                GrStringDraw
+ .text          0x0000fba8        0x0 ./Drivers/libgr.a(line.o)
  .text.GrLineDrawH
-                0x00010030       0x58 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
-                0x00010030                GrLineDrawH
+                0x0000fba8       0x58 ./Drivers/libgr.a(line.o)
+                0x0000fba8                GrLineDrawH
  .text.GrLineDrawV
-                0x00010088       0x58 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
-                0x00010088                GrLineDrawV
+                0x0000fc00       0x58 ./Drivers/libgr.a(line.o)
+                0x0000fc00                GrLineDrawV
  .text.GrClipCodeGet
-                0x000100e0       0x38 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
+                0x0000fc58       0x38 ./Drivers/libgr.a(line.o)
  .text.GrLineDraw
-                0x00010118      0x19c ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
-                0x00010118                GrLineDraw
- .text          0x000102b4       0x64 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
-                0x000102b4                memcmp
- .text          0x00010318      0x190 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
-                0x00010318                memcpy
- .text          0x000104a8       0xd4 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
-                0x000104a8                memset
- .text          0x0001057c       0x48 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
-                0x0001057c                strcat
- .text          0x000105c4       0xbc c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
-                0x000105c4                strcpy
- .text          0x00010680       0x60 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
-                0x00010680                strlen
- .text          0x000106e0       0x78 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
-                0x000106e0                strncpy
+                0x0000fc90      0x19c ./Drivers/libgr.a(line.o)
+                0x0000fc90                GrLineDraw
+ .text          0x0000fe2c       0x64 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+                0x0000fe2c                memcmp
+ .text          0x0000fe90      0x190 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x0000fe90                memcpy
+ .text          0x00010020       0xd4 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x00010020                memset
+ .text          0x000100f4       0x48 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+                0x000100f4                strcat
+ .text          0x0001013c       0xbc c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+                0x0001013c                strcpy
+ .text          0x000101f8       0x60 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+                0x000101f8                strlen
+ .text          0x00010258       0x78 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x00010258                strncpy
  *(.rodata*)
  .rodata.g_usCANBitValues
-                0x00010758       0x14 ./Drivers/can.o
+                0x000102d0       0x14 ./Drivers/can.o
  .rodata.g_pulFMPPERegs
-                0x0001076c       0x10 ./Drivers/flash.o
+                0x000102e4       0x10 ./Drivers/flash.o
  .rodata.g_pulFMPRERegs
-                0x0001077c       0x10 ./Drivers/flash.o
+                0x000102f4       0x10 ./Drivers/flash.o
  .rodata.g_pulGPIOBaseAddrs
-                0x0001078c       0x48 ./Drivers/gpio.o
+                0x00010304       0x48 ./Drivers/gpio.o
  .rodata.g_pulPriority
-                0x000107d4       0x20 ./Drivers/interrupt.o
+                0x0001034c       0x20 ./Drivers/interrupt.o
  .rodata.g_pulRegs
-                0x000107f4       0x48 ./Drivers/interrupt.o
+                0x0001036c       0x48 ./Drivers/interrupt.o
  .rodata.g_pulDCRegs
-                0x0001083c       0x10 ./Drivers/sysctl.o
+                0x000103b4       0x10 ./Drivers/sysctl.o
  .rodata.g_pulSRCRRegs
-                0x0001084c        0xc ./Drivers/sysctl.o
+                0x000103c4        0xc ./Drivers/sysctl.o
  .rodata.g_pulRCGCRegs
-                0x00010858        0xc ./Drivers/sysctl.o
+                0x000103d0        0xc ./Drivers/sysctl.o
  .rodata.g_pulSCGCRegs
-                0x00010864        0xc ./Drivers/sysctl.o
+                0x000103dc        0xc ./Drivers/sysctl.o
  .rodata.g_pulDCGCRegs
-                0x00010870        0xc ./Drivers/sysctl.o
+                0x000103e8        0xc ./Drivers/sysctl.o
  .rodata.g_pulXtals
-                0x0001087c       0x5c ./Drivers/sysctl.o
- .rodata.pucBasicBitmap
-                0x000108d8      0xc84 main.o
-                0x000108d8                pucBasicBitmap
- .rodata.pucGrLibBitmap
-                0x0001155c      0x6a8 main.o
-                0x0001155c                pucGrLibBitmap
- .rodata        0x00011c04       0x58 main.o
- .rodata.pcWelcomeMessage
-                0x00011c5c        0x4 main.o
-                0x00011c5c                pcWelcomeMessage
- .rodata.g_pucRIT128x96x4VerticalInc
-                0x00011c60        0x4 rit128x96x4.o
- .rodata.g_pucRIT128x96x4HorizontalInc
-                0x00011c64        0x4 rit128x96x4.o
- .rodata.g_pucFont
-                0x00011c68      0x1e0 rit128x96x4.o
- .rodata.g_pucRIT128x96x4Init
-                0x00011e48       0x50 rit128x96x4.o
- .rodata.pucCommand1.1739
-                0x00011e98        0x4 rit128x96x4.o
- .rodata.pucCommand1.1553
-                0x00011e9c        0x4 rit128x96x4.o
- .rodata.pucCommand2.1554
-                0x00011ea0        0x4 rit128x96x4.o
- .rodata.g_pucOSRAM128x64x4VerticalInc
-                0x00011ea4        0x4 osram128x64x4.o
- .rodata.g_pucOSRAM128x64x4HorizontalInc
-                0x00011ea8        0x4 osram128x64x4.o
- .rodata.g_pucFont
-                0x00011eac      0x1e0 osram128x64x4.o
- .rodata.g_pucOSRAM128x64x4Init
-                0x0001208c       0x50 osram128x64x4.o
- .rodata.pucCommand1.1699
-                0x000120dc        0x4 osram128x64x4.o
- .rodata.pucCommand1.1540
-                0x000120e0        0x4 osram128x64x4.o
- .rodata.pucCommand2.1541
-                0x000120e4        0x4 osram128x64x4.o
- .rodata.g_sFormike128x128x16
-                0x000120e8       0x28 formike128x128x16.o
-                0x000120e8                g_sFormike128x128x16
- .rodata        0x00012110       0x14 formike128x128x16.o
- .rodata.C.4.2326
-                0x00012124        0x8 formike128x128x16.o
- .rodata        0x0001212c       0x1c ../../Common/drivers/LuminaryMicro/ustdlib.o
+                0x000103f4       0x5c ./Drivers/sysctl.o
+ .rodata        0x00010450       0x1c ./API/ustdlib.o
  .rodata.g_pcHex
-                0x00012148        0x4 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .rodata        0x0001214c       0x50 ../../../Source/tasks.o
- .rodata.ucExpectedStackBytes.3435
-                0x0001219c       0x14 ../../../Source/tasks.o
+                0x0001046c        0x4 ./API/ustdlib.o
+ .rodata.pucBasicBitmap
+                0x00010470      0xc84 main.o
+                0x00010470                pucBasicBitmap
+ .rodata.pucGrLibBitmap
+                0x000110f4      0x6a8 main.o
+                0x000110f4                pucGrLibBitmap
+ .rodata        0x0001179c       0x78 main.o
+ .rodata.pcWelcomeMessage
+                0x00011814        0x4 main.o
+                0x00011814                pcWelcomeMessage
+ .rodata.g_pucRIT128x96x4VerticalInc
+                0x00011818        0x4 rit128x96x4.o
+ .rodata.g_pucRIT128x96x4HorizontalInc
+                0x0001181c        0x4 rit128x96x4.o
+ .rodata.g_pucFont
+                0x00011820      0x1e0 rit128x96x4.o
+ .rodata.g_pucRIT128x96x4Init
+                0x00011a00       0x50 rit128x96x4.o
+ .rodata.pucCommand1.1758
+                0x00011a50        0x4 rit128x96x4.o
+ .rodata.pucCommand1.1572
+                0x00011a54        0x4 rit128x96x4.o
+ .rodata.pucCommand2.1573
+                0x00011a58        0x4 rit128x96x4.o
+ .rodata.g_pucOSRAM128x64x4VerticalInc
+                0x00011a5c        0x4 osram128x64x4.o
+ .rodata.g_pucOSRAM128x64x4HorizontalInc
+                0x00011a60        0x4 osram128x64x4.o
+ .rodata.g_pucFont
+                0x00011a64      0x1e0 osram128x64x4.o
+ .rodata.g_pucOSRAM128x64x4Init
+                0x00011c44       0x50 osram128x64x4.o
+ .rodata.pucCommand1.1718
+                0x00011c94        0x4 osram128x64x4.o
+ .rodata.pucCommand1.1559
+                0x00011c98        0x4 osram128x64x4.o
+ .rodata.pucCommand2.1560
+                0x00011c9c        0x4 osram128x64x4.o
+ .rodata.g_sFormike128x128x16
+                0x00011ca0       0x28 formike128x128x16.o
+                0x00011ca0                g_sFormike128x128x16
+ .rodata        0x00011cc8       0x14 formike128x128x16.o
+ .rodata.C.4.2343
+                0x00011cdc        0x8 formike128x128x16.o
+ .rodata        0x00011ce4       0x20 ../../../Source/tasks.o
+ .rodata.ucExpectedStackBytes.3394
+                0x00011d04       0x14 ../../../Source/tasks.o
  .rodata.ulKernelPriority
-                0x000121b0        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x000121b0                ulKernelPriority
+                0x00011d18        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x00011d18                ulKernelPriority
  .rodata.heapSTRUCT_SIZE
-                0x000121b4        0x2 ../../../Source/portable/MemMang/heap_2.o
- *fill*         0x000121b6        0x2 00
+                0x00011d1c        0x2 ../../../Source/portable/MemMang/heap_2.o
+ *fill*         0x00011d1e        0x2 00
  .rodata.g_sFontCmss12
-                0x000121b8       0xc8 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
-                0x000121b8                g_sFontCmss12
+                0x00011d20       0xc8 ./Drivers/libgr.a(fontcmss12.o)
+                0x00011d20                g_sFontCmss12
  .rodata.g_pucCmss12Data
-                0x00012280      0x514 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
-                0x00012794                _etext = .
+                0x00011de8      0x514 ./Drivers/libgr.a(fontcmss12.o)
+                0x000122fc                _etext = .
 
-.glue_7         0x00012794        0x0
+.glue_7         0x000122fc        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00012794        0x0
+.glue_7t        0x000122fc        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00012794        0x0
+.vfp11_veneer   0x000122fc        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00012794        0x0
+.v4_bx          0x000122fc        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.data           0x20000000        0x8 load address 0x00012794
+.data           0x20000000        0x8 load address 0x000122fc
                 0x20000000                _data = .
  *(vtable)
  *(.data*)
@@ -2342,15 +2317,14 @@ END GROUP
  .data          0x20000000        0x0 ./Drivers/udma.o
  .data          0x20000000        0x0 ./Drivers/usb.o
  .data          0x20000000        0x0 ./Drivers/watchdog.o
- .data          0x20000000        0x0 main.o
- .data          0x20000000        0x0 timertest.o
  .data          0x20000000        0x0 ./API/led.o
  .data          0x20000000        0x0 ./API/comport.o
+ .data          0x20000000        0x0 ./API/buttons.o
+ .data          0x20000000        0x0 ./API/ustdlib.o
+ .data          0x20000000        0x0 main.o
  .data          0x20000000        0x0 rit128x96x4.o
  .data          0x20000000        0x0 osram128x64x4.o
  .data          0x20000000        0x0 formike128x128x16.o
- .data          0x20000000        0x0 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .data          0x20000000        0x0 IntQueueTimer.o
  .data          0x20000000        0x0 ../../../Source/list.o
  .data          0x20000000        0x0 ../../../Source/queue.o
  .data          0x20000000        0x0 ../../../Source/tasks.o
@@ -2361,12 +2335,12 @@ END GROUP
                 0x20000004        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
  .data          0x20000008        0x0 ../../../Source/portable/MemMang/heap_2.o
  .data          0x20000008        0x0 startup.o
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
- .data          0x20000008        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(context.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(fontcmss12.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(image.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(rectangle.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(string.o)
+ .data          0x20000008        0x0 ./Drivers/libgr.a(line.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .data          0x20000008        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
@@ -2377,11 +2351,11 @@ END GROUP
                 0x20000008                _edata = .
 
 .cs3.region-head.ram
-                0x20000008      0x11c load address 0x0001279c
+                0x20000008      0x11c load address 0x00012304
  .cs3.region-head.ram
                 0x20000008      0x11c ./Drivers/interrupt.o
 
-.bss            0x20000128     0x623c load address 0x000128bc
+.bss            0x20000128     0x621c load address 0x00012424
                 0x20000128                _bss = .
  *(.bss*)
  .bss           0x20000128        0x0 ./Drivers/adc.o
@@ -2411,155 +2385,143 @@ END GROUP
  .bss           0x20000130        0x0 ./Drivers/udma.o
  .bss           0x20000130        0x0 ./Drivers/usb.o
  .bss           0x20000130        0x0 ./Drivers/watchdog.o
- .bss           0x20000130        0x0 main.o
+ .bss           0x20000130        0x0 ./API/led.o
+ .bss.isInitialized
+                0x20000130        0x1 ./API/led.o
+ .bss           0x20000131        0x0 ./API/comport.o
+ .bss.isInitialized
+                0x20000131        0x1 ./API/comport.o
+ .bss.isOpen    0x20000132        0x1 ./API/comport.o
+ .bss           0x20000133        0x0 ./API/buttons.o
+ .bss.isInitialized
+                0x20000133        0x1 ./API/buttons.o
+ .bss.callbackCollection
+                0x20000134       0x28 ./API/buttons.o
+ .bss           0x2000015c        0x0 ./API/ustdlib.o
+ .bss           0x2000015c        0x0 main.o
  .bss.ulIdleError
-                0x20000130        0x4 main.o
-                0x20000130                ulIdleError
- .bss.cMessage.3043
-                0x20000134       0x1c main.o
- .bss           0x20000150        0x0 timertest.o
- .bss.ulMaxJitter
-                0x20000150        0x4 timertest.o
-                0x20000150                ulMaxJitter
- .bss.ulHighFrequencyTimerTicks
-                0x20000154        0x4 timertest.o
-                0x20000154                ulHighFrequencyTimerTicks
- .bss.ulLastCount.1495
-                0x20000158        0x4 timertest.o
- .bss.ulMaxDifference.1494
-                0x2000015c        0x4 timertest.o
- .bss           0x20000160        0x0 ./API/led.o
- .bss.isInitialized
-                0x20000160        0x1 ./API/led.o
- .bss           0x20000161        0x0 ./API/comport.o
- .bss.isInitialized
-                0x20000161        0x1 ./API/comport.o
- .bss.isOpen    0x20000162        0x1 ./API/comport.o
- .bss           0x20000163        0x0 rit128x96x4.o
- *fill*         0x20000163        0x1 00
- .bss.ulGPIOId  0x20000164        0x4 rit128x96x4.o
-                0x20000164                ulGPIOId
+                0x2000015c        0x4 main.o
+                0x2000015c                ulIdleError
+ .bss.cMessage.3058
+                0x20000160       0x1c main.o
+ .bss           0x2000017c        0x0 rit128x96x4.o
+ .bss.ulGPIOId  0x2000017c        0x4 rit128x96x4.o
+                0x2000017c                ulGPIOId
  .bss.ulGPIOBase
-                0x20000168        0x4 rit128x96x4.o
-                0x20000168                ulGPIOBase
+                0x20000180        0x4 rit128x96x4.o
+                0x20000180                ulGPIOBase
  .bss.ulOLEDDC_PIN
-                0x2000016c        0x4 rit128x96x4.o
-                0x2000016c                ulOLEDDC_PIN
+                0x20000184        0x4 rit128x96x4.o
+                0x20000184                ulOLEDDC_PIN
  .bss.ulOLEDEN_PIN
-                0x20000170        0x4 rit128x96x4.o
-                0x20000170                ulOLEDEN_PIN
+                0x20000188        0x4 rit128x96x4.o
+                0x20000188                ulOLEDEN_PIN
  .bss.g_bSSIEnabled
-                0x20000174        0x1 rit128x96x4.o
- *fill*         0x20000175        0x3 00
+                0x2000018c        0x1 rit128x96x4.o
+ *fill*         0x2000018d        0x3 00
  .bss.g_pucBuffer
-                0x20000178        0x8 rit128x96x4.o
- .bss           0x20000180        0x0 osram128x64x4.o
+                0x20000190        0x8 rit128x96x4.o
+ .bss           0x20000198        0x0 osram128x64x4.o
  .bss.g_bSSIEnabled
-                0x20000180        0x1 osram128x64x4.o
- *fill*         0x20000181        0x3 00
- .bss.pucBuffer.1625
-                0x20000184        0x8 osram128x64x4.o
- .bss.pucBuffer.1557
-                0x2000018c        0x8 osram128x64x4.o
- .bss.pucZeroBuffer.1544
-                0x20000194        0x8 osram128x64x4.o
- .bss           0x2000019c        0x0 formike128x128x16.o
- .bss.sContext  0x2000019c       0x1c formike128x128x16.o
- .bss           0x200001b8        0x0 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .bss           0x200001b8        0x0 IntQueueTimer.o
- .bss           0x200001b8        0x0 ../../../Source/list.o
- .bss           0x200001b8        0x0 ../../../Source/queue.o
- .bss           0x200001b8        0x0 ../../../Source/tasks.o
+                0x20000198        0x1 osram128x64x4.o
+ *fill*         0x20000199        0x3 00
+ .bss.pucBuffer.1644
+                0x2000019c        0x8 osram128x64x4.o
+ .bss.pucBuffer.1576
+                0x200001a4        0x8 osram128x64x4.o
+ .bss.pucZeroBuffer.1563
+                0x200001ac        0x8 osram128x64x4.o
+ .bss           0x200001b4        0x0 formike128x128x16.o
+ .bss.sContext  0x200001b4       0x1c formike128x128x16.o
+ .bss           0x200001d0        0x0 ../../../Source/list.o
+ .bss           0x200001d0        0x0 ../../../Source/queue.o
+ .bss           0x200001d0        0x0 ../../../Source/tasks.o
  .bss.pxCurrentTCB
-                0x200001b8        0x4 ../../../Source/tasks.o
-                0x200001b8                pxCurrentTCB
+                0x200001d0        0x4 ../../../Source/tasks.o
+                0x200001d0                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x200001bc       0x64 ../../../Source/tasks.o
+                0x200001d4       0x64 ../../../Source/tasks.o
  .bss.xDelayedTaskList1
-                0x20000220       0x14 ../../../Source/tasks.o
+                0x20000238       0x14 ../../../Source/tasks.o
  .bss.xDelayedTaskList2
-                0x20000234       0x14 ../../../Source/tasks.o
+                0x2000024c       0x14 ../../../Source/tasks.o
  .bss.pxDelayedTaskList
-                0x20000248        0x4 ../../../Source/tasks.o
+                0x20000260        0x4 ../../../Source/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x2000024c        0x4 ../../../Source/tasks.o
+                0x20000264        0x4 ../../../Source/tasks.o
  .bss.xPendingReadyList
-                0x20000250       0x14 ../../../Source/tasks.o
+                0x20000268       0x14 ../../../Source/tasks.o
  .bss.xTasksWaitingTermination
-                0x20000264       0x14 ../../../Source/tasks.o
- .bss.uxTasksDeleted
-                0x20000278        0x4 ../../../Source/tasks.o
- .bss.xSuspendedTaskList
                 0x2000027c       0x14 ../../../Source/tasks.o
- .bss.uxCurrentNumberOfTasks
+ .bss.uxTasksDeleted
                 0x20000290        0x4 ../../../Source/tasks.o
- .bss.xTickCount
-                0x20000294        0x4 ../../../Source/tasks.o
- .bss.uxTopUsedPriority
-                0x20000298        0x4 ../../../Source/tasks.o
- .bss.uxTopReadyPriority
-                0x2000029c        0x4 ../../../Source/tasks.o
- .bss.xSchedulerRunning
-                0x200002a0        0x4 ../../../Source/tasks.o
- .bss.uxSchedulerSuspended
-                0x200002a4        0x4 ../../../Source/tasks.o
- .bss.uxMissedTicks
+ .bss.xSuspendedTaskList
+                0x20000294       0x14 ../../../Source/tasks.o
+ .bss.uxCurrentNumberOfTasks
                 0x200002a8        0x4 ../../../Source/tasks.o
- .bss.xMissedYield
+ .bss.xTickCount
                 0x200002ac        0x4 ../../../Source/tasks.o
- .bss.xNumOfOverflows
+ .bss.uxTopUsedPriority
                 0x200002b0        0x4 ../../../Source/tasks.o
- .bss.uxTaskNumber
+ .bss.uxTopReadyPriority
                 0x200002b4        0x4 ../../../Source/tasks.o
- .bss.pcStatsString
-                0x200002b8       0x34 ../../../Source/tasks.o
- .bss.ulTaskSwitchedInTime
-                0x200002ec        0x4 ../../../Source/tasks.o
+ .bss.xSchedulerRunning
+                0x200002b8        0x4 ../../../Source/tasks.o
+ .bss.uxSchedulerSuspended
+                0x200002bc        0x4 ../../../Source/tasks.o
+ .bss.uxMissedTicks
+                0x200002c0        0x4 ../../../Source/tasks.o
+ .bss.xMissedYield
+                0x200002c4        0x4 ../../../Source/tasks.o
+ .bss.xNumOfOverflows
+                0x200002c8        0x4 ../../../Source/tasks.o
+ .bss.uxTaskNumber
+                0x200002cc        0x4 ../../../Source/tasks.o
  .bss.pcTraceBuffer
-                0x200002f0        0x4 ../../../Source/tasks.o
+                0x200002d0        0x4 ../../../Source/tasks.o
  .bss.pcTraceBufferStart
-                0x200002f4        0x4 ../../../Source/tasks.o
+                0x200002d4        0x4 ../../../Source/tasks.o
  .bss.pcTraceBufferEnd
-                0x200002f8        0x4 ../../../Source/tasks.o
- .bss.xTracing  0x200002fc        0x4 ../../../Source/tasks.o
+                0x200002d8        0x4 ../../../Source/tasks.o
+ .bss.xTracing  0x200002dc        0x4 ../../../Source/tasks.o
  .bss.pcStatusString
-                0x20000300       0x34 ../../../Source/tasks.o
- .bss           0x20000334        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
- .bss           0x20000334        0x0 ../../../Source/portable/MemMang/heap_2.o
- *fill*         0x20000334        0x4 00
- .bss.xHeap     0x20000338     0x5dc0 ../../../Source/portable/MemMang/heap_2.o
- .bss.xStart    0x200060f8        0x8 ../../../Source/portable/MemMang/heap_2.o
- .bss.xEnd      0x20006100        0x8 ../../../Source/portable/MemMang/heap_2.o
+                0x200002e0       0x34 ../../../Source/tasks.o
+ .bss           0x20000314        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .bss           0x20000314        0x0 ../../../Source/portable/MemMang/heap_2.o
+ *fill*         0x20000314        0x4 00
+ .bss.xHeap     0x20000318     0x5dc0 ../../../Source/portable/MemMang/heap_2.o
+ .bss.xStart    0x200060d8        0x8 ../../../Source/portable/MemMang/heap_2.o
+ .bss.xEnd      0x200060e0        0x8 ../../../Source/portable/MemMang/heap_2.o
  .bss.xFreeBytesRemaining
-                0x20006108        0x4 ../../../Source/portable/MemMang/heap_2.o
- .bss.xHeapHasBeenInitialised.1975
-                0x2000610c        0x4 ../../../Source/portable/MemMang/heap_2.o
- .bss           0x20006110        0x0 startup.o
- .bss.pulStack  0x20006110      0x1e0 startup.o
- .bss           0x200062f0        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
- .bss           0x200062f0        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
- .bss           0x200062f0        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
+                0x200060e8        0x4 ../../../Source/portable/MemMang/heap_2.o
+ .bss.xHeapHasBeenInitialised.1974
+                0x200060ec        0x4 ../../../Source/portable/MemMang/heap_2.o
+ .bss           0x200060f0        0x0 startup.o
+ .bss.pulStack  0x200060f0      0x1e0 startup.o
+ .bss           0x200062d0        0x0 ./Drivers/libgr.a(context.o)
+ .bss           0x200062d0        0x0 ./Drivers/libgr.a(fontcmss12.o)
+ .bss           0x200062d0        0x0 ./Drivers/libgr.a(image.o)
  .bss.g_pucDictionary
-                0x200062f0       0x20 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
- .bss           0x20006310        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
- .bss           0x20006310        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
- .bss           0x20006310        0x0 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .bss           0x20006310        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x200062d0       0x20 ./Drivers/libgr.a(image.o)
+ .bss           0x200062f0        0x0 ./Drivers/libgr.a(rectangle.o)
+ .bss           0x200062f0        0x0 ./Drivers/libgr.a(string.o)
+ .bss           0x200062f0        0x0 ./Drivers/libgr.a(line.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .bss           0x200062f0        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
  *(COMMON)
- COMMON         0x20006310        0x4 main.o
-                0x20006310                xOLEDQueue
- COMMON         0x20006314       0x50 ../../../Source/queue.o
-                0x20006314                xQueueRegistry
-                0x20006364                _ebss = .
+ COMMON         0x200062f0        0x4 main.o
+                0x200062f0                xOLEDQueue
+ COMMON         0x200062f4       0x50 ../../../Source/queue.o
+                0x200062f4                xQueueRegistry
+                0x20006344                _ebss = .
 OUTPUT(RTOSDemo.axf elf32-littlearm)
 
-.debug_abbrev   0x00000000     0x249f
+.debug_abbrev   0x00000000     0x2471
  .debug_abbrev  0x00000000       0xf5 ./Drivers/adc.o
  .debug_abbrev  0x000000f5      0x156 ./Drivers/can.o
  .debug_abbrev  0x0000024b       0xd1 ./Drivers/comp.o
@@ -2583,23 +2545,22 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_abbrev  0x000011fe      0x152 ./Drivers/udma.o
  .debug_abbrev  0x00001350      0x102 ./Drivers/usb.o
  .debug_abbrev  0x00001452       0xd1 ./Drivers/watchdog.o
- .debug_abbrev  0x00001523      0x194 main.o
- .debug_abbrev  0x000016b7       0x6a timertest.o
- .debug_abbrev  0x00001721       0x76 ./API/led.o
- .debug_abbrev  0x00001797       0xbc ./API/comport.o
- .debug_abbrev  0x00001853       0xd9 rit128x96x4.o
- .debug_abbrev  0x0000192c       0xc8 osram128x64x4.o
- .debug_abbrev  0x000019f4      0x1df formike128x128x16.o
- .debug_abbrev  0x00001bd3       0xfe ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_abbrev  0x00001cd1       0x67 IntQueueTimer.o
- .debug_abbrev  0x00001d38       0xca ../../../Source/list.o
- .debug_abbrev  0x00001e02      0x16f ../../../Source/queue.o
- .debug_abbrev  0x00001f71      0x194 ../../../Source/tasks.o
- .debug_abbrev  0x00002105      0x11c ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_abbrev  0x00002221      0x167 ../../../Source/portable/MemMang/heap_2.o
- .debug_abbrev  0x00002388      0x117 startup.o
+ .debug_abbrev  0x00001523       0x76 ./API/led.o
+ .debug_abbrev  0x00001599       0xbc ./API/comport.o
+ .debug_abbrev  0x00001655       0xde ./API/buttons.o
+ .debug_abbrev  0x00001733       0xfe ./API/ustdlib.o
+ .debug_abbrev  0x00001831      0x17f main.o
+ .debug_abbrev  0x000019b0       0xd9 rit128x96x4.o
+ .debug_abbrev  0x00001a89       0xc8 osram128x64x4.o
+ .debug_abbrev  0x00001b51      0x1df formike128x128x16.o
+ .debug_abbrev  0x00001d30       0xca ../../../Source/list.o
+ .debug_abbrev  0x00001dfa      0x16f ../../../Source/queue.o
+ .debug_abbrev  0x00001f69      0x183 ../../../Source/tasks.o
+ .debug_abbrev  0x000020ec      0x11c ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_abbrev  0x00002208      0x167 ../../../Source/portable/MemMang/heap_2.o
+ .debug_abbrev  0x0000236f      0x102 startup.o
 
-.debug_info     0x00000000     0xc627
+.debug_info     0x00000000     0xc484
  .debug_info    0x00000000      0x8d3 ./Drivers/adc.o
  .debug_info    0x000008d3      0x991 ./Drivers/can.o
  .debug_info    0x00001264      0x26f ./Drivers/comp.o
@@ -2623,23 +2584,22 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_info    0x00006e44      0x4d1 ./Drivers/udma.o
  .debug_info    0x00007315     0x104e ./Drivers/usb.o
  .debug_info    0x00008363      0x344 ./Drivers/watchdog.o
- .debug_info    0x000086a7      0x401 main.o
- .debug_info    0x00008aa8       0xf6 timertest.o
- .debug_info    0x00008b9e       0x89 ./API/led.o
- .debug_info    0x00008c27      0x38e ./API/comport.o
- .debug_info    0x00008fb5      0x457 rit128x96x4.o
- .debug_info    0x0000940c      0x434 osram128x64x4.o
- .debug_info    0x00009840      0x874 formike128x128x16.o
- .debug_info    0x0000a0b4      0x267 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_info    0x0000a31b       0x9f IntQueueTimer.o
- .debug_info    0x0000a3ba      0x2b1 ../../../Source/list.o
- .debug_info    0x0000a66b      0x8b9 ../../../Source/queue.o
- .debug_info    0x0000af24     0x10ec ../../../Source/tasks.o
- .debug_info    0x0000c010      0x1cf ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_info    0x0000c1df      0x2ba ../../../Source/portable/MemMang/heap_2.o
- .debug_info    0x0000c499      0x18e startup.o
+ .debug_info    0x000086a7       0x89 ./API/led.o
+ .debug_info    0x00008730      0x3c2 ./API/comport.o
+ .debug_info    0x00008af2      0x118 ./API/buttons.o
+ .debug_info    0x00008c0a      0x267 ./API/ustdlib.o
+ .debug_info    0x00008e71      0x406 main.o
+ .debug_info    0x00009277      0x457 rit128x96x4.o
+ .debug_info    0x000096ce      0x434 osram128x64x4.o
+ .debug_info    0x00009b02      0x874 formike128x128x16.o
+ .debug_info    0x0000a376      0x2b1 ../../../Source/list.o
+ .debug_info    0x0000a627      0x8b9 ../../../Source/queue.o
+ .debug_info    0x0000aee0      0xfa0 ../../../Source/tasks.o
+ .debug_info    0x0000be80      0x1cf ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_info    0x0000c04f      0x2ba ../../../Source/portable/MemMang/heap_2.o
+ .debug_info    0x0000c309      0x17b startup.o
 
-.debug_line     0x00000000     0x4fb0
+.debug_line     0x00000000     0x4e47
  .debug_line    0x00000000      0x30d ./Drivers/adc.o
  .debug_line    0x0000030d      0x35a ./Drivers/can.o
  .debug_line    0x00000667       0xfb ./Drivers/comp.o
@@ -2663,23 +2623,22 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_line    0x00002da5      0x211 ./Drivers/udma.o
  .debug_line    0x00002fb6      0x632 ./Drivers/usb.o
  .debug_line    0x000035e8      0x198 ./Drivers/watchdog.o
- .debug_line    0x00003780      0x18d main.o
- .debug_line    0x0000390d       0x64 timertest.o
- .debug_line    0x00003971       0x89 ./API/led.o
- .debug_line    0x000039fa      0x121 ./API/comport.o
- .debug_line    0x00003b1b      0x1b5 rit128x96x4.o
- .debug_line    0x00003cd0      0x1a6 osram128x64x4.o
- .debug_line    0x00003e76      0x248 formike128x128x16.o
- .debug_line    0x000040be      0x181 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_line    0x0000423f       0x76 IntQueueTimer.o
- .debug_line    0x000042b5      0x119 ../../../Source/list.o
- .debug_line    0x000043ce      0x398 ../../../Source/queue.o
- .debug_line    0x00004766      0x540 ../../../Source/tasks.o
- .debug_line    0x00004ca6      0x14c ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_line    0x00004df2      0x125 ../../../Source/portable/MemMang/heap_2.o
- .debug_line    0x00004f17       0x99 startup.o
+ .debug_line    0x00003780       0x70 ./API/led.o
+ .debug_line    0x000037f0      0x11c ./API/comport.o
+ .debug_line    0x0000390c       0x77 ./API/buttons.o
+ .debug_line    0x00003983      0x162 ./API/ustdlib.o
+ .debug_line    0x00003ae5      0x17c main.o
+ .debug_line    0x00003c61      0x19c rit128x96x4.o
+ .debug_line    0x00003dfd      0x18d osram128x64x4.o
+ .debug_line    0x00003f8a      0x22f formike128x128x16.o
+ .debug_line    0x000041b9      0x119 ../../../Source/list.o
+ .debug_line    0x000042d2      0x398 ../../../Source/queue.o
+ .debug_line    0x0000466a      0x4e4 ../../../Source/tasks.o
+ .debug_line    0x00004b4e      0x14c ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_line    0x00004c9a      0x125 ../../../Source/portable/MemMang/heap_2.o
+ .debug_line    0x00004dbf       0x88 startup.o
 
-.debug_frame    0x00000000     0x5240
+.debug_frame    0x00000000     0x5180
  .debug_frame   0x00000000      0x37c ./Drivers/adc.o
  .debug_frame   0x0000037c      0x30c ./Drivers/can.o
  .debug_frame   0x00000688      0x114 ./Drivers/comp.o
@@ -2703,30 +2662,29 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_frame   0x000033d4      0x264 ./Drivers/udma.o
  .debug_frame   0x00003638      0x694 ./Drivers/usb.o
  .debug_frame   0x00003ccc      0x1f4 ./Drivers/watchdog.o
- .debug_frame   0x00003ec0      0x108 main.o
- .debug_frame   0x00003fc8       0x50 timertest.o
- .debug_frame   0x00004018       0x4c ./API/led.o
- .debug_frame   0x00004064       0xdc ./API/comport.o
- .debug_frame   0x00004140      0x14c rit128x96x4.o
- .debug_frame   0x0000428c      0x14c osram128x64x4.o
- .debug_frame   0x000043d8      0x1f8 formike128x128x16.o
- .debug_frame   0x000045d0       0x84 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_frame   0x00004654       0x68 IntQueueTimer.o
- .debug_frame   0x000046bc       0x9c ../../../Source/list.o
- .debug_frame   0x00004758      0x284 ../../../Source/queue.o
- .debug_frame   0x000049dc      0x504 ../../../Source/tasks.o
- .debug_frame   0x00004ee0      0x124 ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_frame   0x00005004       0x88 ../../../Source/portable/MemMang/heap_2.o
- .debug_frame   0x0000508c       0x8c startup.o
- .debug_frame   0x00005118       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .debug_frame   0x00005144       0x38 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .debug_frame   0x0000517c       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .debug_frame   0x000051a8       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .debug_frame   0x000051d4       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .debug_frame   0x000051f4       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .debug_frame   0x00005214       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00003ec0       0x4c ./API/led.o
+ .debug_frame   0x00003f0c       0xfc ./API/comport.o
+ .debug_frame   0x00004008       0x4c ./API/buttons.o
+ .debug_frame   0x00004054       0x84 ./API/ustdlib.o
+ .debug_frame   0x000040d8       0xe8 main.o
+ .debug_frame   0x000041c0      0x14c rit128x96x4.o
+ .debug_frame   0x0000430c      0x14c osram128x64x4.o
+ .debug_frame   0x00004458      0x1f8 formike128x128x16.o
+ .debug_frame   0x00004650       0x9c ../../../Source/list.o
+ .debug_frame   0x000046ec      0x284 ../../../Source/queue.o
+ .debug_frame   0x00004970      0x4c0 ../../../Source/tasks.o
+ .debug_frame   0x00004e30      0x124 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_frame   0x00004f54       0x88 ../../../Source/portable/MemMang/heap_2.o
+ .debug_frame   0x00004fdc       0x7c startup.o
+ .debug_frame   0x00005058       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00005084       0x38 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x000050bc       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .debug_frame   0x000050e8       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .debug_frame   0x00005114       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00005134       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .debug_frame   0x00005154       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
 
-.debug_loc      0x00000000     0x8ff9
+.debug_loc      0x00000000     0x8eff
  .debug_loc     0x00000000      0x6a9 ./Drivers/adc.o
  .debug_loc     0x000006a9      0x528 ./Drivers/can.o
  .debug_loc     0x00000bd1      0x1ef ./Drivers/comp.o
@@ -2749,24 +2707,23 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_loc     0x00005e48      0x447 ./Drivers/udma.o
  .debug_loc     0x0000628f      0xcad ./Drivers/usb.o
  .debug_loc     0x00006f3c      0x3a7 ./Drivers/watchdog.o
- .debug_loc     0x000072e3      0x1ae main.o
- .debug_loc     0x00007491       0x6e timertest.o
- .debug_loc     0x000074ff       0x62 ./API/led.o
- .debug_loc     0x00007561      0x175 ./API/comport.o
- .debug_loc     0x000076d6      0x21a rit128x96x4.o
- .debug_loc     0x000078f0      0x21a osram128x64x4.o
- .debug_loc     0x00007b0a      0x358 formike128x128x16.o
- .debug_loc     0x00007e62       0xbd ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_loc     0x00007f1f       0x8d IntQueueTimer.o
- .debug_loc     0x00007fac      0x113 ../../../Source/list.o
- .debug_loc     0x000080bf      0x44c ../../../Source/queue.o
- .debug_loc     0x0000850b      0x869 ../../../Source/tasks.o
- .debug_loc     0x00008d74      0x170 ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_loc     0x00008ee4       0xc4 ../../../Source/portable/MemMang/heap_2.o
- .debug_loc     0x00008fa8       0x51 startup.o
+ .debug_loc     0x000072e3       0x62 ./API/led.o
+ .debug_loc     0x00007345      0x1ac ./API/comport.o
+ .debug_loc     0x000074f1       0x6e ./API/buttons.o
+ .debug_loc     0x0000755f       0xbd ./API/ustdlib.o
+ .debug_loc     0x0000761c      0x178 main.o
+ .debug_loc     0x00007794      0x21a rit128x96x4.o
+ .debug_loc     0x000079ae      0x21a osram128x64x4.o
+ .debug_loc     0x00007bc8      0x358 formike128x128x16.o
+ .debug_loc     0x00007f20      0x113 ../../../Source/list.o
+ .debug_loc     0x00008033      0x44c ../../../Source/queue.o
+ .debug_loc     0x0000847f      0x7fb ../../../Source/tasks.o
+ .debug_loc     0x00008c7a      0x170 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_loc     0x00008dea       0xc4 ../../../Source/portable/MemMang/heap_2.o
+ .debug_loc     0x00008eae       0x51 startup.o
 
 .debug_pubnames
-                0x00000000     0x3aff
+                0x00000000     0x3a2a
  .debug_pubnames
                 0x00000000      0x315 ./Drivers/adc.o
  .debug_pubnames
@@ -2814,37 +2771,35 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_pubnames
                 0x00002d7a      0x189 ./Drivers/watchdog.o
  .debug_pubnames
-                0x00002f03       0xd4 main.o
+                0x00002f03       0x20 ./API/led.o
  .debug_pubnames
-                0x00002fd7       0x72 timertest.o
+                0x00002f23       0x81 ./API/comport.o
  .debug_pubnames
-                0x00003049       0x20 ./API/led.o
+                0x00002fa4       0x2e ./API/buttons.o
  .debug_pubnames
-                0x00003069       0x74 ./API/comport.o
+                0x00002fd2       0x3c ./API/ustdlib.o
  .debug_pubnames
-                0x000030dd      0x10c rit128x96x4.o
+                0x0000300e       0xc3 main.o
  .debug_pubnames
-                0x000031e9       0xde osram128x64x4.o
+                0x000030d1      0x10c rit128x96x4.o
  .debug_pubnames
-                0x000032c7      0x100 formike128x128x16.o
+                0x000031dd       0xde osram128x64x4.o
  .debug_pubnames
-                0x000033c7       0x3c ../../Common/drivers/LuminaryMicro/ustdlib.o
+                0x000032bb      0x100 formike128x128x16.o
  .debug_pubnames
-                0x00003403       0x66 IntQueueTimer.o
+                0x000033bb       0x71 ../../../Source/list.o
  .debug_pubnames
-                0x00003469       0x71 ../../../Source/list.o
+                0x0000342c      0x18c ../../../Source/queue.o
  .debug_pubnames
-                0x000034da      0x18c ../../../Source/queue.o
+                0x000035b8      0x2c3 ../../../Source/tasks.o
  .debug_pubnames
-                0x00003666      0x2dc ../../../Source/tasks.o
+                0x0000387b      0x10d ../../../Source/portable/GCC/ARM_CM3/port.o
  .debug_pubnames
-                0x00003942      0x10d ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x00003988       0x64 ../../../Source/portable/MemMang/heap_2.o
  .debug_pubnames
-                0x00003a4f       0x64 ../../../Source/portable/MemMang/heap_2.o
- .debug_pubnames
-                0x00003ab3       0x4c startup.o
+                0x000039ec       0x3e startup.o
 
-.debug_aranges  0x00000000     0x1950
+.debug_aranges  0x00000000     0x1908
  .debug_aranges
                 0x00000000      0x110 ./Drivers/adc.o
  .debug_aranges
@@ -2892,37 +2847,35 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_aranges
                 0x000012b0       0xa0 ./Drivers/watchdog.o
  .debug_aranges
-                0x00001350       0x58 main.o
+                0x00001350       0x28 ./API/led.o
  .debug_aranges
-                0x000013a8       0x28 timertest.o
+                0x00001378       0x58 ./API/comport.o
  .debug_aranges
-                0x000013d0       0x28 ./API/led.o
+                0x000013d0       0x28 ./API/buttons.o
  .debug_aranges
-                0x000013f8       0x50 ./API/comport.o
+                0x000013f8       0x30 ./API/ustdlib.o
  .debug_aranges
-                0x00001448       0x68 rit128x96x4.o
+                0x00001428       0x50 main.o
  .debug_aranges
-                0x000014b0       0x68 osram128x64x4.o
+                0x00001478       0x68 rit128x96x4.o
  .debug_aranges
-                0x00001518       0x98 formike128x128x16.o
+                0x000014e0       0x68 osram128x64x4.o
  .debug_aranges
-                0x000015b0       0x30 ../../Common/drivers/LuminaryMicro/ustdlib.o
+                0x00001548       0x98 formike128x128x16.o
  .debug_aranges
-                0x000015e0       0x30 IntQueueTimer.o
+                0x000015e0       0x40 ../../../Source/list.o
  .debug_aranges
-                0x00001610       0x40 ../../../Source/list.o
+                0x00001620       0xb8 ../../../Source/queue.o
  .debug_aranges
-                0x00001650       0xb8 ../../../Source/queue.o
+                0x000016d8      0x148 ../../../Source/tasks.o
  .debug_aranges
-                0x00001708      0x158 ../../../Source/tasks.o
+                0x00001820       0x70 ../../../Source/portable/GCC/ARM_CM3/port.o
  .debug_aranges
-                0x00001860       0x70 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x00001890       0x38 ../../../Source/portable/MemMang/heap_2.o
  .debug_aranges
-                0x000018d0       0x38 ../../../Source/portable/MemMang/heap_2.o
- .debug_aranges
-                0x00001908       0x48 startup.o
+                0x000018c8       0x40 startup.o
 
-.debug_ranges   0x00000000     0x1820
+.debug_ranges   0x00000000     0x17e0
  .debug_ranges  0x00000000      0x108 ./Drivers/adc.o
  .debug_ranges  0x00000108       0xd0 ./Drivers/can.o
  .debug_ranges  0x000001d8       0x58 ./Drivers/comp.o
@@ -2946,23 +2899,22 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_ranges  0x00000f60       0xb8 ./Drivers/udma.o
  .debug_ranges  0x00001018      0x1e8 ./Drivers/usb.o
  .debug_ranges  0x00001200       0x98 ./Drivers/watchdog.o
- .debug_ranges  0x00001298       0x50 main.o
- .debug_ranges  0x000012e8       0x20 timertest.o
- .debug_ranges  0x00001308       0x20 ./API/led.o
- .debug_ranges  0x00001328       0x48 ./API/comport.o
- .debug_ranges  0x00001370       0x60 rit128x96x4.o
- .debug_ranges  0x000013d0       0x60 osram128x64x4.o
- .debug_ranges  0x00001430       0x90 formike128x128x16.o
- .debug_ranges  0x000014c0       0x28 ../../Common/drivers/LuminaryMicro/ustdlib.o
- .debug_ranges  0x000014e8       0x28 IntQueueTimer.o
- .debug_ranges  0x00001510       0x38 ../../../Source/list.o
- .debug_ranges  0x00001548       0xb0 ../../../Source/queue.o
- .debug_ranges  0x000015f8      0x150 ../../../Source/tasks.o
- .debug_ranges  0x00001748       0x68 ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_ranges  0x000017b0       0x30 ../../../Source/portable/MemMang/heap_2.o
- .debug_ranges  0x000017e0       0x40 startup.o
+ .debug_ranges  0x00001298       0x20 ./API/led.o
+ .debug_ranges  0x000012b8       0x50 ./API/comport.o
+ .debug_ranges  0x00001308       0x20 ./API/buttons.o
+ .debug_ranges  0x00001328       0x28 ./API/ustdlib.o
+ .debug_ranges  0x00001350       0x48 main.o
+ .debug_ranges  0x00001398       0x60 rit128x96x4.o
+ .debug_ranges  0x000013f8       0x60 osram128x64x4.o
+ .debug_ranges  0x00001458       0x90 formike128x128x16.o
+ .debug_ranges  0x000014e8       0x38 ../../../Source/list.o
+ .debug_ranges  0x00001520       0xb0 ../../../Source/queue.o
+ .debug_ranges  0x000015d0      0x140 ../../../Source/tasks.o
+ .debug_ranges  0x00001710       0x68 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_ranges  0x00001778       0x30 ../../../Source/portable/MemMang/heap_2.o
+ .debug_ranges  0x000017a8       0x38 startup.o
 
-.debug_str      0x00000000     0x4f21
+.debug_str      0x00000000     0x4d9b
  .debug_str     0x00000000      0x3dd ./Drivers/adc.o
                                 0x40c (size before relaxing)
  .debug_str     0x000003dd      0x494 ./Drivers/can.o
@@ -3009,38 +2961,36 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
                                 0x665 (size before relaxing)
  .debug_str     0x0000317d      0x150 ./Drivers/watchdog.o
                                 0x1f2 (size before relaxing)
- .debug_str     0x000032cd      0x1c3 main.o
-                                0x285 (size before relaxing)
- .debug_str     0x00003490       0xa0 timertest.o
-                                0x135 (size before relaxing)
- .debug_str     0x00003530       0x28 ./API/led.o
+ .debug_str     0x000032cd       0x28 ./API/led.o
                                  0xa3 (size before relaxing)
- .debug_str     0x00003558      0x26e ./API/comport.o
-                                0x344 (size before relaxing)
- .debug_str     0x000037c6      0x1a4 rit128x96x4.o
+ .debug_str     0x000032f5      0x279 ./API/comport.o
+                                0x342 (size before relaxing)
+ .debug_str     0x0000356e       0x91 ./API/buttons.o
+                                0x11a (size before relaxing)
+ .debug_str     0x000035ff       0xbb ./API/ustdlib.o
+                                0x1a9 (size before relaxing)
+ .debug_str     0x000036ba      0x17a main.o
+                                0x278 (size before relaxing)
+ .debug_str     0x00003834      0x1aa rit128x96x4.o
                                 0x284 (size before relaxing)
- .debug_str     0x0000396a      0x12e osram128x64x4.o
+ .debug_str     0x000039de      0x12e osram128x64x4.o
                                 0x274 (size before relaxing)
- .debug_str     0x00003a98      0x31b formike128x128x16.o
+ .debug_str     0x00003b0c      0x31b formike128x128x16.o
                                 0x47f (size before relaxing)
- .debug_str     0x00003db3       0xa5 ../../Common/drivers/LuminaryMicro/ustdlib.o
-                                0x1c8 (size before relaxing)
- .debug_str     0x00003e58       0x58 IntQueueTimer.o
-                                 0xf9 (size before relaxing)
- .debug_str     0x00003eb0      0x135 ../../../Source/list.o
+ .debug_str     0x00003e27      0x135 ../../../Source/list.o
                                 0x230 (size before relaxing)
- .debug_str     0x00003fe5      0x3ad ../../../Source/queue.o
+ .debug_str     0x00003f5c      0x3ad ../../../Source/queue.o
                                 0x57a (size before relaxing)
- .debug_str     0x00004392      0x82e ../../../Source/tasks.o
-                                0xa5a (size before relaxing)
- .debug_str     0x00004bc0      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_str     0x00004309      0x78e ../../../Source/tasks.o
+                                0x9a0 (size before relaxing)
+ .debug_str     0x00004a97      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
                                 0x1ff (size before relaxing)
- .debug_str     0x00004cf3      0x161 ../../../Source/portable/MemMang/heap_2.o
+ .debug_str     0x00004bca      0x161 ../../../Source/portable/MemMang/heap_2.o
                                 0x25b (size before relaxing)
- .debug_str     0x00004e54       0xcd startup.o
-                                0x102 (size before relaxing)
+ .debug_str     0x00004d2b       0x70 startup.o
+                                 0xf8 (size before relaxing)
 
-.comment        0x00000000      0x708
+.comment        0x00000000      0x6de
  .comment       0x00000000       0x2a ./Drivers/adc.o
  .comment       0x0000002a       0x2a ./Drivers/can.o
  .comment       0x00000054       0x2a ./Drivers/comp.o
@@ -3064,27 +3014,26 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .comment       0x00000348       0x2a ./Drivers/udma.o
  .comment       0x00000372       0x2a ./Drivers/usb.o
  .comment       0x0000039c       0x2a ./Drivers/watchdog.o
- .comment       0x000003c6       0x2a main.o
- .comment       0x000003f0       0x2a timertest.o
- .comment       0x0000041a       0x2a ./API/led.o
- .comment       0x00000444       0x2a ./API/comport.o
- .comment       0x0000046e       0x2a rit128x96x4.o
- .comment       0x00000498       0x2a osram128x64x4.o
- .comment       0x000004c2       0x2a formike128x128x16.o
- .comment       0x000004ec       0x2a ../../Common/drivers/LuminaryMicro/ustdlib.o
- .comment       0x00000516       0x2a IntQueueTimer.o
- .comment       0x00000540       0x2a ../../../Source/list.o
- .comment       0x0000056a       0x2a ../../../Source/queue.o
- .comment       0x00000594       0x2a ../../../Source/tasks.o
- .comment       0x000005be       0x2a ../../../Source/portable/GCC/ARM_CM3/port.o
- .comment       0x000005e8       0x2a ../../../Source/portable/MemMang/heap_2.o
- .comment       0x00000612       0x2a startup.o
- .comment       0x0000063c       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
- .comment       0x0000065e       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
- .comment       0x00000680       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
- .comment       0x000006a2       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
- .comment       0x000006c4       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
- .comment       0x000006e6       0x22 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
+ .comment       0x000003c6       0x2a ./API/led.o
+ .comment       0x000003f0       0x2a ./API/comport.o
+ .comment       0x0000041a       0x2a ./API/buttons.o
+ .comment       0x00000444       0x2a ./API/ustdlib.o
+ .comment       0x0000046e       0x2a main.o
+ .comment       0x00000498       0x2a rit128x96x4.o
+ .comment       0x000004c2       0x2a osram128x64x4.o
+ .comment       0x000004ec       0x2a formike128x128x16.o
+ .comment       0x00000516       0x2a ../../../Source/list.o
+ .comment       0x00000540       0x2a ../../../Source/queue.o
+ .comment       0x0000056a       0x2a ../../../Source/tasks.o
+ .comment       0x00000594       0x2a ../../../Source/portable/GCC/ARM_CM3/port.o
+ .comment       0x000005be       0x2a ../../../Source/portable/MemMang/heap_2.o
+ .comment       0x000005e8       0x2a startup.o
+ .comment       0x00000612       0x22 ./Drivers/libgr.a(context.o)
+ .comment       0x00000634       0x22 ./Drivers/libgr.a(fontcmss12.o)
+ .comment       0x00000656       0x22 ./Drivers/libgr.a(image.o)
+ .comment       0x00000678       0x22 ./Drivers/libgr.a(rectangle.o)
+ .comment       0x0000069a       0x22 ./Drivers/libgr.a(string.o)
+ .comment       0x000006bc       0x22 ./Drivers/libgr.a(line.o)
 
 .ARM.attributes
                 0x00000000       0x31
@@ -3135,58 +3084,56 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .ARM.attributes
                 0x00000436       0x31 ./Drivers/watchdog.o
  .ARM.attributes
-                0x00000467       0x31 main.o
+                0x00000467       0x31 ./API/led.o
  .ARM.attributes
-                0x00000498       0x31 timertest.o
+                0x00000498       0x31 ./API/comport.o
  .ARM.attributes
-                0x000004c9       0x31 ./API/led.o
+                0x000004c9       0x31 ./API/buttons.o
  .ARM.attributes
-                0x000004fa       0x31 ./API/comport.o
+                0x000004fa       0x31 ./API/ustdlib.o
  .ARM.attributes
-                0x0000052b       0x31 rit128x96x4.o
+                0x0000052b       0x31 main.o
  .ARM.attributes
-                0x0000055c       0x31 osram128x64x4.o
+                0x0000055c       0x31 rit128x96x4.o
  .ARM.attributes
-                0x0000058d       0x31 formike128x128x16.o
+                0x0000058d       0x31 osram128x64x4.o
  .ARM.attributes
-                0x000005be       0x31 ../../Common/drivers/LuminaryMicro/ustdlib.o
+                0x000005be       0x31 formike128x128x16.o
  .ARM.attributes
-                0x000005ef       0x31 IntQueueTimer.o
+                0x000005ef       0x31 ../../../Source/list.o
  .ARM.attributes
-                0x00000620       0x31 ../../../Source/list.o
+                0x00000620       0x31 ../../../Source/queue.o
  .ARM.attributes
-                0x00000651       0x31 ../../../Source/queue.o
+                0x00000651       0x31 ../../../Source/tasks.o
  .ARM.attributes
-                0x00000682       0x31 ../../../Source/tasks.o
+                0x00000682       0x31 ../../../Source/portable/GCC/ARM_CM3/port.o
  .ARM.attributes
-                0x000006b3       0x31 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x000006b3       0x31 ../../../Source/portable/MemMang/heap_2.o
  .ARM.attributes
-                0x000006e4       0x31 ../../../Source/portable/MemMang/heap_2.o
+                0x000006e4       0x31 startup.o
  .ARM.attributes
-                0x00000715       0x31 startup.o
+                0x00000715       0x31 ./Drivers/libgr.a(context.o)
  .ARM.attributes
-                0x00000746       0x31 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(context.o)
+                0x00000746       0x2f ./Drivers/libgr.a(fontcmss12.o)
  .ARM.attributes
-                0x00000777       0x2f ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(fontcmss12.o)
+                0x00000775       0x31 ./Drivers/libgr.a(image.o)
  .ARM.attributes
-                0x000007a6       0x31 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(image.o)
+                0x000007a6       0x31 ./Drivers/libgr.a(rectangle.o)
  .ARM.attributes
-                0x000007d7       0x31 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(rectangle.o)
+                0x000007d7       0x31 ./Drivers/libgr.a(string.o)
  .ARM.attributes
-                0x00000808       0x31 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(string.o)
+                0x00000808       0x31 ./Drivers/libgr.a(line.o)
  .ARM.attributes
-                0x00000839       0x31 ../../Common/drivers/LuminaryMicro/arm-none-eabi-gcc/libgr.a(line.o)
+                0x00000839       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .ARM.attributes
-                0x0000086a       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+                0x00000860       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000891       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x00000887       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x000008b8       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x000008ae       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
  .ARM.attributes
-                0x000008df       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+                0x000008d5       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
  .ARM.attributes
-                0x00000906       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+                0x000008fc       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x0000092d       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .ARM.attributes
-                0x00000954       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x00000923       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
