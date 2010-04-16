@@ -18,10 +18,12 @@
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Source/include"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Source/portable/GCC/ARM_CM3"/>
+<includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/Drivers"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/Common/include"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/Common/ethernet/uIP/uip-1.0/uip"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/webserver"/>
 <includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/Common/drivers/LuminaryMicro"/>
+<includePath path="C:/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/API"/>
 <includePath path="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo"/>
 <includePath path="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse/RTOSDemo"/>
 <includePath path="C:/Users/Arseni/Documents/TUHH/Studienarbeit/freeRTOS/Source/include"/>

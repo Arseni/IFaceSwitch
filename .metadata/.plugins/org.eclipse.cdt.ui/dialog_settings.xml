@@ -7,6 +7,7 @@
 	<item value="645" key="org.eclipse.cdt.uiformatter_pagemodify_dialog.preferred_width"/>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="0" key="askReindex.detail"/>
+		<item value="true" key="askReindex"/>
 	</section>
 	<section name="completion_proposal_size">
 	</section>
@@ -14,6 +15,8 @@
 		<item value="227191" key="searchFlags"/>
 		<item value="false" key="caseSensitive"/>
 		<list key="previousPatterns">
+			<item value="portGET_RUN_TIME_COUNTER_VALUE"/>
+			<item value="portCONFIGURE_TIMER_FOR_RUN_TIME_STATS"/>
 			<item value="*RCGC2*"/>
 			<item value="UART*"/>
 			<item value="UART"/>
