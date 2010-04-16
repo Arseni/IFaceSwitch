@@ -191,11 +191,11 @@ unsigned portLONG ulIdleError = pdFALSE;
 void vUARTTask(void * pvParameters)
 {
 	const portTickType xDelay = 1000 / portTICK_RATE_MS;
-	//xComOpen(1,2,3,4,5,6);
+	xComOpen(1,2,3,4,5,6);
 	for(;;)
 	{
 		vTaskDelay(xDelay);
-		//vComPutChar(1, 2, 3);
+		vComPutChar(1, 2, 3);
 	}
 }
 
