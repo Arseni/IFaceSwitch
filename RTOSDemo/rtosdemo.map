@@ -8,19 +8,19 @@ Archive member included because of file (symbol)
                               ./OLEDDisplay/formike128x128x16.o (GrRectFill)
 ./Drivers/grlib.a(string.o)   ./OLEDDisplay/formike128x128x16.o (GrStringDraw)
 ./Drivers/grlib.a(line.o)     ./Drivers/grlib.a(rectangle.o) (GrLineDrawH)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                               ../../../Source/tasks.o (memcmp)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
                               ./API/ustdlib.o (memcpy)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
                               ../../../Source/tasks.o (memset)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
                               ../../../Source/tasks.o (strcat)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
-                              c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o) (strcpy)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+                              c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o) (strcpy)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
                               ./OLEDDisplay/formike128x128x16.o (strlen)
-c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
                               ./API/ustdlib.o (strncpy)
 
 Allocating common symbols
@@ -172,20 +172,20 @@ Discarded input sections
                 0x00000000       0x38 ./Drivers/grlib.a(line.o)
  .text.GrLineDraw
                 0x00000000      0x19c ./Drivers/grlib.a(line.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .data          0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
- .bss           0x00000000        0x0 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .data          0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .bss           0x00000000        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
 
 Memory Configuration
 
@@ -235,8 +235,8 @@ LOAD ../../../Source/portable/MemMang/heap_2.o
 LOAD startup.o
 LOAD ./Drivers/grlib.a
 START GROUP
-LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
-LOAD c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
+LOAD c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2\libgcc.a
+LOAD c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
 END GROUP
 
 .text           0x00000000     0xa82c
@@ -528,19 +528,19 @@ END GROUP
  .text.GrLineDrawH
                 0x00008348       0x58 ./Drivers/grlib.a(line.o)
                 0x00008348                GrLineDrawH
- .text          0x000083a0       0x64 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .text          0x000083a0       0x64 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
                 0x000083a0                memcmp
- .text          0x00008404      0x190 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .text          0x00008404      0x190 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
                 0x00008404                memcpy
- .text          0x00008594       0xd4 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .text          0x00008594       0xd4 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
                 0x00008594                memset
- .text          0x00008668       0x48 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .text          0x00008668       0x48 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
                 0x00008668                strcat
- .text          0x000086b0       0xbc c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .text          0x000086b0       0xbc c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
                 0x000086b0                strcpy
- .text          0x0000876c       0x60 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .text          0x0000876c       0x60 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
                 0x0000876c                strlen
- .text          0x000087cc       0x78 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .text          0x000087cc       0x78 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
                 0x000087cc                strncpy
  *(.rodata*)
  .rodata.g_pulGPIOBaseAddrs
@@ -830,7 +830,7 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_info    0x0000bfc3      0x2b6 ../../../Source/portable/MemMang/heap_2.o
  .debug_info    0x0000c279      0x177 startup.o
 
-.debug_line     0x00000000     0x2cce
+.debug_line     0x00000000     0x2cb2
  .debug_line    0x00000000      0x188 ./Drivers/adc.o
  .debug_line    0x00000188      0x230 ./Drivers/can.o
  .debug_line    0x000003b8       0x93 ./Drivers/comp.o
@@ -857,17 +857,17 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_line    0x00001cd0       0x62 ./API/led.o
  .debug_line    0x00001d32       0xb5 ./API/comport.o
  .debug_line    0x00001de7       0x69 ./API/buttons.o
- .debug_line    0x00001e50      0x148 ./API/ustdlib.o
- .debug_line    0x00001f98      0x134 ./OLEDDisplay/rit128x96x4.o
- .debug_line    0x000020cc      0x125 ./OLEDDisplay/osram128x64x4.o
- .debug_line    0x000021f1      0x172 ./OLEDDisplay/formike128x128x16.o
- .debug_line    0x00002363      0x12e main.o
- .debug_line    0x00002491       0xdd ../../../Source/list.o
- .debug_line    0x0000256e      0x283 ../../../Source/queue.o
- .debug_line    0x000027f1      0x2d5 ../../../Source/tasks.o
- .debug_line    0x00002ac6       0xbb ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_line    0x00002b81       0xf8 ../../../Source/portable/MemMang/heap_2.o
- .debug_line    0x00002c79       0x55 startup.o
+ .debug_line    0x00001e50      0x13e ./API/ustdlib.o
+ .debug_line    0x00001f8e      0x134 ./OLEDDisplay/rit128x96x4.o
+ .debug_line    0x000020c2      0x125 ./OLEDDisplay/osram128x64x4.o
+ .debug_line    0x000021e7      0x172 ./OLEDDisplay/formike128x128x16.o
+ .debug_line    0x00002359      0x12e main.o
+ .debug_line    0x00002487       0xdd ../../../Source/list.o
+ .debug_line    0x00002564      0x279 ../../../Source/queue.o
+ .debug_line    0x000027dd      0x2d7 ../../../Source/tasks.o
+ .debug_line    0x00002ab4       0xbb ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_line    0x00002b6f       0xee ../../../Source/portable/MemMang/heap_2.o
+ .debug_line    0x00002c5d       0x55 startup.o
 
 .debug_frame    0x00000000     0x5180
  .debug_frame   0x00000000      0x37c ./Drivers/adc.o
@@ -907,13 +907,13 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_frame   0x00004e30      0x124 ../../../Source/portable/GCC/ARM_CM3/port.o
  .debug_frame   0x00004f54       0x88 ../../../Source/portable/MemMang/heap_2.o
  .debug_frame   0x00004fdc       0x7c startup.o
- .debug_frame   0x00005058       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .debug_frame   0x00005084       0x38 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .debug_frame   0x000050bc       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .debug_frame   0x000050e8       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .debug_frame   0x00005114       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .debug_frame   0x00005134       0x20 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .debug_frame   0x00005154       0x2c c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00005058       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00005084       0x38 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x000050bc       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .debug_frame   0x000050e8       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .debug_frame   0x00005114       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00005134       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .debug_frame   0x00005154       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
 
 .debug_loc      0x00000000     0x8eff
  .debug_loc     0x00000000      0x6a9 ./Drivers/adc.o
@@ -1316,16 +1316,16 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .ARM.attributes
                 0x00000808       0x31 ./Drivers/grlib.a(line.o)
  .ARM.attributes
-                0x00000839       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+                0x00000839       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
  .ARM.attributes
-                0x00000860       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x00000860       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000887       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x00000887       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x000008ae       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+                0x000008ae       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
  .ARM.attributes
-                0x000008d5       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+                0x000008d5       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
  .ARM.attributes
-                0x000008fc       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+                0x000008fc       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000923       0x27 c:/program files (x86)/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x00000923       0x27 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)

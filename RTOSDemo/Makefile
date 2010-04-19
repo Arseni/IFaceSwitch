@@ -87,6 +87,7 @@ DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVER
 		$(DRIVERS_DIR)/timer.c $(DRIVERS_DIR)/uart.c $(DRIVERS_DIR)/udma.c $(DRIVERS_DIR)/usb.c $(DRIVERS_DIR)/watchdog.c
 
 APIS=$(API_DIR)/led.c $(API_DIR)/comport.c $(API_DIR)/buttons.c $(API_DIR)/ustdlib.c
+
 OLEDDisplay=$(OLEDDISPLAY_DIR)/rit128x96x4.c $(OLEDDISPLAY_DIR)/osram128x64x4.c $(OLEDDISPLAY_DIR)/formike128x128x16.c
  
 SOURCE=	$(DRIVERS) \
@@ -118,7 +119,7 @@ startup.o : startup.c Makefile
 	$(CC) -c $(CFLAGS) -O1 startup.c -o startup.o
 		
 clean :
-	cs-rm $(OBJS)
+	cs-rm $(OBJS) startup.o
 	
 
 
