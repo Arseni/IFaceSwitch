@@ -4,13 +4,16 @@
 
 typedef enum
 {
-	BUTTON_LEFT,
-	BUTTON_RIGHT,
-	BUTTON_UP,
-	BUTTON_DOWN,
-	BUTTON_SEL
+	BUTTON_NONE=0,
+	BUTTON_UP=1,
+	BUTTON_DOWN=2,
+	BUTTON_LEFT=4,
+	BUTTON_RIGHT=8,
+	BUTTON_SEL=16
 }tButton;
 
 typedef void (* tButtonCallback) (tButton btn);
+
+tButton xButtonIsPressed(void);
 
 #endif

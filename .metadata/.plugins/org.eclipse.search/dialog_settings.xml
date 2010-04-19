@@ -3,12 +3,15 @@
 	<section name="">
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
 	</section>
+	<section name="">
+		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
 	<section name="DialogBounds_SearchDialog">
-		<item value="564" key="DIALOG_WIDTH"/>
+		<item value="519" key="DIALOG_WIDTH"/>
 		<item value="259" key="DIALOG_Y_ORIGIN"/>
+		<item value="398" key="DIALOG_HEIGHT"/>
 		<item value="445" key="DIALOG_X_ORIGIN"/>
-		<item value="427" key="DIALOG_HEIGHT"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -22,17 +25,17 @@
 			<item value="org.eclipse.mylyn.tasks.ui.search.page"/>
 		</list>
 	</section>
-	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
-	</section>
 	<section name="org.eclipse.search.text.FileSearchResultPage">
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
 	</section>
 	<section name="TextSearchPage">
 		<item value="false" key="CASE_SENSITIVE"/>
 		<item value="false" key="REG_EX_SEARCH"/>
 		<item value="false" key="SEARCH_DERIVED"/>
-		<item value="1" key="HISTORY_SIZE"/>
-		<section name="HISTORY0">
+		<item value="3" key="HISTORY_SIZE"/>
+		<section name="HISTORY2">
 			<item value="false" key="isRegExSearch"/>
 			<item value="struct timer" key="textPattern"/>
 			<item value="0" key="scope"/>
@@ -43,13 +46,35 @@
 			<list key="workingSets">
 			</list>
 		</section>
-	</section>
-	<section name="SearchDialog.ScopePart">
-		<item value="0" key="scope"/>
+		<section name="HISTORY0">
+			<item value="false" key="isRegExSearch"/>
+			<item value="*port*" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.c *.h"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
+		<section name="HISTORY1">
+			<item value="false" key="isRegExSearch"/>
+			<item value="*portmakro*" key="textPattern"/>
+			<item value="0" key="scope"/>
+			<item value="true" key="ignoreCase"/>
+			<list key="fileNamePatterns">
+				<item value="*.c *.h"/>
+			</list>
+			<list key="workingSets">
+			</list>
+		</section>
 	</section>
 	<section name="ReplaceDialog2">
 		<list key="replace_with">
 			<item value="inline"/>
 		</list>
+	</section>
+	<section name="SearchDialog.ScopePart">
+		<item value="0" key="scope"/>
 	</section>
 </section>

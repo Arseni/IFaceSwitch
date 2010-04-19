@@ -7,6 +7,7 @@
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Source/include"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Source/portable/GCC/ARM_CM3"/>
+<includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/Drivers"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/include"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/Common/ethernet/uIP/uip-1.0/uip"/>
 <includePath path="C:/TUHH/Studienarbeit/FreeRTOS/Demo/CORTEX_LM3Sxxxx_Eclipse_Studienarbeit/RTOSDemo/webserver"/>

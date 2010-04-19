@@ -725,7 +725,7 @@ GPIOPortIntRegister(unsigned long ulPort, void (*pfnIntHandler)(void))
     //
     // Register the interrupt handler.
     //
-    IntRegister(ulPort, pfnIntHandler);
+   	IntRegister(ulPort, pfnIntHandler);
 
     //
     // Enable the GPIO interrupt.

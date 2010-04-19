@@ -68,7 +68,7 @@ OBJCOPY=arm-none-eabi-objcopy
 LDSCRIPT=standalone.ld
 
 # should use --gc-sections but the debugger does not seem to be able to cope with the option.
-LINKER_FLAGS=-nostartfiles -Xlinker -oRTOSDemo.axf -Xlinker -M -Xlinker -Map=rtosdemo.map -Xlinker --gc-sections 
+LINKER_FLAGS=-nostartfiles -Xlinker -oRTOSDemo.axf -Xlinker -M -Xlinker -Map=rtosdemo.map -Xlinker --no-gc-sections 
 #--no-gc-sections
 
 DEBUG=-g
