@@ -103,7 +103,7 @@ typedef struct{
 static tGPIOISRHandler xGPIOISRHandler[GPIO_MAX_ISR_HANDLERS];
 
 void
-GPIOEISR(void)
+GPIOE_ISR(void)
 {
 	unsigned long isrStatus = GPIOPinIntStatus(GPIO_PORTE_BASE, true);
 	int i;
@@ -117,7 +117,7 @@ GPIOEISR(void)
 	GPIOPinIntClear(GPIO_PORTE_BASE, 0xFF); // clear all interrupt
 }
 void
-GPIOFISR(void)
+GPIOF_ISR(void)
 {
 	unsigned long isrStatus = GPIOPinIntStatus(GPIO_PORTF_BASE, true);
 	int i;

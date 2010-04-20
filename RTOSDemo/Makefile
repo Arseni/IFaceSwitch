@@ -62,6 +62,8 @@ RTOS_SOURCE_DIR=../../../Source
 DRIVERS_DIR=./Drivers
 API_DIR=./API
 OLEDDISPLAY_DIR=./OLEDDisplay
+UIP_DIR=./uip
+ETHERNET_DIR=./ethernet
 
 CC=arm-none-eabi-gcc
 OBJCOPY=arm-none-eabi-objcopy
@@ -79,20 +81,25 @@ CFLAGS=$(DEBUG) -I . -I $(RTOS_SOURCE_DIR)/include -I $(RTOS_SOURCE_DIR)/portabl
 		-D GCC_ARMCM3_LM3S102 -D inline= -mthumb -mcpu=cortex-m3 $(OPTIM) -T$(LDSCRIPT) \
 		-D PACK_STRUCT_END=__attribute\(\(packed\)\) -D ALIGN_STRUCT_END=__attribute\(\(aligned\(4\)\)\) -D sprintf=usprintf -D snprintf=usnprintf \
 		-D printf=uipprintf -D sourcerygxx -I $(DRIVERS_DIR) \
-		-I $(UIP_COMMON_DIR) -ffunction-sections -fdata-sections -I $(API_DIR)
+		-ffunction-sections -fdata-sections -I $(API_DIR) -I $(UIP_DIR) -I $(ETHERNET_DIR)
 
 DRIVERS=$(DRIVERS_DIR)/adc.c $(DRIVERS_DIR)/can.c $(DRIVERS_DIR)/comp.c $(DRIVERS_DIR)/cpu.c $(DRIVERS_DIR)/epi.c $(DRIVERS_DIR)/ethernet.c \
 		$(DRIVERS_DIR)/flash.c $(DRIVERS_DIR)/gpio.c $(DRIVERS_DIR)/hibernate.c $(DRIVERS_DIR)/i2c.c $(DRIVERS_DIR)/i2s.c $(DRIVERS_DIR)/interrupt.c \
 		$(DRIVERS_DIR)/mpu.c $(DRIVERS_DIR)/pwm.c $(DRIVERS_DIR)/qei.c $(DRIVERS_DIR)/ssi.c $(DRIVERS_DIR)/sysctl.c $(DRIVERS_DIR)/systick.c \
 		$(DRIVERS_DIR)/timer.c $(DRIVERS_DIR)/uart.c $(DRIVERS_DIR)/udma.c $(DRIVERS_DIR)/usb.c $(DRIVERS_DIR)/watchdog.c
 
-APIS=$(API_DIR)/led.c $(API_DIR)/comport.c $(API_DIR)/buttons.c $(API_DIR)/ustdlib.c
+APIS=$(API_DIR)/led.c $(API_DIR)/comport.c $(API_DIR)/buttons.c $(API_DIR)/ustdlib.c $(API_DIR)/emac.c
 
 OLEDDisplay=$(OLEDDISPLAY_DIR)/rit128x96x4.c $(OLEDDISPLAY_DIR)/osram128x64x4.c $(OLEDDISPLAY_DIR)/formike128x128x16.c
+
+UIP=$(UIP_DIR)/uip_arp.c $(UIP_DIR)/psock.c $(UIP_DIR)/uip_timer.c $(UIP_DIR)/uip.c
+
+ETHERNET=$(UIP) $(ETHERNET_DIR)/hello-world.c $(ETHERNET_DIR)/uIP_Task.c
  
 SOURCE=	$(DRIVERS) \
 		$(APIS) \
 		$(OLEDDisplay) \
+		$(ETHERNET) \
 		main.c \
 		$(RTOS_SOURCE_DIR)/list.c \
 		$(RTOS_SOURCE_DIR)/queue.c \

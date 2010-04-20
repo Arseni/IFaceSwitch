@@ -44,8 +44,9 @@ extern int main(void);
 extern void xPortPendSVHandler(void);
 extern void xPortSysTickHandler(void);
 extern void vPortSVCHandler( void );
-extern void GPIOEISR(void);
-extern void GPIOFISR(void);
+extern void GPIOE_ISR(void);
+extern void GPIOF_ISR(void);
+extern void vEMAC_ISR( void );
 
 //*****************************************************************************
 //
@@ -88,7 +89,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
     IntDefaultHandler,                      // GPIO Port D
-    GPIOEISR,                      			// GPIO Port E
+    GPIOE_ISR,                      			// GPIO Port E
     IntDefaultHandler,                      // UART0 Rx and Tx
     IntDefaultHandler,                      // UART1 Rx and Tx
     IntDefaultHandler,                      // SSI Rx and Tx
@@ -114,7 +115,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // Analog Comparator 2
     IntDefaultHandler,                      // System Control (PLL, OSC, BO)
     IntDefaultHandler,                      // FLASH Control
-    GPIOFISR,			                    // GPIO Port F
+    GPIOF_ISR,			                    // GPIO Port F
     IntDefaultHandler,                      // GPIO Port G
     IntDefaultHandler,                      // GPIO Port H
     IntDefaultHandler,                      // UART2 Rx and Tx
@@ -126,7 +127,7 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // CAN0
     IntDefaultHandler,                      // CAN1
     0,                                      // Reserved
-    IntDefaultHandler,                      // Ethernet
+    vEMAC_ISR,                      		// Ethernet
     IntDefaultHandler                       // Hibernate
 };
 
