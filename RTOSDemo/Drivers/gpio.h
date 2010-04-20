@@ -38,6 +38,13 @@ extern "C"
 
 //*****************************************************************************
 //
+// Settings for the API usage.
+//
+//*****************************************************************************
+#define GPIO_MAX_ISR_HANDLERS	20	//Maximum amount of callbacks that can be registered at a time for all GPIO interrupts
+
+//*****************************************************************************
+//
 // The following values define the bit field for the ucPins argument to several
 // of the APIs.
 //
@@ -713,28 +720,20 @@ extern "C"
 // Prototypes for the APIs.
 //
 //*****************************************************************************
-extern void GPIODirModeSet(unsigned long ulPort, unsigned char ucPins,
-                           unsigned long ulPinIO);
+extern void GPIODirModeSet(unsigned long ulPort, unsigned char ucPins, unsigned long ulPinIO);
 extern unsigned long GPIODirModeGet(unsigned long ulPort, unsigned char ucPin);
-extern void GPIOIntTypeSet(unsigned long ulPort, unsigned char ucPins,
-                           unsigned long ulIntType);
+extern void GPIOIntTypeSet(unsigned long ulPort, unsigned char ucPins, unsigned long ulIntType);
 extern unsigned long GPIOIntTypeGet(unsigned long ulPort, unsigned char ucPin);
-extern void GPIOPadConfigSet(unsigned long ulPort, unsigned char ucPins,
-                             unsigned long ulStrength,
-                             unsigned long ulPadType);
-extern void GPIOPadConfigGet(unsigned long ulPort, unsigned char ucPin,
-                             unsigned long *pulStrength,
-                             unsigned long *pulPadType);
+extern void GPIOPadConfigSet(unsigned long ulPort, unsigned char ucPins, unsigned long ulStrength, unsigned long ulPadType);
+extern void GPIOPadConfigGet(unsigned long ulPort, unsigned char ucPin, unsigned long *pulStrength, unsigned long *pulPadType);
 extern void GPIOPinIntEnable(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinIntDisable(unsigned long ulPort, unsigned char ucPins);
 extern long GPIOPinIntStatus(unsigned long ulPort, tBoolean bMasked);
 extern void GPIOPinIntClear(unsigned long ulPort, unsigned char ucPins);
-extern void GPIOPortIntRegister(unsigned long ulPort,
-                                void (*pfnIntHandler)(void));
+extern void GPIOPortIntRegister(unsigned long ulPort, unsigned char ucPins, void (*pfnIntHandler)(unsigned char));
 extern void GPIOPortIntUnregister(unsigned long ulPort);
 extern long GPIOPinRead(unsigned long ulPort, unsigned char ucPins);
-extern void GPIOPinWrite(unsigned long ulPort, unsigned char ucPins,
-                         unsigned char ucVal);
+extern void GPIOPinWrite(unsigned long ulPort, unsigned char ucPins, unsigned char ucVal);
 extern void GPIOPinConfigure(unsigned long ulPinConfig);
 extern void GPIOPinTypeADC(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeCAN(unsigned long ulPort, unsigned char ucPins);
@@ -743,8 +742,7 @@ extern void GPIOPinTypeEPI(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeEthernetLED(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeGPIOInput(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeGPIOOutput(unsigned long ulPort, unsigned char ucPins);
-extern void GPIOPinTypeGPIOOutputOD(unsigned long ulPort,
-                                    unsigned char ucPins);
+extern void GPIOPinTypeGPIOOutputOD(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeI2C(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypeI2S(unsigned long ulPort, unsigned char ucPins);
 extern void GPIOPinTypePWM(unsigned long ulPort, unsigned char ucPins);

@@ -219,29 +219,6 @@ void vLEDTask(void * pvParameters)
 	}
 }
 
-void vButtonTask(void * pvParameters)
-{
-	const portTickType xDelay = 5000 / portTICK_RATE_MS;
-	tButton btn;
-	xOLEDMessage msg;
-
-	vTaskDelay(xDelay);
-	for(;;)
-	{
-		if(btn = xButtonIsPressed())
-		{
-			strcpy(msg.pcMessage, "btnPress: ");
-			if(btn & BUTTON_UP) strcat(msg.pcMessage, "up ");
-			if(btn & BUTTON_DOWN) strcat(msg.pcMessage, "down ");
-			if(btn & BUTTON_LEFT) strcat(msg.pcMessage, "left ");
-			if(btn & BUTTON_RIGHT) strcat(msg.pcMessage, "right ");
-			if(btn & BUTTON_SEL) strcat(msg.pcMessage, "sel ");
-			xQueueSend(xOLEDQueue, &msg, portMAX_DELAY);
-			vTaskDelay(xDelay/500);
-		}
-	}
-}
-
 int main( void )
 {
 	prvSetupHardware();
@@ -257,6 +234,8 @@ int main( void )
 	xTaskCreate( vUARTTask, (signed portCHAR *) "UART", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 	xTaskCreate( vLEDTask, (signed portCHAR *) "LED", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
 	xTaskCreate( vButtonTask, (signed portCHAR *) "Buttons", mainOLED_TASK_STACK_SIZE, NULL, tskIDLE_PRIORITY, NULL);
+
+
 
 	/* Configure the high frequency interrupt used to measure the interrupt	jitter time. */
 	//vSetupHighFrequencyTimer();

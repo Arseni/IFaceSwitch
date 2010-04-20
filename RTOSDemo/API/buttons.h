@@ -2,6 +2,8 @@
 #ifndef BUTTONS_H
 #define BUTTONS_H
 
+#define BUTTON_QUEUE_SIZE	10
+
 typedef enum
 {
 	BUTTON_NONE=0,
@@ -15,5 +17,6 @@ typedef enum
 typedef void (* tButtonCallback) (tButton btn);
 
 tButton xButtonIsPressed(void);
+void vButtonTask(void * pvParameters);
 
 #endif

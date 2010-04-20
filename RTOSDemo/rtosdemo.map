@@ -81,7 +81,7 @@ LOAD c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.
 LOAD c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a
 END GROUP
 
-.text           0x00000000    0x125f8
+.text           0x00000000    0x12864
  *(.isr_vector)
  .isr_vector    0x00000000       0xf0 startup.o
                 0x00000000                g_pfnVectors
@@ -215,712 +215,715 @@ END GROUP
                 0x00003008                FlashIntDisable
                 0x00003038                FlashIntStatus
                 0x0000306c                FlashIntClear
- .text          0x0000308c      0xce8 ./Drivers/gpio.o
-                0x00003224                GPIODirModeSet
-                0x000032ac                GPIODirModeGet
-                0x00003310                GPIOIntTypeSet
-                0x000033e4                GPIOIntTypeGet
-                0x00003474                GPIOPadConfigSet
-                0x000036a4                GPIOPadConfigGet
-                0x000037f4                GPIOPinIntEnable
-                0x00003820                GPIOPinIntDisable
-                0x00003850                GPIOPinIntStatus
-                0x00003884                GPIOPinIntClear
-                0x000038a8                GPIOPortIntRegister
-                0x000038d4                GPIOPortIntUnregister
-                0x000038fc                GPIOPinRead
-                0x00003924                GPIOPinWrite
-                0x00003950                GPIOPinTypeADC
-                0x00003984                GPIOPinTypeCAN
-                0x000039b8                GPIOPinTypeComparator
-                0x000039ec                GPIOPinTypeGPIOInput
-                0x00003a20                GPIOPinTypeGPIOOutput
-                0x00003a54                GPIOPinTypeGPIOOutputOD
-                0x00003a88                GPIOPinTypeI2C
-                0x00003abc                GPIOPinTypePWM
-                0x00003af0                GPIOPinTypeQEI
-                0x00003b24                GPIOPinTypeSSI
-                0x00003b58                GPIOPinTypeTimer
-                0x00003b8c                GPIOPinTypeUART
-                0x00003bc0                GPIOPinTypeUSBDigital
-                0x00003bf4                GPIOPinTypeUSBAnalog
-                0x00003c28                GPIOPinTypeI2S
-                0x00003c5c                GPIOPinTypeEthernetLED
-                0x00003c90                GPIOPinTypeEPI
-                0x00003cc4                GPIOPinConfigure
- .text          0x00003d74      0x5b0 ./Drivers/hibernate.o
-                0x00003d74                HibernateWriteComplete
-                0x00003d8c                HibernateEnableExpClk
-                0x00003e2c                HibernateDisable
-                0x00003e50                HibernateClockSelect
-                0x00003e80                HibernateRTCEnable
-                0x00003ea4                HibernateRTCDisable
-                0x00003ec8                HibernateWakeSet
-                0x00003ef8                HibernateWakeGet
-                0x00003f14                HibernateLowBatSet
-                0x00003f44                HibernateLowBatGet
-                0x00003f60                HibernateRTCSet
-                0x00003fb4                HibernateRTCGet
-                0x00003fcc                HibernateRTCMatch0Set
-                0x00004020                HibernateRTCMatch0Get
-                0x00004038                HibernateRTCMatch1Set
-                0x0000408c                HibernateRTCMatch1Get
-                0x000040a4                HibernateRTCTrimSet
-                0x000040f8                HibernateRTCTrimGet
-                0x00004110                HibernateDataSet
-                0x00004190                HibernateDataGet
-                0x000041dc                HibernateRequest
-                0x00004200                HibernateIntEnable
-                0x0000422c                HibernateIntDisable
-                0x0000425c                HibernateIntRegister
-                0x00004280                HibernateIntUnregister
-                0x00004298                HibernateIntStatus
-                0x000042d4                HibernateIntClear
-                0x00004300                HibernateIsActive
- .text          0x00004324      0x5a4 ./Drivers/i2c.o
-                0x00004324                I2CMasterInitExpClk
-                0x00004398                I2CSlaveInit
-                0x000043b8                I2CMasterEnable
-                0x000043e0                I2CSlaveEnable
-                0x00004414                I2CMasterDisable
-                0x0000443c                I2CSlaveDisable
-                0x00004470                I2CIntRegister
-                0x000044ac                I2CIntUnregister
-                0x000044e4                I2CMasterIntEnable
-                0x00004504                I2CSlaveIntEnable
-                0x0000452c                I2CSlaveIntEnableEx
-                0x00004558                I2CMasterIntDisable
-                0x00004578                I2CSlaveIntDisable
-                0x000045a0                I2CSlaveIntDisableEx
-                0x000045d0                I2CMasterIntStatus
-                0x00004610                I2CSlaveIntStatus
-                0x00004650                I2CSlaveIntStatusEx
-                0x000046d4                I2CMasterIntClear
-                0x00004700                I2CSlaveIntClear
-                0x00004720                I2CSlaveIntClearEx
-                0x00004740                I2CMasterSlaveAddrSet
-                0x0000476c                I2CMasterBusy
-                0x0000479c                I2CMasterBusBusy
-                0x000047cc                I2CMasterControl
-                0x000047ec                I2CMasterErr
-                0x00004834                I2CMasterDataPut
-                0x00004854                I2CMasterDataGet
-                0x00004870                I2CSlaveStatus
-                0x0000488c                I2CSlaveDataPut
-                0x000048ac                I2CSlaveDataGet
- .text          0x000048c8      0x574 ./Drivers/i2s.o
-                0x000048c8                I2STxEnable
-                0x000048fc                I2STxDisable
-                0x00004924                I2STxDataPut
-                0x0000494c                I2STxDataPutNonBlocking
-                0x00004980                I2STxConfigSet
-                0x000049cc                I2STxFIFOLimitSet
-                0x000049ec                I2STxFIFOLimitGet
-                0x00004a08                I2STxFIFOLevelGet
-                0x00004a24                I2SRxEnable
-                0x00004a58                I2SRxDisable
-                0x00004a80                I2SRxDataGet
-                0x00004ab0                I2SRxDataGetNonBlocking
-                0x00004aec                I2SRxConfigSet
-                0x00004b7c                I2SRxFIFOLimitSet
-                0x00004ba0                I2SRxFIFOLimitGet
-                0x00004bcc                I2SRxFIFOLevelGet
-                0x00004bec                I2STxRxEnable
-                0x00004c2c                I2STxRxDisable
-                0x00004c54                I2STxRxConfigSet
-                0x00004d0c                I2SMasterClockSelect
-                0x00004d40                I2SIntEnable
-                0x00004d6c                I2SIntDisable
-                0x00004d9c                I2SIntStatus
-                0x00004dd4                I2SIntClear
-                0x00004df8                I2SIntRegister
-                0x00004e1c                I2SIntUnregister
- .text          0x00004e3c      0x520 ./Drivers/interrupt.o
-                0x00004e44                IntMasterEnable
-                0x00004e58                IntMasterDisable
-                0x00004e6c                IntRegister
-                0x00004ef8                IntUnregister
-                0x00004f20                IntPriorityGroupingSet
-                0x00004f54                IntPriorityGroupingGet
-                0x00004fa8                IntPrioritySet
-                0x00005020                IntPriorityGet
-                0x0000505c                IntEnable
-                0x00005134                IntDisable
-                0x0000520c                IntPendSet
-                0x000052c4                IntPendClear
- .text          0x0000535c      0x194 ./Drivers/mpu.o
-                0x0000535c                MPUEnable
-                0x00005380                MPUDisable
-                0x000053a4                MPURegionCountGet
-                0x000053c4                MPURegionEnable
-                0x000053fc                MPURegionDisable
-                0x00005434                MPURegionSet
-                0x00005474                MPURegionGet
-                0x000054b4                MPUIntRegister
-                0x000054d8                MPUIntUnregister
- .text          0x000054f0      0x7e0 ./Drivers/pwm.o
-                0x000054f0                PWMGenConfigure
-                0x00005564                PWMGenPeriodSet
-                0x000055ac                PWMGenPeriodGet
-                0x000055f0                PWMGenEnable
-                0x00005618                PWMGenDisable
-                0x00005640                PWMPulseWidthSet
-                0x000056ac                PWMPulseWidthGet
-                0x0000571c                PWMDeadBandEnable
-                0x00005764                PWMDeadBandDisable
-                0x00005794                PWMSyncUpdate
-                0x000057b0                PWMSyncTimeBase
-                0x000057d0                PWMOutputState
-                0x00005820                PWMOutputInvert
-                0x00005870                PWMOutputFaultLevel
-                0x000058c0                PWMOutputFault
-                0x00005910                PWMGenIntRegister
-                0x00005950                PWMGenIntUnregister
-                0x0000598c                PWMFaultIntRegister
-                0x000059b0                PWMFaultIntUnregister
-                0x000059d0                PWMGenIntTrigEnable
-                0x00005a04                PWMGenIntTrigDisable
-                0x00005a3c                PWMGenIntStatus
-                0x00005a78                PWMGenIntClear
-                0x00005a9c                PWMIntEnable
-                0x00005ac8                PWMIntDisable
-                0x00005af8                PWMFaultIntClear
-                0x00005b18                PWMIntStatus
-                0x00005b48                PWMFaultIntClearExt
-                0x00005b68                PWMGenFaultConfigure
-                0x00005ba8                PWMGenFaultTriggerSet
-                0x00005be4                PWMGenFaultTriggerGet
-                0x00005c1c                PWMGenFaultStatus
-                0x00005c74                PWMGenFaultClear
- .text          0x00005cd0      0x2b8 ./Drivers/qei.o
-                0x00005cd0                QEIEnable
-                0x00005cf0                QEIDisable
-                0x00005d10                QEIConfigure
-                0x00005d44                QEIPositionGet
-                0x00005d60                QEIPositionSet
-                0x00005d80                QEIDirectionGet
-                0x00005db0                QEIErrorGet
-                0x00005dd4                QEIVelocityEnable
-                0x00005df4                QEIVelocityDisable
-                0x00005e14                QEIVelocityConfigure
-                0x00005e4c                QEIVelocityGet
-                0x00005e68                QEIIntRegister
-                0x00005ea4                QEIIntUnregister
-                0x00005edc                QEIIntEnable
-                0x00005f08                QEIIntDisable
-                0x00005f38                QEIIntStatus
-                0x00005f68                QEIIntClear
- .text          0x00005f88      0x388 ./Drivers/ssi.o
-                0x00005f88                SSIConfigSetExpClk
-                0x00006044                SSIEnable
-                0x0000606c                SSIDisable
-                0x00006094                SSIIntRegister
-                0x000060d0                SSIIntUnregister
-                0x00006108                SSIIntEnable
-                0x00006134                SSIIntDisable
-                0x00006164                SSIIntStatus
-                0x00006194                SSIIntClear
-                0x000061b4                SSIDataPut
-                0x000061e4                SSIDataPutNonBlocking
-                0x00006220                SSIDataGet
-                0x00006250                SSIDataGetNonBlocking
-                0x0000628c                SSIDMAEnable
-                0x000062b8                SSIDMADisable
-                0x000062e8                SSIBusy
- .text          0x00006310     0x10c4 ./Drivers/sysctl.o
-                0x00006310                SysCtlSRAMSizeGet
-                0x00006338                SysCtlFlashSizeGet
-                0x00006360                SysCtlPinPresent
-                0x00006394                SysCtlPeripheralPresent
-                0x00006414                SysCtlPeripheralReset
-                0x000064cc                SysCtlPeripheralEnable
-                0x00006524                SysCtlPeripheralDisable
-                0x00006580                SysCtlPeripheralSleepEnable
-                0x000065d8                SysCtlPeripheralSleepDisable
-                0x00006634                SysCtlPeripheralDeepSleepEnable
-                0x0000668c                SysCtlPeripheralDeepSleepDisable
-                0x000066e8                SysCtlPeripheralClockGating
-                0x00006734                SysCtlIntRegister
-                0x00006758                SysCtlIntUnregister
-                0x00006770                SysCtlIntEnable
-                0x0000679c                SysCtlIntDisable
-                0x000067cc                SysCtlIntClear
-                0x000067ec                SysCtlIntStatus
-                0x00006820                SysCtlLDOSet
-                0x00006840                SysCtlLDOGet
-                0x00006858                SysCtlLDOConfigSet
-                0x00006878                SysCtlReset
-                0x00006890                SysCtlSleep
-                0x0000689c                SysCtlDeepSleep
-                0x000068d8                SysCtlResetCauseGet
-                0x000068f0                SysCtlResetCauseClear
-                0x00006920                SysCtlBrownOutConfigSet
-                0x0000694c                SysCtlDelay
-                0x00006954                SysCtlClockSet
-                0x00006bec                SysCtlClockGet
-                0x00006f78                SysCtlPWMClockSet
-                0x00006fa8                SysCtlPWMClockGet
-                0x00006fdc                SysCtlADCSpeedSet
-                0x0000702c                SysCtlADCSpeedGet
-                0x00007048                SysCtlIOSCVerificationSet
-                0x00007094                SysCtlMOSCVerificationSet
-                0x000070e0                SysCtlPLLVerificationSet
-                0x0000712c                SysCtlClkVerificationClear
-                0x00007154                SysCtlGPIOAHBEnable
-                0x00007188                SysCtlGPIOAHBDisable
-                0x000071c0                SysCtlUSBPLLEnable
-                0x000071e4                SysCtlUSBPLLDisable
-                0x00007208                SysCtlI2SMClkSet
- .text          0x000073d4      0x144 ./Drivers/systick.o
-                0x000073d4                SysTickEnable
-                0x000073f8                SysTickDisable
-                0x0000741c                SysTickIntRegister
-                0x00007450                SysTickIntUnregister
-                0x00007478                SysTickIntEnable
-                0x0000749c                SysTickIntDisable
-                0x000074c0                SysTickPeriodSet
-                0x000074e4                SysTickPeriodGet
-                0x00007500                SysTickValueGet
- .text          0x00007518      0x7b4 ./Drivers/timer.o
-                0x00007518                TimerEnable
-                0x00007550                TimerDisable
-                0x0000758c                TimerConfigure
-                0x000075e4                TimerControlLevel
-                0x00007640                TimerControlTrigger
-                0x0000769c                TimerControlEvent
-                0x000076e8                TimerControlStall
-                0x00007744                TimerControlWaitOnTrigger
-                0x000077d0                TimerRTCEnable
-                0x000077f8                TimerRTCDisable
-                0x00007820                TimerPrescaleSet
-                0x00007860                TimerPrescaleGet
-                0x00007890                TimerPrescaleMatchSet
-                0x000078d0                TimerPrescaleMatchGet
-                0x00007900                TimerLoadSet
-                0x00007940                TimerLoadGet
-                0x00007970                TimerValueGet
-                0x000079a0                TimerMatchSet
-                0x000079e0                TimerMatchGet
-                0x00007a10                TimerIntRegister
-                0x00007aa4                TimerIntUnregister
-                0x00007b30                TimerIntEnable
-                0x00007b5c                TimerIntDisable
-                0x00007b8c                TimerIntStatus
-                0x00007bbc                TimerIntClear
-                0x00007bdc                TimerQuiesce
- .text          0x00007ccc      0x83c ./Drivers/uart.o
-                0x00007ccc                UARTParityModeSet
-                0x00007cfc                UARTParityModeGet
-                0x00007d1c                UARTFIFOLevelSet
-                0x00007d44                UARTFIFOLevelGet
-                0x00007d78                UARTConfigSetExpClk
-                0x00007e20                UARTConfigGetExpClk
-                0x00007e90                UARTEnable
-                0x00007ed0                UARTDisable
-                0x00007f20                UARTFIFOEnable
-                0x00007f48                UARTFIFODisable
-                0x00007f70                UARTEnableSIR
-                0x00007fb8                UARTDisableSIR
-                0x00007fe0                UARTSmartCardEnable
-                0x0000802c                UARTSmartCardDisable
-                0x00008054                UARTModemControlSet
-                0x0000808c                UARTModemControlClear
-                0x000080c8                UARTModemControlGet
-                0x000080e8                UARTModemStatusGet
-                0x00008110                UARTFlowControlSet
-                0x00008140                UARTFlowControlGet
-                0x00008160                UARTTxIntModeSet
-                0x00008190                UARTTxIntModeGet
-                0x000081b0                UARTCharsAvail
-                0x000081d8                UARTSpaceAvail
-                0x00008200                UARTCharGetNonBlocking
-                0x00008230                UARTCharGet
-                0x00008258                UARTCharPutNonBlocking
-                0x00008290                UARTCharPut
-                0x000082bc                UARTBreakCtl
-                0x000082fc                UARTBusy
-                0x00008324                UARTIntRegister
-                0x00008374                UARTIntUnregister
-                0x000083c0                UARTIntEnable
-                0x000083ec                UARTIntDisable
-                0x0000841c                UARTIntStatus
-                0x0000844c                UARTIntClear
-                0x0000846c                UARTDMAEnable
-                0x00008498                UARTDMADisable
-                0x000084c8                UARTRxErrorGet
-                0x000084e8                UARTRxErrorClear
- .text          0x00008508      0x57c ./Drivers/udma.o
-                0x00008508                uDMAEnable
-                0x00008520                uDMADisable
-                0x00008538                uDMAErrorStatusGet
-                0x00008550                uDMAErrorStatusClear
-                0x00008568                uDMAChannelEnable
-                0x00008590                uDMAChannelDisable
-                0x000085b8                uDMAChannelIsEnabled
-                0x000085ec                uDMAControlBaseSet
-                0x0000860c                uDMAControlBaseGet
-                0x00008624                uDMAChannelRequest
-                0x0000864c                uDMAChannelAttributeEnable
-                0x000086dc                uDMAChannelAttributeDisable
-                0x0000876c                uDMAChannelAttributeGet
-                0x00008818                uDMAChannelControlSet
-                0x00008864                uDMAChannelTransferSet
-                0x0000894c                uDMAChannelSizeGet
-                0x0000899c                uDMAChannelModeGet
-                0x000089ec                uDMAChannelSelectSecondary
-                0x00008a18                uDMAChannelSelectDefault
-                0x00008a48                uDMAIntRegister
-                0x00008a68                uDMAIntUnregister
- .text          0x00008a84     0x1988 ./Drivers/usb.o
-                0x00008b3c                USBHostSuspend
-                0x00008b68                USBHostReset
-                0x00008bb8                USBHostResume
-                0x00008c08                USBHostSpeedGet
-                0x00008c50                USBIntStatus
-                0x00008d14                USBIntDisable
-                0x00008dec                USBIntEnable
-                0x00008eb4                USBIntDisableControl
-                0x00008f24                USBIntEnableControl
-                0x00008f8c                USBIntStatusControl
-                0x00009024                USBIntDisableEndpoint
-                0x0000908c                USBIntEnableEndpoint
-                0x000090e8                USBIntStatusEndpoint
-                0x00009120                USBIntRegister
-                0x00009144                USBIntUnregister
-                0x00009164                USBEndpointStatus
-                0x000091a8                USBHostEndpointStatusClear
-                0x00009240                USBDevEndpointStatusClear
-                0x00009334                USBHostEndpointDataToggle
-                0x00009430                USBEndpointDataToggleClear
-                0x00009498                USBDevEndpointStall
-                0x00009518                USBDevEndpointStallClear
-                0x000095d8                USBDevConnect
-                0x00009604                USBDevDisconnect
-                0x00009630                USBDevAddrSet
-                0x0000964c                USBDevAddrGet
-                0x00009668                USBHostEndpointConfig
-                0x00009828                USBDevEndpointConfigSet
-                0x00009954                USBDevEndpointConfigGet
-                0x00009aa4                USBFIFOConfigSet
-                0x00009b38                USBFIFOConfigGet
-                0x00009bd4                USBEndpointDMAEnable
-                0x00009c54                USBEndpointDMADisable
-                0x00009cd0                USBEndpointDataAvail
-                0x00009d24                USBEndpointDataGet
-                0x00009dd0                USBDevEndpointDataAck
-                0x00009e2c                USBHostEndpointDataAck
-                0x00009e80                USBEndpointDataPut
-                0x00009f04                USBEndpointDataSend
-                0x00009f68                USBFIFOFlush
-                0x0000a02c                USBHostRequestIN
-                0x0000a064                USBHostRequestStatus
-                0x0000a084                USBHostAddrSet
-                0x0000a0d0                USBHostAddrGet
-                0x0000a118                USBHostHubAddrSet
-                0x0000a164                USBHostHubAddrGet
-                0x0000a1ac                USBHostPwrConfig
-                0x0000a1fc                USBHostPwrFaultEnable
-                0x0000a228                USBHostPwrFaultDisable
-                0x0000a260                USBHostPwrEnable
-                0x0000a28c                USBHostPwrDisable
-                0x0000a2c4                USBFrameNumberGet
-                0x0000a2e4                USBOTGSessionRequest
-                0x0000a334                USBFIFOAddrGet
-                0x0000a358                USBModeGet
-                0x0000a37c                USBEndpointDMAChannel
-                0x0000a3d8                USBHostMode
- .text          0x0000a40c      0x260 ./Drivers/watchdog.o
-                0x0000a40c                WatchdogRunning
-                0x0000a430                WatchdogEnable
-                0x0000a458                WatchdogResetEnable
-                0x0000a480                WatchdogResetDisable
-                0x0000a4a8                WatchdogLock
-                0x0000a4c8                WatchdogUnlock
-                0x0000a4ec                WatchdogLockState
-                0x0000a510                WatchdogReloadSet
-                0x0000a52c                WatchdogReloadGet
-                0x0000a544                WatchdogValueGet
-                0x0000a560                WatchdogIntRegister
-                0x0000a584                WatchdogIntUnregister
-                0x0000a5a4                WatchdogIntEnable
-                0x0000a5cc                WatchdogIntStatus
-                0x0000a5fc                WatchdogIntClear
-                0x0000a61c                WatchdogStallEnable
-                0x0000a644                WatchdogStallDisable
- .text          0x0000a66c       0xa8 ./API/led.o
-                0x0000a6cc                ledSwitch
- .text          0x0000a714      0x14c ./API/comport.o
-                0x0000a778                xComOpen
-                0x0000a7bc                vComWrite
-                0x0000a7d4                vComRead
-                0x0000a7ec                xComGetChar
-                0x0000a810                vComPutChar
-                0x0000a838                xComWaitForSemaphore
-                0x0000a84c                vComClose
- .text          0x0000a860      0x178 ./API/buttons.o
-                0x0000a964                xButtonRegisterCallback
-                0x0000a978                xButtonIsPressed
- .text          0x0000a9d8      0x564 ./API/ustdlib.o
-                0x0000a9d8                uvsnprintf
-                0x0000aed4                usprintf
-                0x0000af08                usnprintf
- .text          0x0000af3c      0x808 ./OLEDDisplay/rit128x96x4.o
-                0x0000b050                RIT128x96x4Clear
-                0x0000b0e4                RIT128x96x4StringDraw
-                0x0000b2c8                RIT128x96x4ImageDraw
-                0x0000b3b4                RIT128x96x4Enable
-                0x0000b450                RIT128x96x4Disable
-                0x0000b4cc                RIT128x96x4Init
-                0x0000b6d0                RIT128x96x4DisplayOn
-                0x0000b72c                RIT128x96x4DisplayOff
- .text          0x0000b744      0x6f0 ./OLEDDisplay/osram128x64x4.o
-                0x0000b834                OSRAM128x64x4Clear
-                0x0000b8b0                OSRAM128x64x4StringDraw
-                0x0000ba94                OSRAM128x64x4ImageDraw
-                0x0000bb80                OSRAM128x64x4Enable
-                0x0000bc1c                OSRAM128x64x4Disable
-                0x0000bc9c                OSRAM128x64x4Init
-                0x0000bdc0                OSRAM128x64x4DisplayOn
-                0x0000be1c                OSRAM128x64x4DisplayOff
- .text          0x0000be34      0xa1c ./OLEDDisplay/formike128x128x16.o
-                0x0000bec8                Formike128x128x16Init
-                0x0000c130                Formike128x128x16BacklightOn
-                0x0000c148                Formike128x128x16BacklightOff
-                0x0000c698                vFormike128x128x16Clear
-                0x0000c710                vFormike128x128x16StringDraw
-                0x0000c770                vFormike128x128x16Init
-                0x0000c828                vFormike128x128x16ImageDraw
- .text          0x0000c850      0x614 main.o
-                0x0000c850                vUARTTask
-                0x0000c8cc                vLEDTask
-                0x0000c8f8                vButtonTask
-                0x0000ca64                main
-                0x0000cde0                vTaskRefresh
-                0x0000ce58                vApplicationStackOverflowHook
- .text          0x0000ce64      0x17c ../../../Source/list.o
-                0x0000ce64                vListInitialise
-                0x0000ceac                vListInitialiseItem
-                0x0000cec8                vListInsertEnd
-                0x0000cf18                vListInsert
-                0x0000cf8c                vListRemove
- .text          0x0000cfe0      0x984 ../../../Source/queue.o
-                0x0000cfe0                xQueueCreate
-                0x0000d0ac                xQueueCreateMutex
-                0x0000d144                xQueueGiveMutexRecursive
-                0x0000d19c                xQueueTakeMutexRecursive
-                0x0000d1fc                xQueueGenericSend
-                0x0000d31c                xQueueGenericSendFromISR
-                0x0000d3b4                xQueueGenericReceive
-                0x0000d544                xQueueReceiveFromISR
-                0x0000d5e0                uxQueueMessagesWaiting
-                0x0000d604                uxQueueMessagesWaitingFromISR
-                0x0000d620                vQueueDelete
-                0x0000d830                xQueueIsQueueEmptyFromISR
-                0x0000d884                xQueueIsQueueFullFromISR
-                0x0000d8ac                vQueueAddToRegistry
- .text          0x0000d964     0x172c ../../../Source/tasks.o
-                0x0000d964                xTaskGenericCreate
-                0x0000db14                vTaskDelete
-                0x0000dbd4                vTaskDelayUntil
-                0x0000dce8                vTaskDelay
-                0x0000dda0                uxTaskPriorityGet
-                0x0000ddd8                vTaskPrioritySet
-                0x0000df08                vTaskSuspend
-                0x0000df8c                xTaskIsTaskSuspended
-                0x0000dfdc                vTaskResume
-                0x0000e088                xTaskResumeFromISR
-                0x0000e148                vTaskStartScheduler
-                0x0000e1c0                vTaskEndScheduler
-                0x0000e1e4                vTaskSuspendAll
-                0x0000e208                xTaskResumeAll
-                0x0000e368                xTaskGetTickCount
-                0x0000e390                uxTaskGetNumberOfTasks
-                0x0000e3a8                vTaskList
-                0x0000e4d8                vTaskStartTrace
-                0x0000e52c                ulTaskEndTrace
-                0x0000e570                vTaskIncrementTick
-                0x0000e6ac                vTaskSwitchContext
-                0x0000e8c4                vTaskPlaceOnEventList
-                0x0000e998                xTaskRemoveFromEventList
-                0x0000ea6c                vTaskSetTimeOutState
-                0x0000ea9c                xTaskCheckForTimeOut
-                0x0000eb44                vTaskMissedYield
-                0x0000eeac                uxTaskGetStackHighWaterMark
-                0x0000ef08                xTaskGetCurrentTaskHandle
-                0x0000ef28                vTaskPriorityInherit
-                0x0000f000                vTaskPriorityDisinherit
- .text          0x0000f090      0x208 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x0000f090                pxPortInitialiseStack
-                0x0000f0f0                vPortSVCHandler
-                0x0000f110                vPortStartFirstTask
-                0x0000f11c                xPortStartScheduler
-                0x0000f170                vPortEndScheduler
-                0x0000f17c                vPortYieldFromISR
-                0x0000f194                vPortEnterCritical
-                0x0000f1c0                vPortExitCritical
-                0x0000f1f8                xPortPendSVHandler
-                0x0000f234                xPortSysTickHandler
- .text          0x0000f298      0x270 ../../../Source/portable/MemMang/heap_2.o
-                0x0000f298                pvPortMalloc
-                0x0000f45c                vPortFree
-                0x0000f4e4                xPortGetFreeHeapSize
-                0x0000f4fc                vPortInitialiseBlocks
- .text          0x0000f508       0x8c startup.o
-                0x0000f514                uipprintf
-                0x0000f520                ResetISR
- .text          0x0000f594        0x0 ./Drivers/grlib.a(context.o)
+ .text          0x0000308c      0xfa8 ./Drivers/gpio.o
+                0x0000308c                GPIOEISR
+                0x00003148                GPIOFISR
+                0x00003458                GPIODirModeSet
+                0x000034e0                GPIODirModeGet
+                0x00003544                GPIOIntTypeSet
+                0x00003618                GPIOIntTypeGet
+                0x000036a8                GPIOPadConfigSet
+                0x000038d8                GPIOPadConfigGet
+                0x00003a28                GPIOPinIntEnable
+                0x00003a54                GPIOPinIntDisable
+                0x00003a84                GPIOPinIntStatus
+                0x00003ab8                GPIOPinIntClear
+                0x00003adc                GPIOPortIntRegister
+                0x00003b94                GPIOPortIntUnregister
+                0x00003bbc                GPIOPinRead
+                0x00003be4                GPIOPinWrite
+                0x00003c10                GPIOPinTypeADC
+                0x00003c44                GPIOPinTypeCAN
+                0x00003c78                GPIOPinTypeComparator
+                0x00003cac                GPIOPinTypeGPIOInput
+                0x00003ce0                GPIOPinTypeGPIOOutput
+                0x00003d14                GPIOPinTypeGPIOOutputOD
+                0x00003d48                GPIOPinTypeI2C
+                0x00003d7c                GPIOPinTypePWM
+                0x00003db0                GPIOPinTypeQEI
+                0x00003de4                GPIOPinTypeSSI
+                0x00003e18                GPIOPinTypeTimer
+                0x00003e4c                GPIOPinTypeUART
+                0x00003e80                GPIOPinTypeUSBDigital
+                0x00003eb4                GPIOPinTypeUSBAnalog
+                0x00003ee8                GPIOPinTypeI2S
+                0x00003f1c                GPIOPinTypeEthernetLED
+                0x00003f50                GPIOPinTypeEPI
+                0x00003f84                GPIOPinConfigure
+ .text          0x00004034      0x5b0 ./Drivers/hibernate.o
+                0x00004034                HibernateWriteComplete
+                0x0000404c                HibernateEnableExpClk
+                0x000040ec                HibernateDisable
+                0x00004110                HibernateClockSelect
+                0x00004140                HibernateRTCEnable
+                0x00004164                HibernateRTCDisable
+                0x00004188                HibernateWakeSet
+                0x000041b8                HibernateWakeGet
+                0x000041d4                HibernateLowBatSet
+                0x00004204                HibernateLowBatGet
+                0x00004220                HibernateRTCSet
+                0x00004274                HibernateRTCGet
+                0x0000428c                HibernateRTCMatch0Set
+                0x000042e0                HibernateRTCMatch0Get
+                0x000042f8                HibernateRTCMatch1Set
+                0x0000434c                HibernateRTCMatch1Get
+                0x00004364                HibernateRTCTrimSet
+                0x000043b8                HibernateRTCTrimGet
+                0x000043d0                HibernateDataSet
+                0x00004450                HibernateDataGet
+                0x0000449c                HibernateRequest
+                0x000044c0                HibernateIntEnable
+                0x000044ec                HibernateIntDisable
+                0x0000451c                HibernateIntRegister
+                0x00004540                HibernateIntUnregister
+                0x00004558                HibernateIntStatus
+                0x00004594                HibernateIntClear
+                0x000045c0                HibernateIsActive
+ .text          0x000045e4      0x5a4 ./Drivers/i2c.o
+                0x000045e4                I2CMasterInitExpClk
+                0x00004658                I2CSlaveInit
+                0x00004678                I2CMasterEnable
+                0x000046a0                I2CSlaveEnable
+                0x000046d4                I2CMasterDisable
+                0x000046fc                I2CSlaveDisable
+                0x00004730                I2CIntRegister
+                0x0000476c                I2CIntUnregister
+                0x000047a4                I2CMasterIntEnable
+                0x000047c4                I2CSlaveIntEnable
+                0x000047ec                I2CSlaveIntEnableEx
+                0x00004818                I2CMasterIntDisable
+                0x00004838                I2CSlaveIntDisable
+                0x00004860                I2CSlaveIntDisableEx
+                0x00004890                I2CMasterIntStatus
+                0x000048d0                I2CSlaveIntStatus
+                0x00004910                I2CSlaveIntStatusEx
+                0x00004994                I2CMasterIntClear
+                0x000049c0                I2CSlaveIntClear
+                0x000049e0                I2CSlaveIntClearEx
+                0x00004a00                I2CMasterSlaveAddrSet
+                0x00004a2c                I2CMasterBusy
+                0x00004a5c                I2CMasterBusBusy
+                0x00004a8c                I2CMasterControl
+                0x00004aac                I2CMasterErr
+                0x00004af4                I2CMasterDataPut
+                0x00004b14                I2CMasterDataGet
+                0x00004b30                I2CSlaveStatus
+                0x00004b4c                I2CSlaveDataPut
+                0x00004b6c                I2CSlaveDataGet
+ .text          0x00004b88      0x574 ./Drivers/i2s.o
+                0x00004b88                I2STxEnable
+                0x00004bbc                I2STxDisable
+                0x00004be4                I2STxDataPut
+                0x00004c0c                I2STxDataPutNonBlocking
+                0x00004c40                I2STxConfigSet
+                0x00004c8c                I2STxFIFOLimitSet
+                0x00004cac                I2STxFIFOLimitGet
+                0x00004cc8                I2STxFIFOLevelGet
+                0x00004ce4                I2SRxEnable
+                0x00004d18                I2SRxDisable
+                0x00004d40                I2SRxDataGet
+                0x00004d70                I2SRxDataGetNonBlocking
+                0x00004dac                I2SRxConfigSet
+                0x00004e3c                I2SRxFIFOLimitSet
+                0x00004e60                I2SRxFIFOLimitGet
+                0x00004e8c                I2SRxFIFOLevelGet
+                0x00004eac                I2STxRxEnable
+                0x00004eec                I2STxRxDisable
+                0x00004f14                I2STxRxConfigSet
+                0x00004fcc                I2SMasterClockSelect
+                0x00005000                I2SIntEnable
+                0x0000502c                I2SIntDisable
+                0x0000505c                I2SIntStatus
+                0x00005094                I2SIntClear
+                0x000050b8                I2SIntRegister
+                0x000050dc                I2SIntUnregister
+ .text          0x000050fc      0x520 ./Drivers/interrupt.o
+                0x00005104                IntMasterEnable
+                0x00005118                IntMasterDisable
+                0x0000512c                IntRegister
+                0x000051b8                IntUnregister
+                0x000051e0                IntPriorityGroupingSet
+                0x00005214                IntPriorityGroupingGet
+                0x00005268                IntPrioritySet
+                0x000052e0                IntPriorityGet
+                0x0000531c                IntEnable
+                0x000053f4                IntDisable
+                0x000054cc                IntPendSet
+                0x00005584                IntPendClear
+ .text          0x0000561c      0x194 ./Drivers/mpu.o
+                0x0000561c                MPUEnable
+                0x00005640                MPUDisable
+                0x00005664                MPURegionCountGet
+                0x00005684                MPURegionEnable
+                0x000056bc                MPURegionDisable
+                0x000056f4                MPURegionSet
+                0x00005734                MPURegionGet
+                0x00005774                MPUIntRegister
+                0x00005798                MPUIntUnregister
+ .text          0x000057b0      0x7e0 ./Drivers/pwm.o
+                0x000057b0                PWMGenConfigure
+                0x00005824                PWMGenPeriodSet
+                0x0000586c                PWMGenPeriodGet
+                0x000058b0                PWMGenEnable
+                0x000058d8                PWMGenDisable
+                0x00005900                PWMPulseWidthSet
+                0x0000596c                PWMPulseWidthGet
+                0x000059dc                PWMDeadBandEnable
+                0x00005a24                PWMDeadBandDisable
+                0x00005a54                PWMSyncUpdate
+                0x00005a70                PWMSyncTimeBase
+                0x00005a90                PWMOutputState
+                0x00005ae0                PWMOutputInvert
+                0x00005b30                PWMOutputFaultLevel
+                0x00005b80                PWMOutputFault
+                0x00005bd0                PWMGenIntRegister
+                0x00005c10                PWMGenIntUnregister
+                0x00005c4c                PWMFaultIntRegister
+                0x00005c70                PWMFaultIntUnregister
+                0x00005c90                PWMGenIntTrigEnable
+                0x00005cc4                PWMGenIntTrigDisable
+                0x00005cfc                PWMGenIntStatus
+                0x00005d38                PWMGenIntClear
+                0x00005d5c                PWMIntEnable
+                0x00005d88                PWMIntDisable
+                0x00005db8                PWMFaultIntClear
+                0x00005dd8                PWMIntStatus
+                0x00005e08                PWMFaultIntClearExt
+                0x00005e28                PWMGenFaultConfigure
+                0x00005e68                PWMGenFaultTriggerSet
+                0x00005ea4                PWMGenFaultTriggerGet
+                0x00005edc                PWMGenFaultStatus
+                0x00005f34                PWMGenFaultClear
+ .text          0x00005f90      0x2b8 ./Drivers/qei.o
+                0x00005f90                QEIEnable
+                0x00005fb0                QEIDisable
+                0x00005fd0                QEIConfigure
+                0x00006004                QEIPositionGet
+                0x00006020                QEIPositionSet
+                0x00006040                QEIDirectionGet
+                0x00006070                QEIErrorGet
+                0x00006094                QEIVelocityEnable
+                0x000060b4                QEIVelocityDisable
+                0x000060d4                QEIVelocityConfigure
+                0x0000610c                QEIVelocityGet
+                0x00006128                QEIIntRegister
+                0x00006164                QEIIntUnregister
+                0x0000619c                QEIIntEnable
+                0x000061c8                QEIIntDisable
+                0x000061f8                QEIIntStatus
+                0x00006228                QEIIntClear
+ .text          0x00006248      0x388 ./Drivers/ssi.o
+                0x00006248                SSIConfigSetExpClk
+                0x00006304                SSIEnable
+                0x0000632c                SSIDisable
+                0x00006354                SSIIntRegister
+                0x00006390                SSIIntUnregister
+                0x000063c8                SSIIntEnable
+                0x000063f4                SSIIntDisable
+                0x00006424                SSIIntStatus
+                0x00006454                SSIIntClear
+                0x00006474                SSIDataPut
+                0x000064a4                SSIDataPutNonBlocking
+                0x000064e0                SSIDataGet
+                0x00006510                SSIDataGetNonBlocking
+                0x0000654c                SSIDMAEnable
+                0x00006578                SSIDMADisable
+                0x000065a8                SSIBusy
+ .text          0x000065d0     0x10c4 ./Drivers/sysctl.o
+                0x000065d0                SysCtlSRAMSizeGet
+                0x000065f8                SysCtlFlashSizeGet
+                0x00006620                SysCtlPinPresent
+                0x00006654                SysCtlPeripheralPresent
+                0x000066d4                SysCtlPeripheralReset
+                0x0000678c                SysCtlPeripheralEnable
+                0x000067e4                SysCtlPeripheralDisable
+                0x00006840                SysCtlPeripheralSleepEnable
+                0x00006898                SysCtlPeripheralSleepDisable
+                0x000068f4                SysCtlPeripheralDeepSleepEnable
+                0x0000694c                SysCtlPeripheralDeepSleepDisable
+                0x000069a8                SysCtlPeripheralClockGating
+                0x000069f4                SysCtlIntRegister
+                0x00006a18                SysCtlIntUnregister
+                0x00006a30                SysCtlIntEnable
+                0x00006a5c                SysCtlIntDisable
+                0x00006a8c                SysCtlIntClear
+                0x00006aac                SysCtlIntStatus
+                0x00006ae0                SysCtlLDOSet
+                0x00006b00                SysCtlLDOGet
+                0x00006b18                SysCtlLDOConfigSet
+                0x00006b38                SysCtlReset
+                0x00006b50                SysCtlSleep
+                0x00006b5c                SysCtlDeepSleep
+                0x00006b98                SysCtlResetCauseGet
+                0x00006bb0                SysCtlResetCauseClear
+                0x00006be0                SysCtlBrownOutConfigSet
+                0x00006c0c                SysCtlDelay
+                0x00006c14                SysCtlClockSet
+                0x00006eac                SysCtlClockGet
+                0x00007238                SysCtlPWMClockSet
+                0x00007268                SysCtlPWMClockGet
+                0x0000729c                SysCtlADCSpeedSet
+                0x000072ec                SysCtlADCSpeedGet
+                0x00007308                SysCtlIOSCVerificationSet
+                0x00007354                SysCtlMOSCVerificationSet
+                0x000073a0                SysCtlPLLVerificationSet
+                0x000073ec                SysCtlClkVerificationClear
+                0x00007414                SysCtlGPIOAHBEnable
+                0x00007448                SysCtlGPIOAHBDisable
+                0x00007480                SysCtlUSBPLLEnable
+                0x000074a4                SysCtlUSBPLLDisable
+                0x000074c8                SysCtlI2SMClkSet
+ .text          0x00007694      0x144 ./Drivers/systick.o
+                0x00007694                SysTickEnable
+                0x000076b8                SysTickDisable
+                0x000076dc                SysTickIntRegister
+                0x00007710                SysTickIntUnregister
+                0x00007738                SysTickIntEnable
+                0x0000775c                SysTickIntDisable
+                0x00007780                SysTickPeriodSet
+                0x000077a4                SysTickPeriodGet
+                0x000077c0                SysTickValueGet
+ .text          0x000077d8      0x7b4 ./Drivers/timer.o
+                0x000077d8                TimerEnable
+                0x00007810                TimerDisable
+                0x0000784c                TimerConfigure
+                0x000078a4                TimerControlLevel
+                0x00007900                TimerControlTrigger
+                0x0000795c                TimerControlEvent
+                0x000079a8                TimerControlStall
+                0x00007a04                TimerControlWaitOnTrigger
+                0x00007a90                TimerRTCEnable
+                0x00007ab8                TimerRTCDisable
+                0x00007ae0                TimerPrescaleSet
+                0x00007b20                TimerPrescaleGet
+                0x00007b50                TimerPrescaleMatchSet
+                0x00007b90                TimerPrescaleMatchGet
+                0x00007bc0                TimerLoadSet
+                0x00007c00                TimerLoadGet
+                0x00007c30                TimerValueGet
+                0x00007c60                TimerMatchSet
+                0x00007ca0                TimerMatchGet
+                0x00007cd0                TimerIntRegister
+                0x00007d64                TimerIntUnregister
+                0x00007df0                TimerIntEnable
+                0x00007e1c                TimerIntDisable
+                0x00007e4c                TimerIntStatus
+                0x00007e7c                TimerIntClear
+                0x00007e9c                TimerQuiesce
+ .text          0x00007f8c      0x83c ./Drivers/uart.o
+                0x00007f8c                UARTParityModeSet
+                0x00007fbc                UARTParityModeGet
+                0x00007fdc                UARTFIFOLevelSet
+                0x00008004                UARTFIFOLevelGet
+                0x00008038                UARTConfigSetExpClk
+                0x000080e0                UARTConfigGetExpClk
+                0x00008150                UARTEnable
+                0x00008190                UARTDisable
+                0x000081e0                UARTFIFOEnable
+                0x00008208                UARTFIFODisable
+                0x00008230                UARTEnableSIR
+                0x00008278                UARTDisableSIR
+                0x000082a0                UARTSmartCardEnable
+                0x000082ec                UARTSmartCardDisable
+                0x00008314                UARTModemControlSet
+                0x0000834c                UARTModemControlClear
+                0x00008388                UARTModemControlGet
+                0x000083a8                UARTModemStatusGet
+                0x000083d0                UARTFlowControlSet
+                0x00008400                UARTFlowControlGet
+                0x00008420                UARTTxIntModeSet
+                0x00008450                UARTTxIntModeGet
+                0x00008470                UARTCharsAvail
+                0x00008498                UARTSpaceAvail
+                0x000084c0                UARTCharGetNonBlocking
+                0x000084f0                UARTCharGet
+                0x00008518                UARTCharPutNonBlocking
+                0x00008550                UARTCharPut
+                0x0000857c                UARTBreakCtl
+                0x000085bc                UARTBusy
+                0x000085e4                UARTIntRegister
+                0x00008634                UARTIntUnregister
+                0x00008680                UARTIntEnable
+                0x000086ac                UARTIntDisable
+                0x000086dc                UARTIntStatus
+                0x0000870c                UARTIntClear
+                0x0000872c                UARTDMAEnable
+                0x00008758                UARTDMADisable
+                0x00008788                UARTRxErrorGet
+                0x000087a8                UARTRxErrorClear
+ .text          0x000087c8      0x57c ./Drivers/udma.o
+                0x000087c8                uDMAEnable
+                0x000087e0                uDMADisable
+                0x000087f8                uDMAErrorStatusGet
+                0x00008810                uDMAErrorStatusClear
+                0x00008828                uDMAChannelEnable
+                0x00008850                uDMAChannelDisable
+                0x00008878                uDMAChannelIsEnabled
+                0x000088ac                uDMAControlBaseSet
+                0x000088cc                uDMAControlBaseGet
+                0x000088e4                uDMAChannelRequest
+                0x0000890c                uDMAChannelAttributeEnable
+                0x0000899c                uDMAChannelAttributeDisable
+                0x00008a2c                uDMAChannelAttributeGet
+                0x00008ad8                uDMAChannelControlSet
+                0x00008b24                uDMAChannelTransferSet
+                0x00008c0c                uDMAChannelSizeGet
+                0x00008c5c                uDMAChannelModeGet
+                0x00008cac                uDMAChannelSelectSecondary
+                0x00008cd8                uDMAChannelSelectDefault
+                0x00008d08                uDMAIntRegister
+                0x00008d28                uDMAIntUnregister
+ .text          0x00008d44     0x1988 ./Drivers/usb.o
+                0x00008dfc                USBHostSuspend
+                0x00008e28                USBHostReset
+                0x00008e78                USBHostResume
+                0x00008ec8                USBHostSpeedGet
+                0x00008f10                USBIntStatus
+                0x00008fd4                USBIntDisable
+                0x000090ac                USBIntEnable
+                0x00009174                USBIntDisableControl
+                0x000091e4                USBIntEnableControl
+                0x0000924c                USBIntStatusControl
+                0x000092e4                USBIntDisableEndpoint
+                0x0000934c                USBIntEnableEndpoint
+                0x000093a8                USBIntStatusEndpoint
+                0x000093e0                USBIntRegister
+                0x00009404                USBIntUnregister
+                0x00009424                USBEndpointStatus
+                0x00009468                USBHostEndpointStatusClear
+                0x00009500                USBDevEndpointStatusClear
+                0x000095f4                USBHostEndpointDataToggle
+                0x000096f0                USBEndpointDataToggleClear
+                0x00009758                USBDevEndpointStall
+                0x000097d8                USBDevEndpointStallClear
+                0x00009898                USBDevConnect
+                0x000098c4                USBDevDisconnect
+                0x000098f0                USBDevAddrSet
+                0x0000990c                USBDevAddrGet
+                0x00009928                USBHostEndpointConfig
+                0x00009ae8                USBDevEndpointConfigSet
+                0x00009c14                USBDevEndpointConfigGet
+                0x00009d64                USBFIFOConfigSet
+                0x00009df8                USBFIFOConfigGet
+                0x00009e94                USBEndpointDMAEnable
+                0x00009f14                USBEndpointDMADisable
+                0x00009f90                USBEndpointDataAvail
+                0x00009fe4                USBEndpointDataGet
+                0x0000a090                USBDevEndpointDataAck
+                0x0000a0ec                USBHostEndpointDataAck
+                0x0000a140                USBEndpointDataPut
+                0x0000a1c4                USBEndpointDataSend
+                0x0000a228                USBFIFOFlush
+                0x0000a2ec                USBHostRequestIN
+                0x0000a324                USBHostRequestStatus
+                0x0000a344                USBHostAddrSet
+                0x0000a390                USBHostAddrGet
+                0x0000a3d8                USBHostHubAddrSet
+                0x0000a424                USBHostHubAddrGet
+                0x0000a46c                USBHostPwrConfig
+                0x0000a4bc                USBHostPwrFaultEnable
+                0x0000a4e8                USBHostPwrFaultDisable
+                0x0000a520                USBHostPwrEnable
+                0x0000a54c                USBHostPwrDisable
+                0x0000a584                USBFrameNumberGet
+                0x0000a5a4                USBOTGSessionRequest
+                0x0000a5f4                USBFIFOAddrGet
+                0x0000a618                USBModeGet
+                0x0000a63c                USBEndpointDMAChannel
+                0x0000a698                USBHostMode
+ .text          0x0000a6cc      0x260 ./Drivers/watchdog.o
+                0x0000a6cc                WatchdogRunning
+                0x0000a6f0                WatchdogEnable
+                0x0000a718                WatchdogResetEnable
+                0x0000a740                WatchdogResetDisable
+                0x0000a768                WatchdogLock
+                0x0000a788                WatchdogUnlock
+                0x0000a7ac                WatchdogLockState
+                0x0000a7d0                WatchdogReloadSet
+                0x0000a7ec                WatchdogReloadGet
+                0x0000a804                WatchdogValueGet
+                0x0000a820                WatchdogIntRegister
+                0x0000a844                WatchdogIntUnregister
+                0x0000a864                WatchdogIntEnable
+                0x0000a88c                WatchdogIntStatus
+                0x0000a8bc                WatchdogIntClear
+                0x0000a8dc                WatchdogStallEnable
+                0x0000a904                WatchdogStallDisable
+ .text          0x0000a92c       0xa8 ./API/led.o
+                0x0000a98c                ledSwitch
+ .text          0x0000a9d4      0x14c ./API/comport.o
+                0x0000aa38                xComOpen
+                0x0000aa7c                vComWrite
+                0x0000aa94                vComRead
+                0x0000aaac                xComGetChar
+                0x0000aad0                vComPutChar
+                0x0000aaf8                xComWaitForSemaphore
+                0x0000ab0c                vComClose
+ .text          0x0000ab20      0x2b4 ./API/buttons.o
+                0x0000ace4                vButtonTask
+                0x0000ad60                xButtonRegisterCallback
+                0x0000ad74                xButtonIsPressed
+ .text          0x0000add4      0x564 ./API/ustdlib.o
+                0x0000add4                uvsnprintf
+                0x0000b2d0                usprintf
+                0x0000b304                usnprintf
+ .text          0x0000b338      0x808 ./OLEDDisplay/rit128x96x4.o
+                0x0000b44c                RIT128x96x4Clear
+                0x0000b4e0                RIT128x96x4StringDraw
+                0x0000b6c4                RIT128x96x4ImageDraw
+                0x0000b7b0                RIT128x96x4Enable
+                0x0000b84c                RIT128x96x4Disable
+                0x0000b8c8                RIT128x96x4Init
+                0x0000bacc                RIT128x96x4DisplayOn
+                0x0000bb28                RIT128x96x4DisplayOff
+ .text          0x0000bb40      0x6f0 ./OLEDDisplay/osram128x64x4.o
+                0x0000bc30                OSRAM128x64x4Clear
+                0x0000bcac                OSRAM128x64x4StringDraw
+                0x0000be90                OSRAM128x64x4ImageDraw
+                0x0000bf7c                OSRAM128x64x4Enable
+                0x0000c018                OSRAM128x64x4Disable
+                0x0000c098                OSRAM128x64x4Init
+                0x0000c1bc                OSRAM128x64x4DisplayOn
+                0x0000c218                OSRAM128x64x4DisplayOff
+ .text          0x0000c230      0xa1c ./OLEDDisplay/formike128x128x16.o
+                0x0000c2c4                Formike128x128x16Init
+                0x0000c52c                Formike128x128x16BacklightOn
+                0x0000c544                Formike128x128x16BacklightOff
+                0x0000ca94                vFormike128x128x16Clear
+                0x0000cb0c                vFormike128x128x16StringDraw
+                0x0000cb6c                vFormike128x128x16Init
+                0x0000cc24                vFormike128x128x16ImageDraw
+ .text          0x0000cc4c      0x4a8 main.o
+                0x0000cc4c                vUARTTask
+                0x0000ccc8                vLEDTask
+                0x0000ccf4                main
+                0x0000d070                vTaskRefresh
+                0x0000d0e8                vApplicationStackOverflowHook
+ .text          0x0000d0f4      0x17c ../../../Source/list.o
+                0x0000d0f4                vListInitialise
+                0x0000d13c                vListInitialiseItem
+                0x0000d158                vListInsertEnd
+                0x0000d1a8                vListInsert
+                0x0000d21c                vListRemove
+ .text          0x0000d270      0x984 ../../../Source/queue.o
+                0x0000d270                xQueueCreate
+                0x0000d33c                xQueueCreateMutex
+                0x0000d3d4                xQueueGiveMutexRecursive
+                0x0000d42c                xQueueTakeMutexRecursive
+                0x0000d48c                xQueueGenericSend
+                0x0000d5ac                xQueueGenericSendFromISR
+                0x0000d644                xQueueGenericReceive
+                0x0000d7d4                xQueueReceiveFromISR
+                0x0000d870                uxQueueMessagesWaiting
+                0x0000d894                uxQueueMessagesWaitingFromISR
+                0x0000d8b0                vQueueDelete
+                0x0000dac0                xQueueIsQueueEmptyFromISR
+                0x0000db14                xQueueIsQueueFullFromISR
+                0x0000db3c                vQueueAddToRegistry
+ .text          0x0000dbf4     0x172c ../../../Source/tasks.o
+                0x0000dbf4                xTaskGenericCreate
+                0x0000dda4                vTaskDelete
+                0x0000de64                vTaskDelayUntil
+                0x0000df78                vTaskDelay
+                0x0000e030                uxTaskPriorityGet
+                0x0000e068                vTaskPrioritySet
+                0x0000e198                vTaskSuspend
+                0x0000e21c                xTaskIsTaskSuspended
+                0x0000e26c                vTaskResume
+                0x0000e318                xTaskResumeFromISR
+                0x0000e3d8                vTaskStartScheduler
+                0x0000e450                vTaskEndScheduler
+                0x0000e474                vTaskSuspendAll
+                0x0000e498                xTaskResumeAll
+                0x0000e5f8                xTaskGetTickCount
+                0x0000e620                uxTaskGetNumberOfTasks
+                0x0000e638                vTaskList
+                0x0000e768                vTaskStartTrace
+                0x0000e7bc                ulTaskEndTrace
+                0x0000e800                vTaskIncrementTick
+                0x0000e93c                vTaskSwitchContext
+                0x0000eb54                vTaskPlaceOnEventList
+                0x0000ec28                xTaskRemoveFromEventList
+                0x0000ecfc                vTaskSetTimeOutState
+                0x0000ed2c                xTaskCheckForTimeOut
+                0x0000edd4                vTaskMissedYield
+                0x0000f13c                uxTaskGetStackHighWaterMark
+                0x0000f198                xTaskGetCurrentTaskHandle
+                0x0000f1b8                vTaskPriorityInherit
+                0x0000f290                vTaskPriorityDisinherit
+ .text          0x0000f320      0x208 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x0000f320                pxPortInitialiseStack
+                0x0000f380                vPortSVCHandler
+                0x0000f3a0                vPortStartFirstTask
+                0x0000f3ac                xPortStartScheduler
+                0x0000f400                vPortEndScheduler
+                0x0000f40c                vPortYieldFromISR
+                0x0000f424                vPortEnterCritical
+                0x0000f450                vPortExitCritical
+                0x0000f488                xPortPendSVHandler
+                0x0000f4c4                xPortSysTickHandler
+ .text          0x0000f528      0x270 ../../../Source/portable/MemMang/heap_2.o
+                0x0000f528                pvPortMalloc
+                0x0000f6ec                vPortFree
+                0x0000f774                xPortGetFreeHeapSize
+                0x0000f78c                vPortInitialiseBlocks
+ .text          0x0000f798       0x8c startup.o
+                0x0000f7a4                uipprintf
+                0x0000f7b0                ResetISR
+ .text          0x0000f824        0x0 ./Drivers/grlib.a(context.o)
  .text.GrContextInit
-                0x0000f594       0x24 ./Drivers/grlib.a(context.o)
-                0x0000f594                GrContextInit
+                0x0000f824       0x24 ./Drivers/grlib.a(context.o)
+                0x0000f824                GrContextInit
  .text.GrContextClipRegionSet
-                0x0000f5b8       0x88 ./Drivers/grlib.a(context.o)
-                0x0000f5b8                GrContextClipRegionSet
- .text          0x0000f640        0x0 ./Drivers/grlib.a(fontcmss12.o)
- .text          0x0000f640        0x0 ./Drivers/grlib.a(image.o)
+                0x0000f848       0x88 ./Drivers/grlib.a(context.o)
+                0x0000f848                GrContextClipRegionSet
+ .text          0x0000f8d0        0x0 ./Drivers/grlib.a(fontcmss12.o)
+ .text          0x0000f8d0        0x0 ./Drivers/grlib.a(image.o)
  .text.GrImageDraw
-                0x0000f640      0x37c ./Drivers/grlib.a(image.o)
-                0x0000f640                GrImageDraw
- .text          0x0000f9bc        0x0 ./Drivers/grlib.a(rectangle.o)
+                0x0000f8d0      0x37c ./Drivers/grlib.a(image.o)
+                0x0000f8d0                GrImageDraw
+ .text          0x0000fc4c        0x0 ./Drivers/grlib.a(rectangle.o)
  .text.GrRectFill
-                0x0000f9bc       0xb4 ./Drivers/grlib.a(rectangle.o)
-                0x0000f9bc                GrRectFill
+                0x0000fc4c       0xb4 ./Drivers/grlib.a(rectangle.o)
+                0x0000fc4c                GrRectFill
  .text.GrRectDraw
-                0x0000fa70       0x64 ./Drivers/grlib.a(rectangle.o)
-                0x0000fa70                GrRectDraw
- .text          0x0000fad4        0x0 ./Drivers/grlib.a(string.o)
+                0x0000fd00       0x64 ./Drivers/grlib.a(rectangle.o)
+                0x0000fd00                GrRectDraw
+ .text          0x0000fd64        0x0 ./Drivers/grlib.a(string.o)
  .text.GrStringWidthGet
-                0x0000fad4       0x58 ./Drivers/grlib.a(string.o)
-                0x0000fad4                GrStringWidthGet
+                0x0000fd64       0x58 ./Drivers/grlib.a(string.o)
+                0x0000fd64                GrStringWidthGet
  .text.GrStringDraw
-                0x0000fb2c      0x34c ./Drivers/grlib.a(string.o)
-                0x0000fb2c                GrStringDraw
- .text          0x0000fe78        0x0 ./Drivers/grlib.a(line.o)
+                0x0000fdbc      0x34c ./Drivers/grlib.a(string.o)
+                0x0000fdbc                GrStringDraw
+ .text          0x00010108        0x0 ./Drivers/grlib.a(line.o)
  .text.GrLineDrawH
-                0x0000fe78       0x58 ./Drivers/grlib.a(line.o)
-                0x0000fe78                GrLineDrawH
+                0x00010108       0x58 ./Drivers/grlib.a(line.o)
+                0x00010108                GrLineDrawH
  .text.GrLineDrawV
-                0x0000fed0       0x58 ./Drivers/grlib.a(line.o)
-                0x0000fed0                GrLineDrawV
+                0x00010160       0x58 ./Drivers/grlib.a(line.o)
+                0x00010160                GrLineDrawV
  .text.GrClipCodeGet
-                0x0000ff28       0x38 ./Drivers/grlib.a(line.o)
+                0x000101b8       0x38 ./Drivers/grlib.a(line.o)
  .text.GrLineDraw
-                0x0000ff60      0x19c ./Drivers/grlib.a(line.o)
-                0x0000ff60                GrLineDraw
- .text          0x000100fc       0x64 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
-                0x000100fc                memcmp
- .text          0x00010160      0x190 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
-                0x00010160                memcpy
- .text          0x000102f0       0xd4 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
-                0x000102f0                memset
- .text          0x000103c4       0x48 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
-                0x000103c4                strcat
- .text          0x0001040c       0xbc c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
-                0x0001040c                strcpy
- .text          0x000104c8       0x60 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
-                0x000104c8                strlen
- .text          0x00010528       0x78 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
-                0x00010528                strncpy
+                0x000101f0      0x19c ./Drivers/grlib.a(line.o)
+                0x000101f0                GrLineDraw
+ .text          0x0001038c       0x64 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+                0x0001038c                memcmp
+ .text          0x000103f0      0x190 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+                0x000103f0                memcpy
+ .text          0x00010580       0xd4 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+                0x00010580                memset
+ .text          0x00010654       0x48 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+                0x00010654                strcat
+ .text          0x0001069c       0xbc c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+                0x0001069c                strcpy
+ .text          0x00010758       0x60 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+                0x00010758                strlen
+ .text          0x000107b8       0x78 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x000107b8                strncpy
  *(.rodata*)
  .rodata.g_usCANBitValues
-                0x000105a0       0x14 ./Drivers/can.o
+                0x00010830       0x14 ./Drivers/can.o
  .rodata.g_pulFMPPERegs
-                0x000105b4       0x10 ./Drivers/flash.o
+                0x00010844       0x10 ./Drivers/flash.o
  .rodata.g_pulFMPRERegs
-                0x000105c4       0x10 ./Drivers/flash.o
+                0x00010854       0x10 ./Drivers/flash.o
  .rodata.g_pulGPIOBaseAddrs
-                0x000105d4       0x48 ./Drivers/gpio.o
+                0x00010864       0x48 ./Drivers/gpio.o
  .rodata.g_pulPriority
-                0x0001061c       0x20 ./Drivers/interrupt.o
+                0x000108ac       0x20 ./Drivers/interrupt.o
  .rodata.g_pulRegs
-                0x0001063c       0x48 ./Drivers/interrupt.o
+                0x000108cc       0x48 ./Drivers/interrupt.o
  .rodata.g_pulDCRegs
-                0x00010684       0x10 ./Drivers/sysctl.o
+                0x00010914       0x10 ./Drivers/sysctl.o
  .rodata.g_pulSRCRRegs
-                0x00010694        0xc ./Drivers/sysctl.o
+                0x00010924        0xc ./Drivers/sysctl.o
  .rodata.g_pulRCGCRegs
-                0x000106a0        0xc ./Drivers/sysctl.o
+                0x00010930        0xc ./Drivers/sysctl.o
  .rodata.g_pulSCGCRegs
-                0x000106ac        0xc ./Drivers/sysctl.o
+                0x0001093c        0xc ./Drivers/sysctl.o
  .rodata.g_pulDCGCRegs
-                0x000106b8        0xc ./Drivers/sysctl.o
+                0x00010948        0xc ./Drivers/sysctl.o
  .rodata.g_pulXtals
-                0x000106c4       0x5c ./Drivers/sysctl.o
- .rodata        0x00010720       0x1c ./API/ustdlib.o
+                0x00010954       0x5c ./Drivers/sysctl.o
+ .rodata        0x000109b0        0xc ./API/buttons.o
+ .rodata        0x000109bc       0x1c ./API/ustdlib.o
  .rodata.g_pcHex
-                0x0001073c        0x4 ./API/ustdlib.o
+                0x000109d8        0x4 ./API/ustdlib.o
  .rodata.g_pucRIT128x96x4VerticalInc
-                0x00010740        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x000109dc        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucRIT128x96x4HorizontalInc
-                0x00010744        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x000109e0        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucFont
-                0x00010748      0x1e0 ./OLEDDisplay/rit128x96x4.o
+                0x000109e4      0x1e0 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucRIT128x96x4Init
-                0x00010928       0x50 ./OLEDDisplay/rit128x96x4.o
+                0x00010bc4       0x50 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand1.1758
-                0x00010978        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x00010c14        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand1.1572
-                0x0001097c        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x00010c18        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.pucCommand2.1573
-                0x00010980        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x00010c1c        0x4 ./OLEDDisplay/rit128x96x4.o
  .rodata.g_pucOSRAM128x64x4VerticalInc
-                0x00010984        0x4 ./OLEDDisplay/osram128x64x4.o
+                0x00010c20        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucOSRAM128x64x4HorizontalInc
-                0x00010988        0x4 ./OLEDDisplay/osram128x64x4.o
+                0x00010c24        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucFont
-                0x0001098c      0x1e0 ./OLEDDisplay/osram128x64x4.o
+                0x00010c28      0x1e0 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_pucOSRAM128x64x4Init
-                0x00010b6c       0x50 ./OLEDDisplay/osram128x64x4.o
+                0x00010e08       0x50 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand1.1718
-                0x00010bbc        0x4 ./OLEDDisplay/osram128x64x4.o
+                0x00010e58        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand1.1559
-                0x00010bc0        0x4 ./OLEDDisplay/osram128x64x4.o
+                0x00010e5c        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.pucCommand2.1560
-                0x00010bc4        0x4 ./OLEDDisplay/osram128x64x4.o
+                0x00010e60        0x4 ./OLEDDisplay/osram128x64x4.o
  .rodata.g_sFormike128x128x16
-                0x00010bc8       0x28 ./OLEDDisplay/formike128x128x16.o
-                0x00010bc8                g_sFormike128x128x16
- .rodata        0x00010bf0       0x14 ./OLEDDisplay/formike128x128x16.o
+                0x00010e64       0x28 ./OLEDDisplay/formike128x128x16.o
+                0x00010e64                g_sFormike128x128x16
+ .rodata        0x00010e8c       0x14 ./OLEDDisplay/formike128x128x16.o
  .rodata.C.4.2343
-                0x00010c04        0x8 ./OLEDDisplay/formike128x128x16.o
+                0x00010ea0        0x8 ./OLEDDisplay/formike128x128x16.o
  .rodata.pucBasicBitmap
-                0x00010c0c      0xc84 main.o
-                0x00010c0c                pucBasicBitmap
+                0x00010ea8      0xc84 main.o
+                0x00010ea8                pucBasicBitmap
  .rodata.pucGrLibBitmap
-                0x00011890      0x6a8 main.o
-                0x00011890                pucGrLibBitmap
- .rodata        0x00011f38       0xa4 main.o
+                0x00011b2c      0x6a8 main.o
+                0x00011b2c                pucGrLibBitmap
+ .rodata        0x000121d4       0x74 main.o
  .rodata.pcWelcomeMessage
-                0x00011fdc        0x4 main.o
-                0x00011fdc                pcWelcomeMessage
- .rodata        0x00011fe0       0x20 ../../../Source/tasks.o
+                0x00012248        0x4 main.o
+                0x00012248                pcWelcomeMessage
+ .rodata        0x0001224c       0x20 ../../../Source/tasks.o
  .rodata.ucExpectedStackBytes.3394
-                0x00012000       0x14 ../../../Source/tasks.o
+                0x0001226c       0x14 ../../../Source/tasks.o
  .rodata.ulKernelPriority
-                0x00012014        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
-                0x00012014                ulKernelPriority
+                0x00012280        0x4 ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x00012280                ulKernelPriority
  .rodata.heapSTRUCT_SIZE
-                0x00012018        0x2 ../../../Source/portable/MemMang/heap_2.o
- *fill*         0x0001201a        0x2 00
+                0x00012284        0x2 ../../../Source/portable/MemMang/heap_2.o
+ *fill*         0x00012286        0x2 00
  .rodata.g_sFontCmss12
-                0x0001201c       0xc8 ./Drivers/grlib.a(fontcmss12.o)
-                0x0001201c                g_sFontCmss12
+                0x00012288       0xc8 ./Drivers/grlib.a(fontcmss12.o)
+                0x00012288                g_sFontCmss12
  .rodata.g_pucCmss12Data
-                0x000120e4      0x514 ./Drivers/grlib.a(fontcmss12.o)
-                0x000125f8                _etext = .
+                0x00012350      0x514 ./Drivers/grlib.a(fontcmss12.o)
+                0x00012864                _etext = .
 
-.glue_7         0x000125f8        0x0
+.glue_7         0x00012864        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x000125f8        0x0
+.glue_7t        0x00012864        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x000125f8        0x0
+.vfp11_veneer   0x00012864        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x000125f8        0x0
+.v4_bx          0x00012864        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.data           0x20000000        0x8 load address 0x000125f8
+.data           0x20000000        0x8 load address 0x00012864
                 0x20000000                _data = .
  *(vtable)
  *(.data*)
@@ -981,11 +984,11 @@ END GROUP
                 0x20000008                _edata = .
 
 .cs3.region-head.ram
-                0x20000008      0x11c load address 0x00012600
+                0x20000008      0x11c load address 0x0001286c
  .cs3.region-head.ram
                 0x20000008      0x11c ./Drivers/interrupt.o
 
-.bss            0x20000128     0x621c load address 0x00012720
+.bss            0x20000128     0x6314 load address 0x0001298c
                 0x20000128                _bss = .
  *(.bss*)
  .bss           0x20000128        0x0 ./Drivers/adc.o
@@ -998,160 +1001,167 @@ END GROUP
  .bss           0x2000012c        0x0 ./Drivers/ethernet.o
  .bss           0x2000012c        0x0 ./Drivers/flash.o
  .bss           0x2000012c        0x0 ./Drivers/gpio.o
- .bss           0x2000012c        0x0 ./Drivers/hibernate.o
+ .bss.xGPIOISRHandler
+                0x2000012c       0xf0 ./Drivers/gpio.o
+ .bss.isInitialized
+                0x2000021c        0x1 ./Drivers/gpio.o
+ .bss           0x2000021d        0x0 ./Drivers/hibernate.o
+ *fill*         0x2000021d        0x3 00
  .bss.g_ulWriteDelay
-                0x2000012c        0x4 ./Drivers/hibernate.o
- .bss           0x20000130        0x0 ./Drivers/i2c.o
- .bss           0x20000130        0x0 ./Drivers/i2s.o
- .bss           0x20000130        0x0 ./Drivers/interrupt.o
- .bss           0x20000130        0x0 ./Drivers/mpu.o
- .bss           0x20000130        0x0 ./Drivers/pwm.o
- .bss           0x20000130        0x0 ./Drivers/qei.o
- .bss           0x20000130        0x0 ./Drivers/ssi.o
- .bss           0x20000130        0x0 ./Drivers/sysctl.o
- .bss           0x20000130        0x0 ./Drivers/systick.o
- .bss           0x20000130        0x0 ./Drivers/timer.o
- .bss           0x20000130        0x0 ./Drivers/uart.o
- .bss           0x20000130        0x0 ./Drivers/udma.o
- .bss           0x20000130        0x0 ./Drivers/usb.o
- .bss           0x20000130        0x0 ./Drivers/watchdog.o
- .bss           0x20000130        0x0 ./API/led.o
+                0x20000220        0x4 ./Drivers/hibernate.o
+ .bss           0x20000224        0x0 ./Drivers/i2c.o
+ .bss           0x20000224        0x0 ./Drivers/i2s.o
+ .bss           0x20000224        0x0 ./Drivers/interrupt.o
+ .bss           0x20000224        0x0 ./Drivers/mpu.o
+ .bss           0x20000224        0x0 ./Drivers/pwm.o
+ .bss           0x20000224        0x0 ./Drivers/qei.o
+ .bss           0x20000224        0x0 ./Drivers/ssi.o
+ .bss           0x20000224        0x0 ./Drivers/sysctl.o
+ .bss           0x20000224        0x0 ./Drivers/systick.o
+ .bss           0x20000224        0x0 ./Drivers/timer.o
+ .bss           0x20000224        0x0 ./Drivers/uart.o
+ .bss           0x20000224        0x0 ./Drivers/udma.o
+ .bss           0x20000224        0x0 ./Drivers/usb.o
+ .bss           0x20000224        0x0 ./Drivers/watchdog.o
+ .bss           0x20000224        0x0 ./API/led.o
  .bss.isInitialized
-                0x20000130        0x1 ./API/led.o
- .bss           0x20000131        0x0 ./API/comport.o
+                0x20000224        0x1 ./API/led.o
+ .bss           0x20000225        0x0 ./API/comport.o
  .bss.isInitialized
-                0x20000131        0x1 ./API/comport.o
- .bss.isOpen    0x20000132        0x1 ./API/comport.o
- .bss           0x20000133        0x0 ./API/buttons.o
+                0x20000225        0x1 ./API/comport.o
+ .bss.isOpen    0x20000226        0x1 ./API/comport.o
+ .bss           0x20000227        0x0 ./API/buttons.o
  .bss.isInitialized
-                0x20000133        0x1 ./API/buttons.o
+                0x20000227        0x1 ./API/buttons.o
  .bss.callbackCollection
-                0x20000134       0x28 ./API/buttons.o
- .bss           0x2000015c        0x0 ./API/ustdlib.o
- .bss           0x2000015c        0x0 ./OLEDDisplay/rit128x96x4.o
- .bss.ulGPIOId  0x2000015c        0x4 ./OLEDDisplay/rit128x96x4.o
-                0x2000015c                ulGPIOId
+                0x20000228       0x28 ./API/buttons.o
+ .bss.xButtonQueue
+                0x20000250        0x4 ./API/buttons.o
+ .bss           0x20000254        0x0 ./API/ustdlib.o
+ .bss           0x20000254        0x0 ./OLEDDisplay/rit128x96x4.o
+ .bss.ulGPIOId  0x20000254        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000254                ulGPIOId
  .bss.ulGPIOBase
-                0x20000160        0x4 ./OLEDDisplay/rit128x96x4.o
-                0x20000160                ulGPIOBase
+                0x20000258        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000258                ulGPIOBase
  .bss.ulOLEDDC_PIN
-                0x20000164        0x4 ./OLEDDisplay/rit128x96x4.o
-                0x20000164                ulOLEDDC_PIN
+                0x2000025c        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x2000025c                ulOLEDDC_PIN
  .bss.ulOLEDEN_PIN
-                0x20000168        0x4 ./OLEDDisplay/rit128x96x4.o
-                0x20000168                ulOLEDEN_PIN
+                0x20000260        0x4 ./OLEDDisplay/rit128x96x4.o
+                0x20000260                ulOLEDEN_PIN
  .bss.g_bSSIEnabled
-                0x2000016c        0x1 ./OLEDDisplay/rit128x96x4.o
- *fill*         0x2000016d        0x3 00
+                0x20000264        0x1 ./OLEDDisplay/rit128x96x4.o
+ *fill*         0x20000265        0x3 00
  .bss.g_pucBuffer
-                0x20000170        0x8 ./OLEDDisplay/rit128x96x4.o
- .bss           0x20000178        0x0 ./OLEDDisplay/osram128x64x4.o
+                0x20000268        0x8 ./OLEDDisplay/rit128x96x4.o
+ .bss           0x20000270        0x0 ./OLEDDisplay/osram128x64x4.o
  .bss.g_bSSIEnabled
-                0x20000178        0x1 ./OLEDDisplay/osram128x64x4.o
- *fill*         0x20000179        0x3 00
+                0x20000270        0x1 ./OLEDDisplay/osram128x64x4.o
+ *fill*         0x20000271        0x3 00
  .bss.pucBuffer.1644
-                0x2000017c        0x8 ./OLEDDisplay/osram128x64x4.o
+                0x20000274        0x8 ./OLEDDisplay/osram128x64x4.o
  .bss.pucBuffer.1576
-                0x20000184        0x8 ./OLEDDisplay/osram128x64x4.o
+                0x2000027c        0x8 ./OLEDDisplay/osram128x64x4.o
  .bss.pucZeroBuffer.1563
-                0x2000018c        0x8 ./OLEDDisplay/osram128x64x4.o
- .bss           0x20000194        0x0 ./OLEDDisplay/formike128x128x16.o
- .bss.sContext  0x20000194       0x1c ./OLEDDisplay/formike128x128x16.o
- .bss           0x200001b0        0x0 main.o
+                0x20000284        0x8 ./OLEDDisplay/osram128x64x4.o
+ .bss           0x2000028c        0x0 ./OLEDDisplay/formike128x128x16.o
+ .bss.sContext  0x2000028c       0x1c ./OLEDDisplay/formike128x128x16.o
+ .bss           0x200002a8        0x0 main.o
  .bss.ulIdleError
-                0x200001b0        0x4 main.o
-                0x200001b0                ulIdleError
- .bss.cMessage.3265
-                0x200001b4       0x1c main.o
- .bss           0x200001d0        0x0 ../../../Source/list.o
- .bss           0x200001d0        0x0 ../../../Source/queue.o
- .bss           0x200001d0        0x0 ../../../Source/tasks.o
+                0x200002a8        0x4 main.o
+                0x200002a8                ulIdleError
+ .bss.cMessage.3235
+                0x200002ac       0x1c main.o
+ .bss           0x200002c8        0x0 ../../../Source/list.o
+ .bss           0x200002c8        0x0 ../../../Source/queue.o
+ .bss           0x200002c8        0x0 ../../../Source/tasks.o
  .bss.pxCurrentTCB
-                0x200001d0        0x4 ../../../Source/tasks.o
-                0x200001d0                pxCurrentTCB
- .bss.pxReadyTasksLists
-                0x200001d4       0x64 ../../../Source/tasks.o
- .bss.xDelayedTaskList1
-                0x20000238       0x14 ../../../Source/tasks.o
- .bss.xDelayedTaskList2
-                0x2000024c       0x14 ../../../Source/tasks.o
- .bss.pxDelayedTaskList
-                0x20000260        0x4 ../../../Source/tasks.o
- .bss.pxOverflowDelayedTaskList
-                0x20000264        0x4 ../../../Source/tasks.o
- .bss.xPendingReadyList
-                0x20000268       0x14 ../../../Source/tasks.o
- .bss.xTasksWaitingTermination
-                0x2000027c       0x14 ../../../Source/tasks.o
- .bss.uxTasksDeleted
-                0x20000290        0x4 ../../../Source/tasks.o
- .bss.xSuspendedTaskList
-                0x20000294       0x14 ../../../Source/tasks.o
- .bss.uxCurrentNumberOfTasks
-                0x200002a8        0x4 ../../../Source/tasks.o
- .bss.xTickCount
-                0x200002ac        0x4 ../../../Source/tasks.o
- .bss.uxTopUsedPriority
-                0x200002b0        0x4 ../../../Source/tasks.o
- .bss.uxTopReadyPriority
-                0x200002b4        0x4 ../../../Source/tasks.o
- .bss.xSchedulerRunning
-                0x200002b8        0x4 ../../../Source/tasks.o
- .bss.uxSchedulerSuspended
-                0x200002bc        0x4 ../../../Source/tasks.o
- .bss.uxMissedTicks
-                0x200002c0        0x4 ../../../Source/tasks.o
- .bss.xMissedYield
-                0x200002c4        0x4 ../../../Source/tasks.o
- .bss.xNumOfOverflows
                 0x200002c8        0x4 ../../../Source/tasks.o
+                0x200002c8                pxCurrentTCB
+ .bss.pxReadyTasksLists
+                0x200002cc       0x64 ../../../Source/tasks.o
+ .bss.xDelayedTaskList1
+                0x20000330       0x14 ../../../Source/tasks.o
+ .bss.xDelayedTaskList2
+                0x20000344       0x14 ../../../Source/tasks.o
+ .bss.pxDelayedTaskList
+                0x20000358        0x4 ../../../Source/tasks.o
+ .bss.pxOverflowDelayedTaskList
+                0x2000035c        0x4 ../../../Source/tasks.o
+ .bss.xPendingReadyList
+                0x20000360       0x14 ../../../Source/tasks.o
+ .bss.xTasksWaitingTermination
+                0x20000374       0x14 ../../../Source/tasks.o
+ .bss.uxTasksDeleted
+                0x20000388        0x4 ../../../Source/tasks.o
+ .bss.xSuspendedTaskList
+                0x2000038c       0x14 ../../../Source/tasks.o
+ .bss.uxCurrentNumberOfTasks
+                0x200003a0        0x4 ../../../Source/tasks.o
+ .bss.xTickCount
+                0x200003a4        0x4 ../../../Source/tasks.o
+ .bss.uxTopUsedPriority
+                0x200003a8        0x4 ../../../Source/tasks.o
+ .bss.uxTopReadyPriority
+                0x200003ac        0x4 ../../../Source/tasks.o
+ .bss.xSchedulerRunning
+                0x200003b0        0x4 ../../../Source/tasks.o
+ .bss.uxSchedulerSuspended
+                0x200003b4        0x4 ../../../Source/tasks.o
+ .bss.uxMissedTicks
+                0x200003b8        0x4 ../../../Source/tasks.o
+ .bss.xMissedYield
+                0x200003bc        0x4 ../../../Source/tasks.o
+ .bss.xNumOfOverflows
+                0x200003c0        0x4 ../../../Source/tasks.o
  .bss.uxTaskNumber
-                0x200002cc        0x4 ../../../Source/tasks.o
+                0x200003c4        0x4 ../../../Source/tasks.o
  .bss.pcTraceBuffer
-                0x200002d0        0x4 ../../../Source/tasks.o
+                0x200003c8        0x4 ../../../Source/tasks.o
  .bss.pcTraceBufferStart
-                0x200002d4        0x4 ../../../Source/tasks.o
+                0x200003cc        0x4 ../../../Source/tasks.o
  .bss.pcTraceBufferEnd
-                0x200002d8        0x4 ../../../Source/tasks.o
- .bss.xTracing  0x200002dc        0x4 ../../../Source/tasks.o
+                0x200003d0        0x4 ../../../Source/tasks.o
+ .bss.xTracing  0x200003d4        0x4 ../../../Source/tasks.o
  .bss.pcStatusString
-                0x200002e0       0x34 ../../../Source/tasks.o
- .bss           0x20000314        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
- .bss           0x20000314        0x0 ../../../Source/portable/MemMang/heap_2.o
- *fill*         0x20000314        0x4 00
- .bss.xHeap     0x20000318     0x5dc0 ../../../Source/portable/MemMang/heap_2.o
- .bss.xStart    0x200060d8        0x8 ../../../Source/portable/MemMang/heap_2.o
- .bss.xEnd      0x200060e0        0x8 ../../../Source/portable/MemMang/heap_2.o
+                0x200003d8       0x34 ../../../Source/tasks.o
+ .bss           0x2000040c        0x0 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .bss           0x2000040c        0x0 ../../../Source/portable/MemMang/heap_2.o
+ *fill*         0x2000040c        0x4 00
+ .bss.xHeap     0x20000410     0x5dc0 ../../../Source/portable/MemMang/heap_2.o
+ .bss.xStart    0x200061d0        0x8 ../../../Source/portable/MemMang/heap_2.o
+ .bss.xEnd      0x200061d8        0x8 ../../../Source/portable/MemMang/heap_2.o
  .bss.xFreeBytesRemaining
-                0x200060e8        0x4 ../../../Source/portable/MemMang/heap_2.o
+                0x200061e0        0x4 ../../../Source/portable/MemMang/heap_2.o
  .bss.xHeapHasBeenInitialised.1974
-                0x200060ec        0x4 ../../../Source/portable/MemMang/heap_2.o
- .bss           0x200060f0        0x0 startup.o
- .bss.pulStack  0x200060f0      0x1e0 startup.o
- .bss           0x200062d0        0x0 ./Drivers/grlib.a(context.o)
- .bss           0x200062d0        0x0 ./Drivers/grlib.a(fontcmss12.o)
- .bss           0x200062d0        0x0 ./Drivers/grlib.a(image.o)
+                0x200061e4        0x4 ../../../Source/portable/MemMang/heap_2.o
+ .bss           0x200061e8        0x0 startup.o
+ .bss.pulStack  0x200061e8      0x1e0 startup.o
+ .bss           0x200063c8        0x0 ./Drivers/grlib.a(context.o)
+ .bss           0x200063c8        0x0 ./Drivers/grlib.a(fontcmss12.o)
+ .bss           0x200063c8        0x0 ./Drivers/grlib.a(image.o)
  .bss.g_pucDictionary
-                0x200062d0       0x20 ./Drivers/grlib.a(image.o)
- .bss           0x200062f0        0x0 ./Drivers/grlib.a(rectangle.o)
- .bss           0x200062f0        0x0 ./Drivers/grlib.a(string.o)
- .bss           0x200062f0        0x0 ./Drivers/grlib.a(line.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .bss           0x200062f0        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+                0x200063c8       0x20 ./Drivers/grlib.a(image.o)
+ .bss           0x200063e8        0x0 ./Drivers/grlib.a(rectangle.o)
+ .bss           0x200063e8        0x0 ./Drivers/grlib.a(string.o)
+ .bss           0x200063e8        0x0 ./Drivers/grlib.a(line.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .bss           0x200063e8        0x0 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
  *(COMMON)
- COMMON         0x200062f0        0x4 main.o
-                0x200062f0                xOLEDQueue
- COMMON         0x200062f4       0x50 ../../../Source/queue.o
-                0x200062f4                xQueueRegistry
-                0x20006344                _ebss = .
+ COMMON         0x200063e8        0x4 main.o
+                0x200063e8                xOLEDQueue
+ COMMON         0x200063ec       0x50 ../../../Source/queue.o
+                0x200063ec                xQueueRegistry
+                0x2000643c                _ebss = .
 OUTPUT(RTOSDemo.axf elf32-littlearm)
 
-.debug_abbrev   0x00000000     0x2450
+.debug_abbrev   0x00000000     0x24d5
  .debug_abbrev  0x00000000       0xf3 ./Drivers/adc.o
  .debug_abbrev  0x000000f3      0x154 ./Drivers/can.o
  .debug_abbrev  0x00000247       0xcf ./Drivers/comp.o
@@ -1159,38 +1169,38 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_abbrev  0x00000372       0xc5 ./Drivers/epi.o
  .debug_abbrev  0x00000437      0x115 ./Drivers/ethernet.o
  .debug_abbrev  0x0000054c      0x15e ./Drivers/flash.o
- .debug_abbrev  0x000006aa       0xf8 ./Drivers/gpio.o
- .debug_abbrev  0x000007a2      0x100 ./Drivers/hibernate.o
- .debug_abbrev  0x000008a2       0xd6 ./Drivers/i2c.o
- .debug_abbrev  0x00000978       0xde ./Drivers/i2s.o
- .debug_abbrev  0x00000a56      0x10b ./Drivers/interrupt.o
- .debug_abbrev  0x00000b61       0xbc ./Drivers/mpu.o
- .debug_abbrev  0x00000c1d       0xc5 ./Drivers/pwm.o
- .debug_abbrev  0x00000ce2       0xde ./Drivers/qei.o
- .debug_abbrev  0x00000dc0       0xd6 ./Drivers/ssi.o
- .debug_abbrev  0x00000e96      0x11c ./Drivers/sysctl.o
- .debug_abbrev  0x00000fb2       0x81 ./Drivers/systick.o
- .debug_abbrev  0x00001033       0xb6 ./Drivers/timer.o
- .debug_abbrev  0x000010e9       0xed ./Drivers/uart.o
- .debug_abbrev  0x000011d6      0x150 ./Drivers/udma.o
- .debug_abbrev  0x00001326      0x100 ./Drivers/usb.o
- .debug_abbrev  0x00001426       0xcf ./Drivers/watchdog.o
- .debug_abbrev  0x000014f5       0x74 ./API/led.o
- .debug_abbrev  0x00001569       0xba ./API/comport.o
- .debug_abbrev  0x00001623       0xef ./API/buttons.o
- .debug_abbrev  0x00001712       0xfc ./API/ustdlib.o
- .debug_abbrev  0x0000180e       0xd7 ./OLEDDisplay/rit128x96x4.o
- .debug_abbrev  0x000018e5       0xc6 ./OLEDDisplay/osram128x64x4.o
- .debug_abbrev  0x000019ab      0x1dd ./OLEDDisplay/formike128x128x16.o
- .debug_abbrev  0x00001b88      0x193 main.o
- .debug_abbrev  0x00001d1b       0xc8 ../../../Source/list.o
- .debug_abbrev  0x00001de3      0x16d ../../../Source/queue.o
- .debug_abbrev  0x00001f50      0x181 ../../../Source/tasks.o
- .debug_abbrev  0x000020d1      0x11a ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_abbrev  0x000021eb      0x165 ../../../Source/portable/MemMang/heap_2.o
- .debug_abbrev  0x00002350      0x100 startup.o
+ .debug_abbrev  0x000006aa      0x15b ./Drivers/gpio.o
+ .debug_abbrev  0x00000805      0x100 ./Drivers/hibernate.o
+ .debug_abbrev  0x00000905       0xd6 ./Drivers/i2c.o
+ .debug_abbrev  0x000009db       0xde ./Drivers/i2s.o
+ .debug_abbrev  0x00000ab9      0x10b ./Drivers/interrupt.o
+ .debug_abbrev  0x00000bc4       0xbc ./Drivers/mpu.o
+ .debug_abbrev  0x00000c80       0xc5 ./Drivers/pwm.o
+ .debug_abbrev  0x00000d45       0xde ./Drivers/qei.o
+ .debug_abbrev  0x00000e23       0xd6 ./Drivers/ssi.o
+ .debug_abbrev  0x00000ef9      0x11c ./Drivers/sysctl.o
+ .debug_abbrev  0x00001015       0x81 ./Drivers/systick.o
+ .debug_abbrev  0x00001096       0xb6 ./Drivers/timer.o
+ .debug_abbrev  0x0000114c       0xed ./Drivers/uart.o
+ .debug_abbrev  0x00001239      0x150 ./Drivers/udma.o
+ .debug_abbrev  0x00001389      0x100 ./Drivers/usb.o
+ .debug_abbrev  0x00001489       0xcf ./Drivers/watchdog.o
+ .debug_abbrev  0x00001558       0x74 ./API/led.o
+ .debug_abbrev  0x000015cc       0xba ./API/comport.o
+ .debug_abbrev  0x00001686      0x127 ./API/buttons.o
+ .debug_abbrev  0x000017ad       0xfc ./API/ustdlib.o
+ .debug_abbrev  0x000018a9       0xd7 ./OLEDDisplay/rit128x96x4.o
+ .debug_abbrev  0x00001980       0xc6 ./OLEDDisplay/osram128x64x4.o
+ .debug_abbrev  0x00001a46      0x1dd ./OLEDDisplay/formike128x128x16.o
+ .debug_abbrev  0x00001c23      0x17d main.o
+ .debug_abbrev  0x00001da0       0xc8 ../../../Source/list.o
+ .debug_abbrev  0x00001e68      0x16d ../../../Source/queue.o
+ .debug_abbrev  0x00001fd5      0x181 ../../../Source/tasks.o
+ .debug_abbrev  0x00002156      0x11a ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_abbrev  0x00002270      0x165 ../../../Source/portable/MemMang/heap_2.o
+ .debug_abbrev  0x000023d5      0x100 startup.o
 
-.debug_info     0x00000000     0xc50e
+.debug_info     0x00000000     0xc6a8
  .debug_info    0x00000000      0x8cf ./Drivers/adc.o
  .debug_info    0x000008cf      0x98d ./Drivers/can.o
  .debug_info    0x0000125c      0x26b ./Drivers/comp.o
@@ -1198,38 +1208,38 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_info    0x00001559      0x650 ./Drivers/epi.o
  .debug_info    0x00001ba9      0x666 ./Drivers/ethernet.o
  .debug_info    0x0000220f      0x3f7 ./Drivers/flash.o
- .debug_info    0x00002606      0x8d9 ./Drivers/gpio.o
- .debug_info    0x00002edf      0x44b ./Drivers/hibernate.o
- .debug_info    0x0000332a      0x67d ./Drivers/i2c.o
- .debug_info    0x000039a7      0x593 ./Drivers/i2s.o
- .debug_info    0x00003f3a      0x303 ./Drivers/interrupt.o
- .debug_info    0x0000423d      0x1b8 ./Drivers/mpu.o
- .debug_info    0x000043f5      0x94c ./Drivers/pwm.o
- .debug_info    0x00004d41      0x3cb ./Drivers/qei.o
- .debug_info    0x0000510c      0x445 ./Drivers/ssi.o
- .debug_info    0x00005551      0x7e8 ./Drivers/sysctl.o
- .debug_info    0x00005d39      0x127 ./Drivers/systick.o
- .debug_info    0x00005e60      0x681 ./Drivers/timer.o
- .debug_info    0x000064e1      0x913 ./Drivers/uart.o
- .debug_info    0x00006df4      0x4cd ./Drivers/udma.o
- .debug_info    0x000072c1     0x104a ./Drivers/usb.o
- .debug_info    0x0000830b      0x340 ./Drivers/watchdog.o
- .debug_info    0x0000864b       0x85 ./API/led.o
- .debug_info    0x000086d0      0x3be ./API/comport.o
- .debug_info    0x00008a8e      0x1a7 ./API/buttons.o
- .debug_info    0x00008c35      0x263 ./API/ustdlib.o
- .debug_info    0x00008e98      0x453 ./OLEDDisplay/rit128x96x4.o
- .debug_info    0x000092eb      0x430 ./OLEDDisplay/osram128x64x4.o
- .debug_info    0x0000971b      0x870 ./OLEDDisplay/formike128x128x16.o
- .debug_info    0x00009f8b      0x48d main.o
- .debug_info    0x0000a418      0x2ad ../../../Source/list.o
- .debug_info    0x0000a6c5      0x8b5 ../../../Source/queue.o
- .debug_info    0x0000af7a      0xf9c ../../../Source/tasks.o
- .debug_info    0x0000bf16      0x1cb ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_info    0x0000c0e1      0x2b6 ../../../Source/portable/MemMang/heap_2.o
- .debug_info    0x0000c397      0x177 startup.o
+ .debug_info    0x00002606      0xa07 ./Drivers/gpio.o
+ .debug_info    0x0000300d      0x44b ./Drivers/hibernate.o
+ .debug_info    0x00003458      0x67d ./Drivers/i2c.o
+ .debug_info    0x00003ad5      0x593 ./Drivers/i2s.o
+ .debug_info    0x00004068      0x303 ./Drivers/interrupt.o
+ .debug_info    0x0000436b      0x1b8 ./Drivers/mpu.o
+ .debug_info    0x00004523      0x94c ./Drivers/pwm.o
+ .debug_info    0x00004e6f      0x3cb ./Drivers/qei.o
+ .debug_info    0x0000523a      0x445 ./Drivers/ssi.o
+ .debug_info    0x0000567f      0x7e8 ./Drivers/sysctl.o
+ .debug_info    0x00005e67      0x127 ./Drivers/systick.o
+ .debug_info    0x00005f8e      0x681 ./Drivers/timer.o
+ .debug_info    0x0000660f      0x913 ./Drivers/uart.o
+ .debug_info    0x00006f22      0x4cd ./Drivers/udma.o
+ .debug_info    0x000073ef     0x104a ./Drivers/usb.o
+ .debug_info    0x00008439      0x340 ./Drivers/watchdog.o
+ .debug_info    0x00008779       0x85 ./API/led.o
+ .debug_info    0x000087fe      0x3be ./API/comport.o
+ .debug_info    0x00008bbc      0x29e ./API/buttons.o
+ .debug_info    0x00008e5a      0x263 ./API/ustdlib.o
+ .debug_info    0x000090bd      0x453 ./OLEDDisplay/rit128x96x4.o
+ .debug_info    0x00009510      0x430 ./OLEDDisplay/osram128x64x4.o
+ .debug_info    0x00009940      0x870 ./OLEDDisplay/formike128x128x16.o
+ .debug_info    0x0000a1b0      0x402 main.o
+ .debug_info    0x0000a5b2      0x2ad ../../../Source/list.o
+ .debug_info    0x0000a85f      0x8b5 ../../../Source/queue.o
+ .debug_info    0x0000b114      0xf9c ../../../Source/tasks.o
+ .debug_info    0x0000c0b0      0x1cb ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_info    0x0000c27b      0x2b6 ../../../Source/portable/MemMang/heap_2.o
+ .debug_info    0x0000c531      0x177 startup.o
 
-.debug_line     0x00000000     0x2cfb
+.debug_line     0x00000000     0x2d53
  .debug_line    0x00000000      0x188 ./Drivers/adc.o
  .debug_line    0x00000188      0x230 ./Drivers/can.o
  .debug_line    0x000003b8       0x93 ./Drivers/comp.o
@@ -1237,38 +1247,38 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_line    0x0000049a      0x121 ./Drivers/epi.o
  .debug_line    0x000005bb      0x16a ./Drivers/ethernet.o
  .debug_line    0x00000725      0x136 ./Drivers/flash.o
- .debug_line    0x0000085b      0x1c9 ./Drivers/gpio.o
- .debug_line    0x00000a24      0x118 ./Drivers/hibernate.o
- .debug_line    0x00000b3c      0x13e ./Drivers/i2c.o
- .debug_line    0x00000c7a      0x124 ./Drivers/i2s.o
- .debug_line    0x00000d9e       0xdc ./Drivers/interrupt.o
- .debug_line    0x00000e7a       0x7c ./Drivers/mpu.o
- .debug_line    0x00000ef6      0x177 ./Drivers/pwm.o
- .debug_line    0x0000106d       0xc7 ./Drivers/qei.o
- .debug_line    0x00001134       0xd3 ./Drivers/ssi.o
- .debug_line    0x00001207      0x25d ./Drivers/sysctl.o
- .debug_line    0x00001464       0x6f ./Drivers/systick.o
- .debug_line    0x000014d3      0x155 ./Drivers/timer.o
- .debug_line    0x00001628      0x18f ./Drivers/uart.o
- .debug_line    0x000017b7      0x10e ./Drivers/udma.o
- .debug_line    0x000018c5      0x343 ./Drivers/usb.o
- .debug_line    0x00001c08       0xc8 ./Drivers/watchdog.o
- .debug_line    0x00001cd0       0x62 ./API/led.o
- .debug_line    0x00001d32       0xb5 ./API/comport.o
- .debug_line    0x00001de7       0x86 ./API/buttons.o
- .debug_line    0x00001e6d      0x13e ./API/ustdlib.o
- .debug_line    0x00001fab      0x134 ./OLEDDisplay/rit128x96x4.o
- .debug_line    0x000020df      0x125 ./OLEDDisplay/osram128x64x4.o
- .debug_line    0x00002204      0x172 ./OLEDDisplay/formike128x128x16.o
- .debug_line    0x00002376      0x15a main.o
- .debug_line    0x000024d0       0xdd ../../../Source/list.o
- .debug_line    0x000025ad      0x279 ../../../Source/queue.o
- .debug_line    0x00002826      0x2d7 ../../../Source/tasks.o
- .debug_line    0x00002afd       0xbb ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_line    0x00002bb8       0xee ../../../Source/portable/MemMang/heap_2.o
- .debug_line    0x00002ca6       0x55 startup.o
+ .debug_line    0x0000085b      0x1f8 ./Drivers/gpio.o
+ .debug_line    0x00000a53      0x118 ./Drivers/hibernate.o
+ .debug_line    0x00000b6b      0x13e ./Drivers/i2c.o
+ .debug_line    0x00000ca9      0x124 ./Drivers/i2s.o
+ .debug_line    0x00000dcd       0xdc ./Drivers/interrupt.o
+ .debug_line    0x00000ea9       0x7c ./Drivers/mpu.o
+ .debug_line    0x00000f25      0x177 ./Drivers/pwm.o
+ .debug_line    0x0000109c       0xc7 ./Drivers/qei.o
+ .debug_line    0x00001163       0xd3 ./Drivers/ssi.o
+ .debug_line    0x00001236      0x25d ./Drivers/sysctl.o
+ .debug_line    0x00001493       0x6f ./Drivers/systick.o
+ .debug_line    0x00001502      0x155 ./Drivers/timer.o
+ .debug_line    0x00001657      0x18f ./Drivers/uart.o
+ .debug_line    0x000017e6      0x10e ./Drivers/udma.o
+ .debug_line    0x000018f4      0x343 ./Drivers/usb.o
+ .debug_line    0x00001c37       0xc8 ./Drivers/watchdog.o
+ .debug_line    0x00001cff       0x62 ./API/led.o
+ .debug_line    0x00001d61       0xb5 ./API/comport.o
+ .debug_line    0x00001e16       0xd9 ./API/buttons.o
+ .debug_line    0x00001eef      0x13e ./API/ustdlib.o
+ .debug_line    0x0000202d      0x134 ./OLEDDisplay/rit128x96x4.o
+ .debug_line    0x00002161      0x125 ./OLEDDisplay/osram128x64x4.o
+ .debug_line    0x00002286      0x172 ./OLEDDisplay/formike128x128x16.o
+ .debug_line    0x000023f8      0x130 main.o
+ .debug_line    0x00002528       0xdd ../../../Source/list.o
+ .debug_line    0x00002605      0x279 ../../../Source/queue.o
+ .debug_line    0x0000287e      0x2d7 ../../../Source/tasks.o
+ .debug_line    0x00002b55       0xbb ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_line    0x00002c10       0xee ../../../Source/portable/MemMang/heap_2.o
+ .debug_line    0x00002cfe       0x55 startup.o
 
-.debug_frame    0x00000000     0x51e4
+.debug_frame    0x00000000     0x5260
  .debug_frame   0x00000000      0x37c ./Drivers/adc.o
  .debug_frame   0x0000037c      0x30c ./Drivers/can.o
  .debug_frame   0x00000688      0x114 ./Drivers/comp.o
@@ -1276,84 +1286,84 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_frame   0x000007dc      0x29c ./Drivers/epi.o
  .debug_frame   0x00000a78      0x2ac ./Drivers/ethernet.o
  .debug_frame   0x00000d24      0x1d4 ./Drivers/flash.o
- .debug_frame   0x00000ef8      0x3f8 ./Drivers/gpio.o
- .debug_frame   0x000012f0      0x338 ./Drivers/hibernate.o
- .debug_frame   0x00001628      0x368 ./Drivers/i2c.o
- .debug_frame   0x00001990      0x2f0 ./Drivers/i2s.o
- .debug_frame   0x00001c80      0x17c ./Drivers/interrupt.o
- .debug_frame   0x00001dfc      0x110 ./Drivers/mpu.o
- .debug_frame   0x00001f0c      0x3bc ./Drivers/pwm.o
- .debug_frame   0x000022c8      0x1f4 ./Drivers/qei.o
- .debug_frame   0x000024bc      0x1d8 ./Drivers/ssi.o
- .debug_frame   0x00002694      0x4c0 ./Drivers/sysctl.o
- .debug_frame   0x00002b54      0x110 ./Drivers/systick.o
- .debug_frame   0x00002c64      0x2f4 ./Drivers/timer.o
- .debug_frame   0x00002f58      0x47c ./Drivers/uart.o
- .debug_frame   0x000033d4      0x264 ./Drivers/udma.o
- .debug_frame   0x00003638      0x694 ./Drivers/usb.o
- .debug_frame   0x00003ccc      0x1f4 ./Drivers/watchdog.o
- .debug_frame   0x00003ec0       0x4c ./API/led.o
- .debug_frame   0x00003f0c       0xfc ./API/comport.o
- .debug_frame   0x00004008       0x8c ./API/buttons.o
- .debug_frame   0x00004094       0x84 ./API/ustdlib.o
- .debug_frame   0x00004118      0x14c ./OLEDDisplay/rit128x96x4.o
- .debug_frame   0x00004264      0x14c ./OLEDDisplay/osram128x64x4.o
- .debug_frame   0x000043b0      0x1f8 ./OLEDDisplay/formike128x128x16.o
- .debug_frame   0x000045a8      0x10c main.o
- .debug_frame   0x000046b4       0x9c ../../../Source/list.o
- .debug_frame   0x00004750      0x284 ../../../Source/queue.o
- .debug_frame   0x000049d4      0x4c0 ../../../Source/tasks.o
- .debug_frame   0x00004e94      0x124 ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_frame   0x00004fb8       0x88 ../../../Source/portable/MemMang/heap_2.o
- .debug_frame   0x00005040       0x7c startup.o
- .debug_frame   0x000050bc       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
- .debug_frame   0x000050e8       0x38 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
- .debug_frame   0x00005120       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
- .debug_frame   0x0000514c       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
- .debug_frame   0x00005178       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
- .debug_frame   0x00005198       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
- .debug_frame   0x000051b8       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
+ .debug_frame   0x00000ef8      0x454 ./Drivers/gpio.o
+ .debug_frame   0x0000134c      0x338 ./Drivers/hibernate.o
+ .debug_frame   0x00001684      0x368 ./Drivers/i2c.o
+ .debug_frame   0x000019ec      0x2f0 ./Drivers/i2s.o
+ .debug_frame   0x00001cdc      0x17c ./Drivers/interrupt.o
+ .debug_frame   0x00001e58      0x110 ./Drivers/mpu.o
+ .debug_frame   0x00001f68      0x3bc ./Drivers/pwm.o
+ .debug_frame   0x00002324      0x1f4 ./Drivers/qei.o
+ .debug_frame   0x00002518      0x1d8 ./Drivers/ssi.o
+ .debug_frame   0x000026f0      0x4c0 ./Drivers/sysctl.o
+ .debug_frame   0x00002bb0      0x110 ./Drivers/systick.o
+ .debug_frame   0x00002cc0      0x2f4 ./Drivers/timer.o
+ .debug_frame   0x00002fb4      0x47c ./Drivers/uart.o
+ .debug_frame   0x00003430      0x264 ./Drivers/udma.o
+ .debug_frame   0x00003694      0x694 ./Drivers/usb.o
+ .debug_frame   0x00003d28      0x1f4 ./Drivers/watchdog.o
+ .debug_frame   0x00003f1c       0x4c ./API/led.o
+ .debug_frame   0x00003f68       0xfc ./API/comport.o
+ .debug_frame   0x00004064       0xd0 ./API/buttons.o
+ .debug_frame   0x00004134       0x84 ./API/ustdlib.o
+ .debug_frame   0x000041b8      0x14c ./OLEDDisplay/rit128x96x4.o
+ .debug_frame   0x00004304      0x14c ./OLEDDisplay/osram128x64x4.o
+ .debug_frame   0x00004450      0x1f8 ./OLEDDisplay/formike128x128x16.o
+ .debug_frame   0x00004648       0xe8 main.o
+ .debug_frame   0x00004730       0x9c ../../../Source/list.o
+ .debug_frame   0x000047cc      0x284 ../../../Source/queue.o
+ .debug_frame   0x00004a50      0x4c0 ../../../Source/tasks.o
+ .debug_frame   0x00004f10      0x124 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_frame   0x00005034       0x88 ../../../Source/portable/MemMang/heap_2.o
+ .debug_frame   0x000050bc       0x7c startup.o
+ .debug_frame   0x00005138       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcmp.o)
+ .debug_frame   0x00005164       0x38 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memcpy.o)
+ .debug_frame   0x0000519c       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-memset.o)
+ .debug_frame   0x000051c8       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcat.o)
+ .debug_frame   0x000051f4       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strcpy.o)
+ .debug_frame   0x00005214       0x20 c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strlen.o)
+ .debug_frame   0x00005234       0x2c c:/programme/codesourcery/sourcery g++ lite/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2\libc.a(lib_a-strncpy.o)
 
-.debug_loc      0x00000000     0x8f9a
+.debug_loc      0x00000000     0x9080
  .debug_loc     0x00000000      0x6a9 ./Drivers/adc.o
  .debug_loc     0x000006a9      0x528 ./Drivers/can.o
  .debug_loc     0x00000bd1      0x1ef ./Drivers/comp.o
  .debug_loc     0x00000dc0      0x4f1 ./Drivers/epi.o
  .debug_loc     0x000012b1      0x4f1 ./Drivers/ethernet.o
  .debug_loc     0x000017a2      0x34c ./Drivers/flash.o
- .debug_loc     0x00001aee      0x717 ./Drivers/gpio.o
- .debug_loc     0x00002205      0x568 ./Drivers/hibernate.o
- .debug_loc     0x0000276d      0x672 ./Drivers/i2c.o
- .debug_loc     0x00002ddf      0x596 ./Drivers/i2s.o
- .debug_loc     0x00003375      0x2a7 ./Drivers/interrupt.o
- .debug_loc     0x0000361c      0x1cb ./Drivers/mpu.o
- .debug_loc     0x000037e7      0x717 ./Drivers/pwm.o
- .debug_loc     0x00003efe      0x3a7 ./Drivers/qei.o
- .debug_loc     0x000042a5      0x370 ./Drivers/ssi.o
- .debug_loc     0x00004615      0x86a ./Drivers/sysctl.o
- .debug_loc     0x00004e7f      0x19b ./Drivers/systick.o
- .debug_loc     0x0000501a      0x596 ./Drivers/timer.o
- .debug_loc     0x000055b0      0x898 ./Drivers/uart.o
- .debug_loc     0x00005e48      0x447 ./Drivers/udma.o
- .debug_loc     0x0000628f      0xcad ./Drivers/usb.o
- .debug_loc     0x00006f3c      0x3a7 ./Drivers/watchdog.o
- .debug_loc     0x000072e3       0x62 ./API/led.o
- .debug_loc     0x00007345      0x1ac ./API/comport.o
- .debug_loc     0x000074f1       0xd0 ./API/buttons.o
- .debug_loc     0x000075c1       0xbd ./API/ustdlib.o
- .debug_loc     0x0000767e      0x21a ./OLEDDisplay/rit128x96x4.o
- .debug_loc     0x00007898      0x21a ./OLEDDisplay/osram128x64x4.o
- .debug_loc     0x00007ab2      0x358 ./OLEDDisplay/formike128x128x16.o
- .debug_loc     0x00007e0a      0x1b1 main.o
- .debug_loc     0x00007fbb      0x113 ../../../Source/list.o
- .debug_loc     0x000080ce      0x44c ../../../Source/queue.o
- .debug_loc     0x0000851a      0x7fb ../../../Source/tasks.o
- .debug_loc     0x00008d15      0x170 ../../../Source/portable/GCC/ARM_CM3/port.o
- .debug_loc     0x00008e85       0xc4 ../../../Source/portable/MemMang/heap_2.o
- .debug_loc     0x00008f49       0x51 startup.o
+ .debug_loc     0x00001aee      0x7bc ./Drivers/gpio.o
+ .debug_loc     0x000022aa      0x568 ./Drivers/hibernate.o
+ .debug_loc     0x00002812      0x672 ./Drivers/i2c.o
+ .debug_loc     0x00002e84      0x596 ./Drivers/i2s.o
+ .debug_loc     0x0000341a      0x2a7 ./Drivers/interrupt.o
+ .debug_loc     0x000036c1      0x1cb ./Drivers/mpu.o
+ .debug_loc     0x0000388c      0x717 ./Drivers/pwm.o
+ .debug_loc     0x00003fa3      0x3a7 ./Drivers/qei.o
+ .debug_loc     0x0000434a      0x370 ./Drivers/ssi.o
+ .debug_loc     0x000046ba      0x86a ./Drivers/sysctl.o
+ .debug_loc     0x00004f24      0x19b ./Drivers/systick.o
+ .debug_loc     0x000050bf      0x596 ./Drivers/timer.o
+ .debug_loc     0x00005655      0x898 ./Drivers/uart.o
+ .debug_loc     0x00005eed      0x447 ./Drivers/udma.o
+ .debug_loc     0x00006334      0xcad ./Drivers/usb.o
+ .debug_loc     0x00006fe1      0x3a7 ./Drivers/watchdog.o
+ .debug_loc     0x00007388       0x62 ./API/led.o
+ .debug_loc     0x000073ea      0x1ac ./API/comport.o
+ .debug_loc     0x00007596      0x14a ./API/buttons.o
+ .debug_loc     0x000076e0       0xbd ./API/ustdlib.o
+ .debug_loc     0x0000779d      0x21a ./OLEDDisplay/rit128x96x4.o
+ .debug_loc     0x000079b7      0x21a ./OLEDDisplay/osram128x64x4.o
+ .debug_loc     0x00007bd1      0x358 ./OLEDDisplay/formike128x128x16.o
+ .debug_loc     0x00007f29      0x178 main.o
+ .debug_loc     0x000080a1      0x113 ../../../Source/list.o
+ .debug_loc     0x000081b4      0x44c ../../../Source/queue.o
+ .debug_loc     0x00008600      0x7fb ../../../Source/tasks.o
+ .debug_loc     0x00008dfb      0x170 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_loc     0x00008f6b       0xc4 ../../../Source/portable/MemMang/heap_2.o
+ .debug_loc     0x0000902f       0x51 startup.o
 
 .debug_pubnames
-                0x00000000     0x3a4f
+                0x00000000     0x3a69
  .debug_pubnames
                 0x00000000      0x315 ./Drivers/adc.o
  .debug_pubnames
@@ -1369,65 +1379,65 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_pubnames
                 0x000009ab      0x13d ./Drivers/flash.o
  .debug_pubnames
-                0x00000ae8      0x2bc ./Drivers/gpio.o
+                0x00000ae8      0x2d6 ./Drivers/gpio.o
  .debug_pubnames
-                0x00000da4      0x2a1 ./Drivers/hibernate.o
+                0x00000dbe      0x2a1 ./Drivers/hibernate.o
  .debug_pubnames
-                0x00001045      0x293 ./Drivers/i2c.o
+                0x0000105f      0x293 ./Drivers/i2c.o
  .debug_pubnames
-                0x000012d8      0x217 ./Drivers/i2s.o
+                0x000012f2      0x217 ./Drivers/i2s.o
  .debug_pubnames
-                0x000014ef       0xf6 ./Drivers/interrupt.o
+                0x00001509       0xf6 ./Drivers/interrupt.o
  .debug_pubnames
-                0x000015e5       0xb8 ./Drivers/mpu.o
+                0x000015ff       0xb8 ./Drivers/mpu.o
  .debug_pubnames
-                0x0000169d      0x2d1 ./Drivers/pwm.o
+                0x000016b7      0x2d1 ./Drivers/pwm.o
  .debug_pubnames
-                0x0000196e      0x14f ./Drivers/qei.o
+                0x00001988      0x14f ./Drivers/qei.o
  .debug_pubnames
-                0x00001abd      0x133 ./Drivers/ssi.o
+                0x00001ad7      0x133 ./Drivers/ssi.o
  .debug_pubnames
-                0x00001bf0      0x41f ./Drivers/sysctl.o
+                0x00001c0a      0x41f ./Drivers/sysctl.o
  .debug_pubnames
-                0x0000200f       0xd0 ./Drivers/systick.o
+                0x00002029       0xd0 ./Drivers/systick.o
  .debug_pubnames
-                0x000020df      0x224 ./Drivers/timer.o
+                0x000020f9      0x224 ./Drivers/timer.o
  .debug_pubnames
-                0x00002303      0x346 ./Drivers/uart.o
+                0x0000231d      0x346 ./Drivers/uart.o
  .debug_pubnames
-                0x00002649      0x210 ./Drivers/udma.o
+                0x00002663      0x210 ./Drivers/udma.o
  .debug_pubnames
-                0x00002859      0x521 ./Drivers/usb.o
+                0x00002873      0x521 ./Drivers/usb.o
  .debug_pubnames
-                0x00002d7a      0x189 ./Drivers/watchdog.o
+                0x00002d94      0x189 ./Drivers/watchdog.o
  .debug_pubnames
-                0x00002f03       0x20 ./API/led.o
+                0x00002f1d       0x20 ./API/led.o
  .debug_pubnames
-                0x00002f23       0x81 ./API/comport.o
+                0x00002f3d       0x81 ./API/comport.o
  .debug_pubnames
-                0x00002fa4       0x43 ./API/buttons.o
+                0x00002fbe       0x53 ./API/buttons.o
  .debug_pubnames
-                0x00002fe7       0x3c ./API/ustdlib.o
+                0x00003011       0x3c ./API/ustdlib.o
  .debug_pubnames
-                0x00003023      0x10c ./OLEDDisplay/rit128x96x4.o
+                0x0000304d      0x10c ./OLEDDisplay/rit128x96x4.o
  .debug_pubnames
-                0x0000312f       0xde ./OLEDDisplay/osram128x64x4.o
+                0x00003159       0xde ./OLEDDisplay/osram128x64x4.o
  .debug_pubnames
-                0x0000320d      0x100 ./OLEDDisplay/formike128x128x16.o
+                0x00003237      0x100 ./OLEDDisplay/formike128x128x16.o
  .debug_pubnames
-                0x0000330d       0xd3 main.o
+                0x00003337       0xc3 main.o
  .debug_pubnames
-                0x000033e0       0x71 ../../../Source/list.o
+                0x000033fa       0x71 ../../../Source/list.o
  .debug_pubnames
-                0x00003451      0x18c ../../../Source/queue.o
+                0x0000346b      0x18c ../../../Source/queue.o
  .debug_pubnames
-                0x000035dd      0x2c3 ../../../Source/tasks.o
+                0x000035f7      0x2c3 ../../../Source/tasks.o
  .debug_pubnames
-                0x000038a0      0x10d ../../../Source/portable/GCC/ARM_CM3/port.o
+                0x000038ba      0x10d ../../../Source/portable/GCC/ARM_CM3/port.o
  .debug_pubnames
-                0x000039ad       0x64 ../../../Source/portable/MemMang/heap_2.o
+                0x000039c7       0x64 ../../../Source/portable/MemMang/heap_2.o
  .debug_pubnames
-                0x00003a11       0x3e startup.o
+                0x00003a2b       0x3e startup.o
 
 .debug_aranges  0x00000000      0x4a0
  .debug_aranges
@@ -1505,7 +1515,7 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
  .debug_aranges
                 0x00000480       0x20 startup.o
 
-.debug_str      0x00000000     0x4e00
+.debug_str      0x00000000     0x4e79
  .debug_str     0x00000000      0x3dd ./Drivers/adc.o
                                 0x40c (size before relaxing)
  .debug_str     0x000003dd      0x494 ./Drivers/can.o
@@ -1520,65 +1530,65 @@ OUTPUT(RTOSDemo.axf elf32-littlearm)
                                 0x2ff (size before relaxing)
  .debug_str     0x00000d6a      0x1bb ./Drivers/flash.o
                                 0x293 (size before relaxing)
- .debug_str     0x00000f25      0x301 ./Drivers/gpio.o
-                                0x3c9 (size before relaxing)
- .debug_str     0x00001226      0x291 ./Drivers/hibernate.o
+ .debug_str     0x00000f25      0x35a ./Drivers/gpio.o
+                                0x422 (size before relaxing)
+ .debug_str     0x0000127f      0x291 ./Drivers/hibernate.o
                                 0x354 (size before relaxing)
- .debug_str     0x000014b7      0x257 ./Drivers/i2c.o
+ .debug_str     0x00001510      0x257 ./Drivers/i2c.o
                                 0x319 (size before relaxing)
- .debug_str     0x0000170e      0x1bc ./Drivers/i2s.o
+ .debug_str     0x00001767      0x1bc ./Drivers/i2s.o
                                 0x28a (size before relaxing)
- .debug_str     0x000018ca       0xf8 ./Drivers/interrupt.o
+ .debug_str     0x00001923       0xf8 ./Drivers/interrupt.o
                                 0x1d8 (size before relaxing)
- .debug_str     0x000019c2       0xb6 ./Drivers/mpu.o
+ .debug_str     0x00001a1b       0xb6 ./Drivers/mpu.o
                                 0x14f (size before relaxing)
- .debug_str     0x00001a78      0x32e ./Drivers/pwm.o
+ .debug_str     0x00001ad1      0x32e ./Drivers/pwm.o
                                 0x3f5 (size before relaxing)
- .debug_str     0x00001da6      0x129 ./Drivers/qei.o
+ .debug_str     0x00001dff      0x129 ./Drivers/qei.o
                                 0x1f7 (size before relaxing)
- .debug_str     0x00001ecf      0x140 ./Drivers/ssi.o
+ .debug_str     0x00001f28      0x140 ./Drivers/ssi.o
                                 0x225 (size before relaxing)
- .debug_str     0x0000200f      0x448 ./Drivers/sysctl.o
+ .debug_str     0x00002068      0x448 ./Drivers/sysctl.o
                                 0x503 (size before relaxing)
- .debug_str     0x00002457       0xac ./Drivers/systick.o
+ .debug_str     0x000024b0       0xac ./Drivers/systick.o
                                 0x13f (size before relaxing)
- .debug_str     0x00002503      0x1d7 ./Drivers/timer.o
+ .debug_str     0x0000255c      0x1d7 ./Drivers/timer.o
                                 0x2a5 (size before relaxing)
- .debug_str     0x000026da      0x30b ./Drivers/uart.o
+ .debug_str     0x00002733      0x30b ./Drivers/uart.o
                                 0x411 (size before relaxing)
- .debug_str     0x000029e5      0x256 ./Drivers/udma.o
+ .debug_str     0x00002a3e      0x256 ./Drivers/udma.o
                                 0x30b (size before relaxing)
- .debug_str     0x00002c3b      0x542 ./Drivers/usb.o
+ .debug_str     0x00002c94      0x542 ./Drivers/usb.o
                                 0x665 (size before relaxing)
- .debug_str     0x0000317d      0x150 ./Drivers/watchdog.o
+ .debug_str     0x000031d6      0x150 ./Drivers/watchdog.o
                                 0x1f2 (size before relaxing)
- .debug_str     0x000032cd       0x28 ./API/led.o
+ .debug_str     0x00003326       0x1a ./API/led.o
                                  0xa3 (size before relaxing)
- .debug_str     0x000032f5      0x279 ./API/comport.o
+ .debug_str     0x00003340      0x279 ./API/comport.o
                                 0x342 (size before relaxing)
- .debug_str     0x0000356e       0xf5 ./API/buttons.o
-                                0x1ca (size before relaxing)
- .debug_str     0x00003663       0x8c ./API/ustdlib.o
+ .debug_str     0x000035b9      0x16b ./API/buttons.o
+                                0x247 (size before relaxing)
+ .debug_str     0x00003724       0x8c ./API/ustdlib.o
                                 0x1a9 (size before relaxing)
- .debug_str     0x000036ef      0x1bf ./OLEDDisplay/rit128x96x4.o
+ .debug_str     0x000037b0      0x1bf ./OLEDDisplay/rit128x96x4.o
                                 0x290 (size before relaxing)
- .debug_str     0x000038ae      0x13a ./OLEDDisplay/osram128x64x4.o
+ .debug_str     0x0000396f      0x13a ./OLEDDisplay/osram128x64x4.o
                                 0x280 (size before relaxing)
- .debug_str     0x000039e8      0x327 ./OLEDDisplay/formike128x128x16.o
+ .debug_str     0x00003aa9      0x327 ./OLEDDisplay/formike128x128x16.o
                                 0x48b (size before relaxing)
- .debug_str     0x00003d0f      0x17d main.o
-                                0x2d2 (size before relaxing)
- .debug_str     0x00003e8c      0x135 ../../../Source/list.o
+ .debug_str     0x00003dd0      0x135 main.o
+                                0x278 (size before relaxing)
+ .debug_str     0x00003f05      0x135 ../../../Source/list.o
                                 0x230 (size before relaxing)
- .debug_str     0x00003fc1      0x3ad ../../../Source/queue.o
+ .debug_str     0x0000403a      0x3ad ../../../Source/queue.o
                                 0x57a (size before relaxing)
- .debug_str     0x0000436e      0x78e ../../../Source/tasks.o
+ .debug_str     0x000043e7      0x78e ../../../Source/tasks.o
                                 0x9a0 (size before relaxing)
- .debug_str     0x00004afc      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
+ .debug_str     0x00004b75      0x133 ../../../Source/portable/GCC/ARM_CM3/port.o
                                 0x1ff (size before relaxing)
- .debug_str     0x00004c2f      0x161 ../../../Source/portable/MemMang/heap_2.o
+ .debug_str     0x00004ca8      0x161 ../../../Source/portable/MemMang/heap_2.o
                                 0x25b (size before relaxing)
- .debug_str     0x00004d90       0x70 startup.o
+ .debug_str     0x00004e09       0x70 startup.o
                                  0xf8 (size before relaxing)
 
 .comment        0x00000000      0x6de

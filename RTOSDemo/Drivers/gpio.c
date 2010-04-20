@@ -88,6 +88,65 @@ GPIOBaseValid(unsigned long ulPort)
 
 //*****************************************************************************
 //
+// GPIO Interrupt Handler
+// Calls registered callbacks for either interrupt
+// GPIOEISR() - GPIO interrupt on port E
+// GPIOFISR() - GPIO interrupt on port F
+//
+//*****************************************************************************
+typedef struct{
+	unsigned long ulPort;
+	unsigned char ucPins;
+	void (*callback) (unsigned char ucPins);
+}tGPIOISRHandler;
+
+static tGPIOISRHandler xGPIOISRHandler[GPIO_MAX_ISR_HANDLERS];
+
+void
+GPIOEISR(void)
+{
+	unsigned long isrStatus = GPIOPinIntStatus(GPIO_PORTE_BASE, true);
+	int i;
+	for(i=0;i<GPIO_MAX_ISR_HANDLERS;i++)
+	{
+		if( (xGPIOISRHandler[i].ulPort == GPIO_PORTE_BASE) && (isrStatus & xGPIOISRHandler[i].ucPins) )
+		{
+			xGPIOISRHandler[i].callback(isrStatus);
+		}
+	}
+	GPIOPinIntClear(GPIO_PORTE_BASE, 0xFF); // clear all interrupt
+}
+void
+GPIOFISR(void)
+{
+	unsigned long isrStatus = GPIOPinIntStatus(GPIO_PORTF_BASE, true);
+	int i;
+	for(i=0;i<GPIO_MAX_ISR_HANDLERS;i++)
+	{
+		if( (xGPIOISRHandler[i].ulPort == GPIO_PORTF_BASE) && (isrStatus & xGPIOISRHandler[i].ucPins) )
+		{
+			xGPIOISRHandler[i].callback(isrStatus);
+		}
+	}
+	GPIOPinIntClear(GPIO_PORTF_BASE, 0xFF); // clear all interrupt
+}
+
+static tBoolean isInitialized = false;
+static void
+vInit(void)
+{
+	if(isInitialized)
+		return;
+
+	int i;
+	for(i=0;i<GPIO_MAX_ISR_HANDLERS;i++)
+		xGPIOISRHandler[i].callback = xGPIOISRHandler[i].ucPins = xGPIOISRHandler[i].ulPort = 0;
+
+	isInitialized = true;
+	return;
+}
+//*****************************************************************************
+//
 //! \internal
 //! Gets the GPIO interrupt number.
 //!
@@ -710,7 +769,7 @@ GPIOPinIntClear(unsigned long ulPort, unsigned char ucPins)
 //
 //*****************************************************************************
 void
-GPIOPortIntRegister(unsigned long ulPort, void (*pfnIntHandler)(void))
+GPIOPortIntRegister(unsigned long ulPort, unsigned char ucPins, void (*pfnIntHandler)(unsigned char))
 {
     //
     // Check the arguments.
@@ -718,19 +777,26 @@ GPIOPortIntRegister(unsigned long ulPort, void (*pfnIntHandler)(void))
     ASSERT(GPIOBaseValid(ulPort));
 
     //
-    // Get the interrupt number associated with the specified GPIO.
-    //
-    ulPort = GPIOGetIntNumber(ulPort);
-
-    //
     // Register the interrupt handler.
     //
-   	IntRegister(ulPort, pfnIntHandler);
+    vInit();
+    int i;
+    for(i=0; i<GPIO_MAX_ISR_HANDLERS; i++)
+    {
+    	if(xGPIOISRHandler[i].ulPort == 0)
+    	{
+    		xGPIOISRHandler[i].ulPort = ulPort;
+    		xGPIOISRHandler[i].ucPins = ucPins;
+    		xGPIOISRHandler[i].callback = pfnIntHandler;
+    		break;
+    	}
+    }
 
     //
+    // Get the interrupt number associated with the specified GPIO.
     // Enable the GPIO interrupt.
     //
-    IntEnable(ulPort);
+    IntEnable(GPIOGetIntNumber(ulPort));
 }
 
 //*****************************************************************************

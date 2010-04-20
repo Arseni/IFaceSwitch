@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.cdt.ui.CElementWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1267966610204_0" label="FreeRTOS_LM3S8962_Demo" name="FreeRTOS_LM3S8962_Demo">
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-fs.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/webserver.h" type="1"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/startup.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/clock-arch.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-cgi.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/uIP_Task.c" type="1"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RTOSDemo/standalone.ld" type="1"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RTOSDemo/Makefile" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/uip-conf.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/FreeRTOSConfig.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/http-strings.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-cgi.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/emac.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-fsdata.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-fs" type="2"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-fs.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/emac.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd-fsdata.h" type="1"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/main.c" type="1"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/RTOSDemo/Makefile" type="1"/>
+<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/FreeRTOSConfig.h" type="1"/>
 <item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/OLEDDisplay/bitmap.h" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/http-strings.c" type="1"/>
-<item factoryID="org.eclipse.cdt.ui.PersistableCElementFactory" path="/RTOSDemo/webserver/httpd.h" type="1"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1270820190704_1" label="Window Working Set" name="Aggregate for window 1188147282312">
 <workingSet IMemento.internal.id="FreeRTOS_LM3S8962_Demo"/>

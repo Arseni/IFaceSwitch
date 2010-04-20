@@ -28,25 +28,22 @@ extern xQueueHandle xOLEDQueue;
 /* ---------------------- private library --------------------- */
 static tBoolean isInitialized = false;
 static tButtonCallback callbackCollection[BUTTON_MAX_CALLBACKS];
+static xQueueHandle xButtonQueue;
 
-static void buttonPressISR(void)
+static void buttonArrowsPressed(unsigned char ucPins)
 {
-	while(1)
+	tButton btnPressed = ucPins & BUTTON_ARROW_PINS;
+	if(btnPressed)
+		xQueueSend(xButtonQueue, &btnPressed, portMAX_DELAY);
+}
+static void buttonSelPressed(unsigned char ucPins)
+{
+	tButton btnPressed = ucPins & BUTTON_SEL_PIN;
+	if(btnPressed)
 	{
+		btnPressed = BUTTON_SEL;
+		xQueueSend(xButtonQueue, &btnPressed, portMAX_DELAY);
 	}
-	/*xOLEDMessage msg;
-	tButton btnPressed = xButtonIsPressed();
-	strcpy(msg.pcMessage, "btnPress: ");
-	if(btnPressed & BUTTON_UP) strcat(msg.pcMessage, "up ");
-	if(btnPressed & BUTTON_DOWN) strcat(msg.pcMessage, "down ");
-	if(btnPressed & BUTTON_LEFT) strcat(msg.pcMessage, "left ");
-	if(btnPressed & BUTTON_RIGHT) strcat(msg.pcMessage, "right ");
-	if(btnPressed & BUTTON_SEL) strcat(msg.pcMessage, "sel ");
-	xQueueSend(xOLEDQueue, &msg, portMAX_DELAY);
-
-	GPIOPinIntClear(BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS);
-	GPIOPinIntClear(BUTTON_SEL_PORT_BASE, BUTTON_SEL_PIN);
-*/
 }
 
 
@@ -71,22 +68,38 @@ static void Init(void)
 	GPIOPadConfigSet( BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU );
 	GPIOPadConfigSet( BUTTON_SEL_PORT_BASE, BUTTON_SEL_PIN, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPU );
 
-	// Enable and register interrupt, clear
+	// Enable and register interrupt
 	GPIOIntTypeSet(BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS, GPIO_FALLING_EDGE);
 	GPIOPinIntEnable(BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS);
-	//GPIOPortIntRegister(BUTTON_ARROW_PORT_BASE, buttonPressISR);
-	GPIOPinIntClear(BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS);
+	GPIOPortIntRegister(BUTTON_ARROW_PORT_BASE, BUTTON_ARROW_PINS, buttonArrowsPressed);
 
+	GPIOIntTypeSet(BUTTON_SEL_PORT_BASE, BUTTON_SEL_PIN, GPIO_FALLING_EDGE);
+	GPIOPinIntEnable(BUTTON_SEL_PORT_BASE, BUTTON_SEL_PIN);
+	GPIOPortIntRegister(BUTTON_SEL_PORT_BASE, BUTTON_SEL_PIN, buttonSelPressed);
 
 	isInitialized = true;
 }
 
 
 /* ---------------------- public  library --------------------- */
+
+void vButtonTask(void * pvParameters)
+{
+	tButton btnPressed;
+	xOLEDMessage msg;
+	Init();
+	xButtonQueue = xQueueCreate( BUTTON_QUEUE_SIZE, sizeof( tButton ) );
+	for(;;)
+	{
+		xQueueReceive( xButtonQueue, &btnPressed, portMAX_DELAY );
+		sprintf(msg.pcMessage, "btn: %04X", btnPressed);
+		xQueueSend( xOLEDQueue, &msg, portMAX_DELAY);
+	}
+}
+
 tBoolean xButtonRegisterCallback(tButtonCallback btnCb)
 {
 	Init();
-
 }
 
 tButton xButtonIsPressed(void)
